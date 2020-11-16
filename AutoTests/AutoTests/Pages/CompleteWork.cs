@@ -1,0 +1,174 @@
+﻿using AutoTests.SeleniumHelpers;
+using AutoTests.Utilies;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.PageObjects;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace AutoTests.Pages
+{
+    class CompleteWork : PageObject
+    {
+        private readonly IWebDriver _driver;
+        private readonly string _numberProject;
+        private readonly string BuissnessResearchXpath = ConfigurationHelper.Get<string>("BuissnessResearchXpath");
+        private readonly string EditorPopoutXpath = ConfigurationHelper.Get<string>("EditorPopoutXpath");
+        private readonly string ExecuteStatusXpath = ConfigurationHelper.Get<string>("ExecuteStatusXpath");
+        private readonly string DevelopShemeXpath = ConfigurationHelper.Get<string>("DevelopShemeXpath");
+        private readonly string DevelopTicketXpath = ConfigurationHelper.Get<string>("DevelopTicketXpath");
+        private readonly string DevelopTaskXpath = ConfigurationHelper.Get<string>("DevelopTaskXpath");
+        private readonly string TitleXpath = ConfigurationHelper.Get<string>("TitleXpath"); 
+        private readonly string ButtonOnToolbarXpath = ConfigurationHelper.Get<string>("ButtonOnToolbarXpath");
+        private readonly string DropDownXpath = ConfigurationHelper.Get<string>("DropDownXpath");
+        private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
+        public CompleteWork(IWebDriver driver, string numberProject) : base(driver)
+        {
+            _driver = driver;
+            _numberProject = numberProject;
+        }
+        public IWebElement BuissnessResearch { get { return _driver.FindElement(By.XPath("" + BuissnessResearchXpath + " (Проект – " + _numberProject + ")']")); } }
+        //public IWebElement BuissnessResearch { get { return _driver.FindElement(By.XPath("" + BuissnessResearchXpath + " (Проект – 1902270605)']")); } }
+        public IWebElement DevelopScheme { get { return _driver.FindElement(By.XPath("" + DevelopShemeXpath + " (Проект – " + _numberProject + ")']")); } }
+        //public IWebElement DevelopScheme { get { return _driver.FindElement(By.XPath("" + DevelopShemeXpath + " (Проект – 1902270605)']")); } }
+        public IWebElement DevelopTicket { get { return _driver.FindElement(By.XPath("" + DevelopTicketXpath + " (Проект – " + _numberProject + ")']")); } }
+        //public IWebElement DevelopTicket { get { return _driver.FindElement(By.XPath("" + DevelopTicketXpath + " (Проект – 1902270605)']")); } }
+        public IWebElement TaskNewRecord { get { return _driver.FindElement(By.XPath("" + TitleXpath + "TestName (Проект – " + _numberProject + ")']")); } }
+        //public IWebElement TaskNewRecord { get { return _driver.FindElement(By.XPath("" + TitleXpath + "TestName (Проект – 1310600719)']")); } }
+        public IWebElement DevelopTask { get { return _driver.FindElement(By.XPath("" + DevelopTaskXpath + " (Проект – " + _numberProject + ")']")); } }
+        //public IWebElement DevelopTask { get { return _driver.FindElement(By.XPath("" + DevelopTaskXpath + " (Проект – 600457694)']")); } }
+        public IWebElement TaskNewRecord2 { get { return _driver.FindElement(By.XPath("(" + TitleXpath + "TestName (Проект – " + _numberProject + ")'])[2]")); } }
+        //public IWebElement TaskNewRecord { get { return _driver.FindElement(By.XPath("" + TitleXpath + "TestName (Проект – 1902270605)']")); } }
+        public IWebElement TaskNewRecord3 { get { return _driver.FindElement(By.XPath("(" + TitleXpath + "TestName (Проект – " + _numberProject + ")'])[3]")); } }
+        //public IWebElement TaskNewRecord { get { return _driver.FindElement(By.XPath("" + TitleXpath + "TestName (Проект – 1902270605)']")); } }
+        public IWebElement EditorPopout { get { return _driver.FindElement(By.XPath("(" + EditorPopoutXpath + ")[2]")); } }
+        public IWebElement ExecuteStatus { get { return _driver.FindElement(By.XPath("" + ExecuteStatusXpath + "")); } }
+        public IWebElement ExecuteStatusForDevelopTask { get { return _driver.FindElement(By.XPath("(" + ExecuteStatusXpath + ")[4]")); } }
+        public IWebElement CompleteTaskButton { get { return _driver.FindElement(By.XPath("" + ButtonOnToolbarXpath + "")); } }
+        public IWebElement DropDown { get { return _driver.FindElement(By.XPath("(" + DropDownXpath + ")[2]")); } }
+        public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
+        public void CompleteTaskOfBuisnessResearch()
+        {
+            //Thread.Sleep(2000);
+            SeleniumHelper.waitUntilElementVisibile(BuissnessResearch, 20000);
+            Actions act = new Actions(_driver);
+            act.DoubleClick(BuissnessResearch).Perform();
+            Thread.Sleep(2000);
+            EditorPopout.Click();
+            Thread.Sleep(2000);
+            DropDown.Click();
+            Thread.Sleep(2000);
+            ExecuteStatus.Click();
+            Thread.Sleep(2000);
+            CompleteTaskButton.Click();
+            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            //Thread.Sleep(10000);
+        }
+        public void CompleteTaskOfDevelopScheme()
+        {
+            //Thread.Sleep(2000);
+            SeleniumHelper.waitUntilElementVisibile(DevelopScheme, 20000);
+            Actions act = new Actions(_driver);
+            act.DoubleClick(DevelopScheme).Perform();
+            Thread.Sleep(2000);
+            EditorPopout.Click();
+            Thread.Sleep(2000);
+            DropDown.Click();
+            Thread.Sleep(2000);
+            ExecuteStatus.Click();
+            Thread.Sleep(2000);
+            CompleteTaskButton.Click();
+            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            //Thread.Sleep(10000);
+        }
+        public void CompleteTaskOfDevelopTicket()
+        {
+            //Thread.Sleep(2000);
+            SeleniumHelper.waitUntilElementVisibile(DevelopTicket, 20000);
+            Actions act = new Actions(_driver);
+            act.DoubleClick(DevelopTicket).Perform();
+            Thread.Sleep(2000);
+            EditorPopout.Click();
+            Thread.Sleep(2000);
+            DropDown.Click();
+            Thread.Sleep(2000);
+            ExecuteStatus.Click();
+            Thread.Sleep(2000);
+            CompleteTaskButton.Click();
+            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            //Thread.Sleep(10000);
+        }
+        public void CompleteTaskOfNewRecord()
+        {
+            //Thread.Sleep(2000);
+            SeleniumHelper.waitUntilElementVisibile(TaskNewRecord, 20000);
+            Actions act = new Actions(_driver);
+            act.DoubleClick(TaskNewRecord).Perform();
+            Thread.Sleep(2000);
+            EditorPopout.Click();
+            Thread.Sleep(2000);
+            DropDown.Click();
+            Thread.Sleep(2000);
+            ExecuteStatus.Click();
+            Thread.Sleep(2000);
+            CompleteTaskButton.Click();
+            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            //Thread.Sleep(10000);
+        }
+        public void CompleteTaskOfNewRecord2()
+        {
+            //Thread.Sleep(2000);
+            SeleniumHelper.waitUntilElementVisibile(TaskNewRecord2, 20000);
+            Actions act = new Actions(_driver);
+            act.DoubleClick(TaskNewRecord2).Perform();
+            Thread.Sleep(2000);
+            EditorPopout.Click();
+            Thread.Sleep(2000);
+            DropDown.Click();
+            Thread.Sleep(2000);
+            ExecuteStatus.Click();
+            Thread.Sleep(2000);
+            CompleteTaskButton.Click();
+            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            //Thread.Sleep(10000);
+        }
+        public void CompleteTaskOfNewRecord3()
+        {
+            //Thread.Sleep(2000);
+            SeleniumHelper.waitUntilElementVisibile(TaskNewRecord3, 20000);
+            Actions act = new Actions(_driver);
+            act.DoubleClick(TaskNewRecord3).Perform();
+            Thread.Sleep(2000);
+            EditorPopout.Click();
+            Thread.Sleep(2000);
+            DropDown.Click();
+            Thread.Sleep(2000);
+            ExecuteStatus.Click();
+            Thread.Sleep(2000);
+            CompleteTaskButton.Click();
+            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            //Thread.Sleep(10000);
+        }
+        public void CompleteTaskDevelopTask()
+        {
+            //Thread.Sleep(2000);
+            SeleniumHelper.waitUntilElementVisibile(DevelopTask, 20000);
+            Actions act = new Actions(_driver);
+            act.DoubleClick(DevelopTask).Perform();
+            Thread.Sleep(2000);
+            EditorPopout.Click();
+            Thread.Sleep(2000);
+            DropDown.Click();
+            Thread.Sleep(2000);
+            ExecuteStatusForDevelopTask.Click();
+            Thread.Sleep(2000);
+            CompleteTaskButton.Click();
+            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            //Thread.Sleep(10000);
+        }
+    }
+}
