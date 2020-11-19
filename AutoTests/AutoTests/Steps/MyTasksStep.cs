@@ -1,4 +1,5 @@
 ﻿using AutoTests.Pages;
+using AutoTests.SeleniumHelpers;
 using FluentAssertions;
 using OpenQA.Selenium;
 using System;
@@ -39,6 +40,16 @@ namespace AutoTests.Steps
         public void WhenIClickLogout()
         {
             _pageMyTasks.LogOut();
+        }
+        [When(@"I navigate to global configuration")]
+        public void ThenINavigateToGlobalConfiguration()
+        {
+            //ScenarioContext.Current.Pending();
+            SeleniumHelper.waitUntilElementInvisibile(_pageMyTasks.Loader, 100000);
+            SeleniumHelper.waitUntilElementVisibile(_pageMyTasks.Logo, 2000);
+            _pageMyTasks.Logo.Click();
+            Thread.Sleep(300);
+            _pageMyTasks.GlobalConfiguration.Click();
         }
     }
 }

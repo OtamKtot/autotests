@@ -34,6 +34,7 @@ namespace AutoTests.Pages
         private readonly string MyProjectXpath = ConfigurationHelper.Get<string>("MyProjectXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath"); 
         private readonly string CreateTicketXpath = ConfigurationHelper.Get<string>("CreateTicketXpath");
+        private readonly string GlobalConfigurationXpath = ConfigurationHelper.Get<string>("GlobalConfigurationXpath");
         public MyTasks(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -58,6 +59,7 @@ namespace AutoTests.Pages
         public IWebElement MyProject { get { return _driver.FindElement(By.XPath("" + MyProjectXpath + "")); } }
         public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
         public IWebElement CreateTicketButton { get { return _driver.FindElement(By.XPath("(" + CreateTicketXpath + ")[2]")); } }
+        public IWebElement GlobalConfiguration { get { return _driver.FindElement(By.XPath("(" + GlobalConfigurationXpath + ")[3]")); } }
         public void GoToMyTasks()
         {
             Thread.Sleep(5000);
