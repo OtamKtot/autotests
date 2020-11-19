@@ -22,6 +22,7 @@ namespace AutoTests.Steps
         [When(@"I add RecordTemplate")]
         public void ThenIAddRecordTemplate(Table table)
         {
+            SeleniumHelper.waitUntilElementInvisibile(_pageTemplates.Loader, 10000);
             var template = table.CreateInstance<Template>();
             _pageTemplates.Add.Click();
             _pageTemplates.Name.SendKeys(template.Name);
@@ -46,6 +47,7 @@ namespace AutoTests.Steps
         [When(@"I navigate into (.*) RecordTemplate")]
         public void ThenINavigateIntoNameRecordTemplate(string nameTemplate)
         {
+            SeleniumHelper.waitUntilElementInvisibile(_pageTemplates.Loader, 10000);
             foreach (var element in _pageTemplates.Templates)
             {
                 if (element.Text == nameTemplate)

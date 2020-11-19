@@ -20,6 +20,7 @@ namespace AutoTests.Pages
         private readonly string ColumnsOfListXpath = ConfigurationHelper.Get<string>("ColumnsOfListXpath");
         private readonly string AttributeTextXpath = ConfigurationHelper.Get<string>("AttributeTextXpath");
         private readonly string FormTextXpath = ConfigurationHelper.Get<string>("FormTextXpath");
+        private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
         public TemplatesPage(IWebDriver driver) : base(driver)
         {
                 _driver = driver;
@@ -33,6 +34,7 @@ namespace AutoTests.Pages
         public ReadOnlyCollection<IWebElement> Templates { get { return _driver.FindElements(By.XPath("" + ColumnsOfListXpath + "")); } }
         public IWebElement AttributeText { get { return _driver.FindElement(By.XPath("" + AttributeTextXpath + "")); } }
         public IWebElement FormText { get { return _driver.FindElement(By.XPath("" + FormTextXpath + "")); } }
+        public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
 
     }
 }
