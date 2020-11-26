@@ -16,6 +16,7 @@ namespace AutoTests.Pages
     class MyTasks : PageObject
     {
         private readonly IWebDriver _driver;
+        private readonly SeleniumHelperWithExpectedConditions selenium;
         private readonly int ExplicityWait = ConfigurationHelper.Get<int>("ExplicityWait");
         private readonly string MyTaskXpath = ConfigurationHelper.Get<string>("MyTaskXpath");
         private readonly string RecordOnProjectXpath = ConfigurationHelper.Get<string>("RecordOnProjectXpath");
@@ -39,6 +40,7 @@ namespace AutoTests.Pages
         public MyTasks(IWebDriver driver) : base(driver)
         {
             _driver = driver;
+            selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
         public IWebElement MyTask { get { return _driver.FindElement(By.XPath("" + MyTaskXpath + "")); } }
         public IWebElement RecordOnProject { get { return _driver.FindElement(By.XPath("" + RecordOnProjectXpath + "")); } }
@@ -113,6 +115,22 @@ namespace AutoTests.Pages
             Thread.Sleep(12000);
         }
         public void CreateTicket()
+        {
+            selenium.Click(By.XPath(RecordOnProjectXpath));
+            selenium.Click(By.XPath(CreateRecordOnProjectXpath));
+            selenium.SendKeys(By.XPath(TextFieldXpath), "TestName");
+            selenium.Click(By.XPath(DropDownXpath));
+            selenium.Click(By.XPath(FirstElementFromListXpath));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
+            selenium.Click(By.XPath(FirstElementFromListXpath));
+            selenium.Click(By.XPath(DateTimeNullXpath));
+            selenium.Click(By.XPath(DayOldXpath));
+            selenium.Click(By.XPath(DateTimeNullXpath));
+            selenium.Click(By.XPath("(" + DayNewXpath + ")[2]"));
+            selenium.Click(By.XPath("(" + CreateTicketXpath + ")[2]"));
+            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
+        }
+        public void CreateTicketTest()
         {
             RecordOnProject.Click();
             CreateRecordOnProject.Click();
