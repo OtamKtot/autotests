@@ -13,7 +13,79 @@ namespace AutoTests.SeleniumHelpers
 {
     class SeleniumHelper
     {
+        public static bool WaitForToBeNotVisibleAndPresent(IWebDriver _driver, string locator, int timeout = 10, int end = 10)
+        {
+            var errors = new StringBuilder();
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeout));
 
+            try
+            {
+                //wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException), typeof(NoSuchElementException));
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.InvisibilityOfElementLocated(By.XPath(locator)));
+
+                return true;
+            }
+            catch (StaleElementReferenceException ex)
+            {
+                if (end == 0) { return false; }
+                return WaitForToBeNotVisibleAndPresent(_driver, locator, timeout, end - 1);
+            }
+            catch (Exception ex)
+            {
+                errors.AppendLine(ex.Message);
+                //Logger.Info($"[Element] Element located by [ {locator} ] is VISIBLE or present in DOM after { timeout } second(s) expectation.");
+                //Logger.Debug(e.Message);
+                return false;
+            }
+        }
+        public static bool WaitForToBeDisplayed(IWebDriver _driver, string locator, int timeout = 10, int end = 10)
+        {
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeout));
+            var errors = new StringBuilder();
+            try
+            {
+                //wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException), typeof(NoSuchElementException));
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+
+                return true;
+            }
+            catch (StaleElementReferenceException ex)
+            {
+                if (end == 0) { return false; }
+                return WaitForToBeDisplayed(_driver, locator, timeout, end - 1);
+            }
+            catch (Exception ex)
+            {
+                errors.AppendLine(ex.Message);
+                //Logger.Info($"[Element] Element located by [ {locator} ] is NOT displayed after {timeout} second(s) expectation.");
+                //Logger.Debug(e.Message);
+                return false;
+            }
+        }
+        public static bool WaitForToBePresent(IWebDriver _driver, string locator, int timeout = 10, int end = 10)
+        {
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeout));
+            var errors = new StringBuilder();
+            try
+            {
+                wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException), typeof(NoSuchElementException));
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath(locator)));
+
+                return true;
+            }
+            catch (StaleElementReferenceException ex)
+            {
+                if (end == 0) { return false; }
+                return WaitForToBePresent(_driver, locator, timeout, end - 1);
+            }
+            catch (Exception ex)
+            {
+                errors.AppendLine(ex.Message);
+                //Logger.Info("[Element] Element located by [" + locator + "] is NOT present in DOM after " + timeout + " second(s) expectation.");
+                //Logger.Debug(e.Message);
+                return false;
+            }
+        }
         //ожидаем исчезновение элемента
         public static void waitUntilElementInvisibile(IWebElement webelement, double periodElementWait)
         {

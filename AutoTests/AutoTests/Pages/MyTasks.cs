@@ -1,5 +1,6 @@
 ﻿using AutoTests.SeleniumHelpers;
 using AutoTests.Utilies;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -92,8 +93,9 @@ namespace AutoTests.Pages
         }
         public void LogOut()
         {
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 30000);
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 5));
+            //SeleniumHelper.waitUntilElementInvisibile(Loader, 30000);
+            //Thread.Sleep(2000);
             //WebDriverWait iWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10)); 
             //iWait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//*[@class='js - content - loading - region l - loader visible - loader']")));
             IJavaScriptExecutor ex = (IJavaScriptExecutor)_driver;
@@ -106,7 +108,8 @@ namespace AutoTests.Pages
             // wait.Until(_driver => LogOutClick);
             //IJavaScriptExecutor ex = (IJavaScriptExecutor)_driver;
             ex.ExecuteScript("arguments[0].click();", LogOutClick);
-           // LogOutClick.Click();
+            // LogOutClick.Click();
+            //Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 5));
             Thread.Sleep(12000);
         }
         public void CreateTicket()
@@ -118,27 +121,32 @@ namespace AutoTests.Pages
             // wait = new WebDriverWait(_driver, TimeSpan.FromMinutes(ExplicityWait));
             //wait.Until(_driver => FirstElementFromList.Enabled);
             //Thread.Sleep(2000);
-            SeleniumHelper.waitUntilElementVisibile(FirstElementFromList, 2000);
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, FirstElementFromListXpath, 2));
+            //SeleniumHelper.waitUntilElementVisibile(FirstElementFromList, 2000);
+            //Thread.Sleep(2000);
             FirstElementFromList.Click();
             //wait.Until(_driver => Zakazchik.Enabled);
             Zakazchik.Click();
             //wait.Until(_driver => FirstElementFromList.Enabled);
-            SeleniumHelper.waitUntilElementVisibile(FirstElementFromList, 2000);
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, FirstElementFromListXpath, 2));
+            //SeleniumHelper.waitUntilElementVisibile(FirstElementFromList, 2000);
+            //Thread.Sleep(2000);
             FirstElementFromList.Click();
             DateTimeNull.Click();
             //wait.Until(_driver => DayOld.Enabled);
             //Thread.Sleep(2000);
-            SeleniumHelper.waitUntilElementVisibile(DayOld, 2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, DayOldXpath, 2));
+            //SeleniumHelper.waitUntilElementVisibile(DayOld, 2000);
             DayOld.Click();
             DateTimeNull.Click();
             // wait.Until(_driver => DayNew.Enabled);
-            Thread.Sleep(2000);
-            SeleniumHelper.waitUntilElementVisibile(DayNew, 2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, DayNewXpath, 2));
+            //Thread.Sleep(2000);
+            //SeleniumHelper.waitUntilElementVisibile(DayNew, 2000);
             DayNew.Click();
             CreateTicketButton.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 30000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
+            //SeleniumHelper.waitUntilElementInvisibile(Loader, 30000);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoTests.Pages;
 using AutoTests.SeleniumHelpers;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System;
@@ -22,6 +23,7 @@ namespace AutoTests.Steps
         [When(@"I add RecordTemplate")]
         public void ThenIAddRecordTemplate(Table table)
         {
+//            Assert.IsTrue(SeleniumHelper.wa)
             SeleniumHelper.waitUntilElementInvisibile(_pageTemplates.Loader, 10000);
             var template = table.CreateInstance<Template>();
             _pageTemplates.Add.Click();

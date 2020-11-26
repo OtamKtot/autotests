@@ -340,9 +340,6 @@ C:\Users\aantipov\AutoTests\AutoTests\obj\Debug\net472\AutoTests.AssemblyInfo.cs
 C:\Users\aantipov\AutoTests\AutoTests\obj\Debug\net472\AutoTests.csproj.CopyComplete
 C:\Users\aantipov\AutoTests\AutoTests\obj\Debug\net472\AutoTests.dll
 C:\Users\aantipov\AutoTests\AutoTests\obj\Debug\net472\AutoTests.pdb
-C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\RazorEngine.NetCore.dll
-C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\SharpCompress.dll
-C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Reflection.Metadata.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\NUnit3.TestAdapter.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\NUnit3.TestAdapter.pdb
@@ -356,6 +353,7 @@ C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\BoDi.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Crc32C.NET.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Cucumber.Messages.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\DnsClient.dll
+C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\SeleniumExtras.WaitHelpers.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\ExtentReports.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\FluentAssertions.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Gherkin.dll
@@ -423,8 +421,10 @@ C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\MongoDB.Driver.Core.d
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\MongoDB.Libmongocrypt.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Newtonsoft.Json.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\nunit.framework.dll
+C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\RazorEngine.NetCore.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\WebDriver.Support.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\WebDriver.dll
+C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\SharpCompress.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Snappy.NET.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\TechTalk.SpecFlow.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\LivingDoc.Dtos.dll
@@ -436,6 +436,7 @@ C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Diagnostics.Di
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.IO.Pipelines.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Memory.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Numerics.Vectors.dll
+C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Reflection.Metadata.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Runtime.CompilerServices.Unsafe.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Security.AccessControl.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Security.Cryptography.Cng.dll
@@ -446,6 +447,7 @@ C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Text.Encodings
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Threading.Tasks.Extensions.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.ValueTuple.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Utf8Json.dll
+C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.csprojAssemblyReference.cache
 C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.dll.config
 C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.csproj.CoreCompileInputs.cache
 C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.AssemblyInfoInputs.cache

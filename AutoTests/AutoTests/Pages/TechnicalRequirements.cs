@@ -1,5 +1,6 @@
 ﻿using AutoTests.SeleniumHelpers;
 using AutoTests.Utilies;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
@@ -36,24 +37,24 @@ namespace AutoTests.Pages
         public IWebElement LoaderVisible { get { return _driver.FindElement(By.XPath("" + LoaderVisibleXpath + "")); } }
         public void CompleteTask()
         {
-            //SeleniumHelpers.waitUntilElementInvisibile(Loader, 10000);
-            //SeleniumHelpers.waitUntilElementVisibile(MakeTechnicalRequirement, 2000);
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //SeleniumHelpers.waitUntilElementInvisibile(LoaderVisible, 10000);
-            Thread.Sleep(8000);
+            //SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            //Thread.Sleep(8000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
             MakeTechnicalRequirement.Click();
-            //SeleniumHelpers.waitUntilElementVisibile(MakeTechnicalRequirement, 20000);
             Actions act = new Actions(_driver);
             act.DoubleClick(MakeTechnicalRequirement).Perform();
             Goal.SendKeys("TestName");
             Effect.SendKeys("TestName");
             AddRecordToCollection.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
+            //SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            //Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, FirstElementFromListXpath, 2));
             FirstElementList.Click();
             //Thread.Sleep(2000);
             CompleteTaskButton.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
+            //SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
             //Thread.Sleep(8000);
         }
     }

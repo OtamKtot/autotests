@@ -30,7 +30,7 @@ namespace AutoTests.Hooks
         //private static ExtentTest featureName;
         //private static ExtentTest scenario;
         //private static ExtentReports extent;
-        private static ExtentKlovReporter klov;
+        //private static ExtentKlovReporter klov;
         [ThreadStatic] private static ExtentTest featureName;
         [ThreadStatic] private static ExtentTest scenario;
         private static ExtentReports extent;
@@ -139,10 +139,10 @@ namespace AutoTests.Hooks
         public void AfterScenario(ScenarioContext scenarioContext)
         {
             Console.WriteLine("AfterScenario");
-            if (scenarioContext.TestError != null)
-            {
-                _driver.TakeScreenshot().SaveAsFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", ""), $"{scenarioContext.ScenarioInfo.Title}.png"), ScreenshotImageFormat.Png);
-            }
+           // if (scenarioContext.TestError != null)
+           // {
+           //     _driver.TakeScreenshot().SaveAsFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", ""), $"{scenarioContext.ScenarioInfo.Title}.png"), ScreenshotImageFormat.Png);
+           // }
             _driver?.Dispose();
             _driver?.Quit();
         }

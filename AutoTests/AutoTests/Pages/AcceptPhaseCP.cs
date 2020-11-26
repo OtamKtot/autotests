@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoTests.SeleniumHelpers;
+using NUnit.Framework;
 
 namespace AutoTests.Pages
 {
@@ -48,37 +49,47 @@ namespace AutoTests.Pages
         public void CompleteTask()
         {
             //Thread.Sleep(5000);
-            SeleniumHelper.waitUntilElementVisibile(AcceptPhase, 20000);
+            //SeleniumHelper.waitUntilElementVisibile(AcceptPhase, 20000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
             Actions act = new Actions(_driver);
             act.DoubleClick(AcceptPhase).Perform();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, AcceptPhaseTabXpath, 2));
+            //Thread.Sleep(2000);
             AcceptPhaseTab.Click();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, AddNewRecordOnCollectionXpath, 2));
+            //Thread.Sleep(2000);
             AddNewRecordOnCollection.Click();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, "(" + CollectionFieldXpath + ")[236]", 2));
+            //Thread.Sleep(2000);
             NameClick.Click();
             NameSendKeys.Click();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, PhaseCPTaskAcceptXpath, 2));
+            //Thread.Sleep(2000);
             PhaseCPTaskAccept.Click();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, "(" + CollectionFieldXpath + ")[237]", 2));
+            //Thread.Sleep(2000);
             StatusClick.Click();
-            //StatusSendKeys.Click();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, AcceptStatusXpath, 2));
+            //Thread.Sleep(2000);
             AcceptStatus.Click();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, AddNewRecordOnCollectionXpath, 2));
+            //Thread.Sleep(2000);
             AddNewRecordOnCollection.Click();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, "(" + CollectionFieldXpath + ")[241]", 2));
+            //Thread.Sleep(2000);
             Name2Click.Click();
-            //NameSendKeys.Click();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, PhaseCPTicketAcceptXpath, 2));
+            //Thread.Sleep(2000);
             PhaseCPTicketAccept.Click();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, "(" + CollectionFieldXpath + ")[242]", 2));
+            //Thread.Sleep(2000);
             Status2Click.Click();
-            //StatusSendKeys.Click();
-            Thread.Sleep(2000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, "(" + AcceptStatusXpath + ")[2]", 2));
+            //Thread.Sleep(2000);
             AcceptStatus2.Click();
             CompleteTaskButton.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
+            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
             //Thread.Sleep(10000);
         }
     }

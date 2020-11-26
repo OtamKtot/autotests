@@ -8,6 +8,7 @@ Scenario: I login as Admin
 		| UserName | Password |
 		| admin    | admin123   |
 	And I click login
+	And I click logout
 	Then I should see user logged in to the application
 @LoginRukovoditel
 Scenario: I login as Rukovoditel
