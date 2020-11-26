@@ -56,7 +56,7 @@ namespace AutoTests.Pages
             Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, AcceptPhaseTabXpath, 2));
             //Thread.Sleep(2000);
             AcceptPhaseTab.Click();
-            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, AddNewRecordOnCollectionXpath, 2));
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, AddNewRecordOnCollectionXpath, 10));
             //Thread.Sleep(2000);
             AddNewRecordOnCollection.Click();
             Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));

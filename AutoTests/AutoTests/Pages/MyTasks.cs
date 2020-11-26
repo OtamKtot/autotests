@@ -140,7 +140,7 @@ namespace AutoTests.Pages
             DayOld.Click();
             DateTimeNull.Click();
             // wait.Until(_driver => DayNew.Enabled);
-            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, DayNewXpath, 2));
+            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, "(" + DayNewXpath + ")[2]", 2));
             //Thread.Sleep(2000);
             //SeleniumHelper.waitUntilElementVisibile(DayNew, 2000);
             DayNew.Click();
