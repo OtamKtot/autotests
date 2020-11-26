@@ -13,6 +13,7 @@ namespace AutoTests.SeleniumHelpers
 {
     class SeleniumHelper
     {
+
         public static bool WaitForToBeNotVisibleAndPresent(IWebDriver _driver, string locator, int timeout = 10, int end = 10)
         {
             var errors = new StringBuilder();
@@ -22,13 +23,15 @@ namespace AutoTests.SeleniumHelpers
             {
                 //wait.IgnoreExceptionTypes(typeof(StaleElementReferenceException), typeof(NoSuchElementException));
                 wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.InvisibilityOfElementLocated(By.XPath(locator)));
-
+                
                 return true;
             }
             catch (StaleElementReferenceException ex)
             {
-                if (end == 0) { return false; }
-                return WaitForToBeNotVisibleAndPresent(_driver, locator, timeout, end - 1);
+               // if (end == 0) { return false; }
+               // return WaitForToBeNotVisibleAndPresent(_driver, locator, timeout, end - 1);
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.StalenessOf(_driver.FindElement(By.XPath(locator))));
+                return true;
             }
             catch (Exception ex)
             {
@@ -51,8 +54,10 @@ namespace AutoTests.SeleniumHelpers
             }
             catch (StaleElementReferenceException ex)
             {
-                if (end == 0) { return false; }
-                return WaitForToBeDisplayed(_driver, locator, timeout, end - 1);
+                //if (end == 0) { return false; }
+                //return WaitForToBeDisplayed(_driver, locator, timeout, end - 1);
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.StalenessOf(_driver.FindElement(By.XPath(locator))));
+                return true;
             }
             catch (Exception ex)
             {
@@ -75,8 +80,10 @@ namespace AutoTests.SeleniumHelpers
             }
             catch (StaleElementReferenceException ex)
             {
-                if (end == 0) { return false; }
-                return WaitForToBePresent(_driver, locator, timeout, end - 1);
+                //if (end == 0) { return false; }
+                //return WaitForToBePresent(_driver, locator, timeout, end - 1);
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.StalenessOf(_driver.FindElement(By.XPath(locator))));
+                return true;
             }
             catch (Exception ex)
             {
