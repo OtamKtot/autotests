@@ -24,7 +24,6 @@ namespace AutoTests.Steps
         [When(@"I complete ProjectOnTicket")]
         public void WhenICompleteProjectOnTicket()
         {
-            _pageMyTasks.GoToMyTasks();
             _pageProjectOnTicket.CompleteTask();
             Thread.Sleep(2000);
         }

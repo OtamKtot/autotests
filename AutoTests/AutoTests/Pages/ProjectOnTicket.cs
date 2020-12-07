@@ -91,6 +91,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath("" + CollectionFieldXpath + "[8]"));
             selenium.Click(By.XPath(FirstElementFromListXpath));
             selenium.Click(By.XPath("" + CollectionFieldXpath + "[7]"));
+            selenium.Click(By.XPath(VerticalLayoutXpath));
         }
         public void CompleteTask()
         {
