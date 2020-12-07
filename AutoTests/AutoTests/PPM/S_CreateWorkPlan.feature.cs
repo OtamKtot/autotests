@@ -103,24 +103,12 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 6
-testRunner.Given("I navigate to application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to application and login as Rukovoditel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
-                            "UserName",
-                            "Password"});
-                table24.AddRow(new string[] {
-                            "Rukovoditel",
-                            "1"});
 #line 7
- testRunner.When("I enter username and password", ((string)(null)), table24, "When ");
+ testRunner.When("I create WorkPlan", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
- testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 11
- testRunner.And("I create WorkPlan", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 12
+#line 8
  testRunner.Then("I should see that WorkPlank is create", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

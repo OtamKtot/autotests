@@ -16,21 +16,36 @@ namespace AutoTests.Pages
     class TurnProject : PageObject
     {
         private readonly IWebDriver _driver;
+        private readonly SeleniumHelperWithExpectedConditions selenium;
         private readonly string MakeTurnProjectXpath = ConfigurationHelper.Get<string>("MakeTurnProjectXpath");
         private readonly string ButtonOnToolbarXpath = ConfigurationHelper.Get<string>("ButtonOnToolbarXpath");
         private readonly string RadioButtonXpath = ConfigurationHelper.Get<string>("RadioButtonXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
-        private WebDriverWait wait;
         public TurnProject(IWebDriver driver) : base(driver)
         {
             _driver = driver;
-            wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
+            selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
         public IWebElement MakeTurnProject { get { return _driver.FindElement(By.XPath("" + MakeTurnProjectXpath + "")); } }
         public IWebElement RadioButton { get { return _driver.FindElement(By.XPath("" + RadioButtonXpath + "")); } }
         public IWebElement CompleteTaskButton { get { return _driver.FindElement(By.XPath("" + ButtonOnToolbarXpath + "")); } }
         public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
         public void CompleteTask()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.CheckElementIsVisible(By.XPath(MakeTurnProjectXpath));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(MakeTurnProject).Perform();
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(RadioButtonXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ButtonOnToolbarXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            //Thread.Sleep(5000);
+        }
+        public void CompleteTaskTest()
         {
             SeleniumHelper.waitUntilElementVisibile(MakeTurnProject, 20000);
             Actions act = new Actions(_driver);

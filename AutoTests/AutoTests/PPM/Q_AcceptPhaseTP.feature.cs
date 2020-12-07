@@ -103,45 +103,24 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 6
-testRunner.Given("I navigate to application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to application and login as Rukovoditel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
-                            "UserName",
-                            "Password"});
-                table20.AddRow(new string[] {
-                            "Rukovoditel",
-                            "1"});
 #line 7
- testRunner.When("I enter username and password", ((string)(null)), table20, "When ");
+ testRunner.When("I complete TechnicalProject", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
- testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 11
- testRunner.And("I complete TechnicalProject", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 12
+#line 8
  testRunner.Then("I should see that TechnicalProject is complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 13
+#line 9
  testRunner.When("I click logout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
-                            "UserName",
-                            "Password"});
-                table21.AddRow(new string[] {
-                            "Project",
-                            "1"});
-#line 14
- testRunner.And("I enter username and password", ((string)(null)), table21, "And ");
+#line 10
+ testRunner.Given("I navigate to application and login as Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 17
- testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.When("I complete AcceptPhaseTP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
- testRunner.And("I complete AcceptPhaseTP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 19
+#line 12
  testRunner.Then("I should see that AcceptPhaseTP is complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

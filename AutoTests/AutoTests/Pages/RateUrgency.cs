@@ -16,6 +16,7 @@ namespace AutoTests.Pages
     class RateUrgency : PageObject
     {
         private readonly IWebDriver _driver;
+        private readonly SeleniumHelperWithExpectedConditions selenium;
         private readonly string MakeRateUrgencyXpath = ConfigurationHelper.Get<string>("MakeRateUrgencyXpath");
         private readonly string RadioButtonXpath = ConfigurationHelper.Get<string>("RadioButtonXpath");
         private readonly string ButtonOnToolbarXpath = ConfigurationHelper.Get<string>("ButtonOnToolbarXpath");
@@ -23,6 +24,7 @@ namespace AutoTests.Pages
         public RateUrgency(IWebDriver driver) : base (driver)
         {
             _driver = driver;
+            selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
         public IWebElement MakeRateUrgency { get { return _driver.FindElement(By.XPath("" + MakeRateUrgencyXpath + "")); } }
         public IWebElement RadioButton { get { return _driver.FindElement(By.XPath("" + RadioButtonXpath + "")); } }
@@ -30,18 +32,15 @@ namespace AutoTests.Pages
         public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
         public void CompleteTask()
         {
-            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
-            //SeleniumHelper.waitUntilElementVisibile(MakeRateUrgency, 20000);
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+
             Actions act = new Actions(_driver);
             act.DoubleClick(MakeRateUrgency).Perform();
-            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
-            //SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            RadioButton.Click();
-            //Thread.Sleep(2000);
-            CompleteTaskButton.Click();
-            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
-            //SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //Thread.Sleep(2000);
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(RadioButtonXpath));
+            selenium.Click(By.XPath(ButtonOnToolbarXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
     }
 }

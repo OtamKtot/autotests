@@ -41,5 +41,58 @@ namespace AutoTests.Steps
             _pageLogin.Submit.Click();
             SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
         }
+        [Given(@"I navigate to application and login as Project")]
+        public void GivenINavigateToApplicationAndLoginAsProject()
+        {
+            var account = new Account
+            {
+                Username = "Project",
+                Password = "1"
+            };
+            _pageLogin.Navigate(baseUrl);
+            _pageLogin.Login(account);
+            _pageLogin.Submit.Click();
+            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+        }
+        [Given(@"I navigate to application and login as Director")]
+        public void GivenINavigateToApplicationAndLoginAsDirector()
+        {
+            var account = new Account
+            {
+                Username = "Director",
+                Password = "1"
+            };
+            _pageLogin.Navigate(baseUrl);
+            _pageLogin.Login(account);
+            _pageLogin.Submit.Click();
+            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+        }
+        [Given(@"I navigate to application and login as Rukovoditel")]
+        public void GivenINavigateToApplicationAndLoginAsRukovoditel()
+        {
+            var account = new Account
+            {
+                Username = "Rukovoditel",
+                Password = "1"
+            };
+            _pageLogin.Navigate(baseUrl);
+            _pageLogin.Login(account);
+            _pageLogin.Submit.Click();
+            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+        }
+        [Given(@"I navigate to application and login as Ispolnitel")]
+        public void GivenINavigateToApplicationAndLoginAsIspolnitel()
+        {
+            var account = new Account
+            {
+                Username = "Ispolnitel",
+                Password = "1"
+            };
+            _pageLogin.Navigate(baseUrl);
+            _pageLogin.Login(account);
+            _pageLogin.Submit.Click();
+            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+        }
+
     }
 }

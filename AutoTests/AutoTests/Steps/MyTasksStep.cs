@@ -16,9 +16,11 @@ namespace AutoTests.Steps
     class MyTasksStep
     {
         private readonly MyTasks _pageMyTasks;
-        public MyTasksStep(IWebDriver driver)
+        private readonly SeleniumHelperWithExpectedConditions selenium;
+        public MyTasksStep(IWebDriver _driver)
         {
-            _pageMyTasks = new MyTasks(driver);
+            _pageMyTasks = new MyTasks(_driver);
+            selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
         [Then(@"I should see user logged in to the application")]
         public void ThenIShouldSeeUserLoggedInToTheApplication()

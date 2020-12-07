@@ -4,6 +4,7 @@ using WebDriverWait = OpenQA.Selenium.Support.UI.WebDriverWait;
 using SeleniumExtras.WaitHelpers;
 using NUnit.Framework;
 using AutoTests.Utilies;
+using OpenQA.Selenium.Interactions;
 
 namespace AutoTests.SeleniumHelpers
 {
@@ -22,6 +23,12 @@ namespace AutoTests.SeleniumHelpers
                 _driver.FindElement(by).Clear();
                 _driver.FindElement(by).SendKeys(valueToType);
             }
+            catch (StaleElementReferenceException)
+            {
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ImplicitlyWait"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                _driver.FindElement(by).Clear();
+                _driver.FindElement(by).SendKeys(valueToType);
+            }
             catch (Exception ex) when (ex is NoSuchElementException || ex is WebDriverTimeoutException)
             {
                 Assert.Fail($"Exception occurred in SeleniumHelper.SendKeys(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ImplicitlyWait")} seconds.");
@@ -33,7 +40,12 @@ namespace AutoTests.SeleniumHelpers
             {
                 new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ImplicitlyWait"))).Until(ExpectedConditions.ElementToBeClickable(by));
                 _driver.FindElement(by).Click();
-            }        
+            }
+            catch (StaleElementReferenceException)
+            {
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ImplicitlyWait"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                _driver.FindElement(by).Click();
+            }
             catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)  
             {
                 Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ImplicitlyWait")} seconds.");
@@ -65,7 +77,7 @@ namespace AutoTests.SeleniumHelpers
             }
             return returnValue;
         }
-        public bool WaitForToBeNotVisibleAndPresent(By by)
+        public bool CheckElementIsUnVisible(By by)
         {
             try
             {
@@ -76,6 +88,26 @@ namespace AutoTests.SeleniumHelpers
                 return false;
             }
             return true;
+        }
+        public void DoubleClick(By by)
+        {
+            try
+            {
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ImplicitlyWait"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                Actions act = new Actions(_driver);
+                IWebElement webElement = _driver.FindElement(by);
+                act.DoubleClick(webElement);
+            }
+            catch (StaleElementReferenceException)
+            {
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ImplicitlyWait"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                Actions act1 = new Actions(_driver);
+                act1.DoubleClick(_driver.FindElement(by));
+            }
+            catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
+            {
+                Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ImplicitlyWait")} seconds.");
+            }
         }
     }
 }

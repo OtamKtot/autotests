@@ -128,7 +128,8 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(DateTimeNullXpath));
             selenium.Click(By.XPath("(" + DayNewXpath + ")[2]"));
             selenium.Click(By.XPath("(" + CreateTicketXpath + ")[2]"));
-            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+           // Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
         }
         public void CreateTicketTest()
         {

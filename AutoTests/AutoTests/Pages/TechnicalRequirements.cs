@@ -16,6 +16,7 @@ namespace AutoTests.Pages
     class TechnicalRequirements : PageObject
     {
         private readonly IWebDriver _driver;
+        private readonly SeleniumHelperWithExpectedConditions selenium;
         private readonly string MakeTechnicalRequirementXpath = ConfigurationHelper.Get<string>("MakeTechnicalRequirementXpath");
         private readonly string TextFieldOnGroupXpath = ConfigurationHelper.Get<string>("TextFieldOnGroupXpath");
         private readonly string AddRecordToCollectionXpath = ConfigurationHelper.Get<string>("AddRecordToCollectionXpath");
@@ -26,6 +27,7 @@ namespace AutoTests.Pages
         public TechnicalRequirements(IWebDriver driver) : base(driver)
         {
             _driver = driver;
+            selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
         public IWebElement MakeTechnicalRequirement { get { return _driver.FindElement(By.XPath("" + MakeTechnicalRequirementXpath + "")); } }
         public IWebElement Goal { get { return _driver.FindElement(By.XPath("" + TextFieldOnGroupXpath + "")); } }
@@ -36,6 +38,22 @@ namespace AutoTests.Pages
         public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }        
         public IWebElement LoaderVisible { get { return _driver.FindElement(By.XPath("" + LoaderVisibleXpath + "")); } }
         public void CompleteTask()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(MakeTechnicalRequirementXpath));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(MakeTechnicalRequirement).Perform();
+
+            selenium.SendKeys(By.XPath(TextFieldOnGroupXpath),"TestName");
+            selenium.SendKeys(By.XPath("(" + TextFieldOnGroupXpath + ")[2]"), "TestName");
+            selenium.Click(By.XPath(AddRecordToCollectionXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(FirstElementFromListXpath));
+            selenium.Click(By.XPath(ButtonOnToolbarXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CompleteTaskTest()
         {
             //SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
             //Thread.Sleep(8000);
