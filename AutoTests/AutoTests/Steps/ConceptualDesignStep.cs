@@ -53,5 +53,22 @@ namespace AutoTests.Steps
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
+        [When(@"I open task and add edit four record in collection")]
+        public void WhenIOpenTaskAndAddEditFourRecordInCollection()
+        {
+            _pageConceptualDesign.OpenTask();
+            _pageConceptualDesign.EditFourCollectionRecord();
+        }
+        [When(@"I add three childs for three variants")]
+        public void WhenIAddThreeChildsForThreeVariants()
+        {
+            _pageConceptualDesign.CreateThreeVariantsChilds();
+        }
+        [When(@"I planned Work in ConceptualDesign")]
+        public void WhenIPlannedWorkInConceptualDesign()
+        {
+            _pageConceptualDesign.PlannedTask();
+        }
+
     }
 }

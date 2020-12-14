@@ -24,9 +24,7 @@ namespace AutoTests.Steps
         }
         [When(@"I complete AppointDirector")]
         public void WhenICompleteAppointDirector()
-        {
-            Thread.Sleep(400000);
-            _pageMyTasks.GoToMyTasks();
+        {           
             _pageAppointDirector.CompleteTask();
             Thread.Sleep(2000);
         }
@@ -35,5 +33,14 @@ namespace AutoTests.Steps
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
+        [When(@"I open task and add Rukovoditel in collection")]
+        public void WhenIOpenTaskAndAddRukovoditelInCollection()
+        {
+            Thread.Sleep(400000);
+            _pageMyTasks.GoToMyTasks();
+            _pageAppointDirector.OpenTask();
+            _pageAppointDirector.AddRukovoditelInCollection();
+        }
+
     }
 }
