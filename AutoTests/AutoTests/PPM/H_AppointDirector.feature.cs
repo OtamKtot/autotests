@@ -106,7 +106,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I navigate to application and login as Director", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
- testRunner.When("I open task and add Rukovoditel in collection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I open task and add Rukovoditel in collection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
  testRunner.When("I complete AppointDirector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

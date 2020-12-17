@@ -29,8 +29,8 @@ namespace AutoTests.Steps
         {
             _pageLogin.Navigate(baseUrl);
         }
-        [When(@"I enter username and password")]
-        public void WhenIEnterUsernameAndPassword(Table table)
+        [Given(@"I enter username and password")]
+        public void GivenIEnterUsernameAndPassword(Table table)
         {
             var account = table.CreateInstance<Account>();
             _pageLogin.Login(account);

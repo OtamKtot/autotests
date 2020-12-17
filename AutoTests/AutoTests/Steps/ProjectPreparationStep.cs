@@ -33,14 +33,14 @@ namespace AutoTests.Steps
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
-        [When(@"I open task and add Ispolnitel in collection and create phase")]
-        public void WhenIOpenTaskAndAddIspolnitelInCollectionAndCreatePhase()
+        [Given(@"I open task and add Ispolnitel in collection and create phase")]
+        public void GivenIOpenTaskAndAddIspolnitelInCollectionAndCreatePhase()
         {
             _pageProjectPreparation.OpenTask();
             _pageProjectPreparation.AddIspolnitelInCollectionAndCreatePhase();
         }
-        [When(@"I add document in collection")]
-        public void WhenIAddDocumentInCollection()
+        [Given(@"I add document in collection")]
+        public void GivenIAddDocumentInCollection()
         {
             _pageProjectPreparation.AddDocumentOnFormCollection();
         }

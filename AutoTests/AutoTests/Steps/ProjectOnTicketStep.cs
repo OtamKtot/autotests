@@ -32,8 +32,8 @@ namespace AutoTests.Steps
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
-        [When(@"I open task and add record in collection")]
-        public void WhenIOpenTaskAndAddRecordInCollection()
+        [Given(@"I open task and add record in collection")]
+        public void GivenIOpenTaskAndAddRecordInCollection()
         {
             _pageMyTasks.GoToMyTasks();
             _pageProjectOnTicket.OpenTask();

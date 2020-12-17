@@ -60,7 +60,7 @@ namespace AutoTests.Pages
             selenium.SendKeys(By.XPath("(" + DropDownXpath + ")[4]"), "Rukovoditel");
             selenium.CheckElementIsUnVisible(By.XPath(LoaderOnUserFieldOnCollectionXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
             selenium.Click(By.XPath(FirstListCheckBoxXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }

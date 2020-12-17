@@ -112,10 +112,10 @@ this.ScenarioInitialize(scenarioInfo);
                             "admin",
                             "admin123"});
 #line 7
- testRunner.When("I enter username and password", ((string)(null)), table1, "When ");
+ testRunner.Given("I enter username and password", ((string)(null)), table1, "Given ");
 #line hidden
 #line 10
- testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
  testRunner.Then("I should see user logged in to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -163,10 +163,10 @@ this.ScenarioInitialize(scenarioInfo);
                             "Rukovoditel",
                             "1"});
 #line 15
- testRunner.When("I enter username and password", ((string)(null)), table2, "When ");
+ testRunner.Given("I enter username and password", ((string)(null)), table2, "Given ");
 #line hidden
 #line 18
- testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
  testRunner.Then("I should see user logged in to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -214,10 +214,10 @@ this.ScenarioInitialize(scenarioInfo);
                             "Project",
                             "1"});
 #line 23
- testRunner.When("I enter username and password", ((string)(null)), table3, "When ");
+ testRunner.Given("I enter username and password", ((string)(null)), table3, "Given ");
 #line hidden
 #line 26
- testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 27
  testRunner.Then("I should see user logged in to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -265,10 +265,10 @@ this.ScenarioInitialize(scenarioInfo);
                             "Director",
                             "1"});
 #line 31
- testRunner.When("I enter username and password", ((string)(null)), table4, "When ");
+ testRunner.Given("I enter username and password", ((string)(null)), table4, "Given ");
 #line hidden
 #line 34
- testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 35
  testRunner.Then("I should see user logged in to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

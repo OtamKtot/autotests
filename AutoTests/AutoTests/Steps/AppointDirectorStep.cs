@@ -33,8 +33,8 @@ namespace AutoTests.Steps
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
-        [When(@"I open task and add Rukovoditel in collection")]
-        public void WhenIOpenTaskAndAddRukovoditelInCollection()
+        [Given(@"I open task and add Rukovoditel in collection")]
+        public void GivenIOpenTaskAndAddRukovoditelInCollection()
         {
             Thread.Sleep(400000);
             _pageMyTasks.GoToMyTasks();

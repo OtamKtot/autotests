@@ -238,14 +238,14 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(DayNewXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[76]"));
             Thread.Sleep(2000);
-            selenium.SendKeys(By.XPath("(" + DropDownXpath + ")[5]"), "Rukovoditel");
+            selenium.SendKeys(By.XPath("(" + DropDownXpath + ")[10]"), "Rukovoditel");
             selenium.CheckElementIsUnVisible(By.XPath(LoaderOnUserFieldOnCollectionXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             Thread.Sleep(2000);
             selenium.Click(By.XPath(FirstListCheckBoxXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[77]"));
             Thread.Sleep(2000);
-            selenium.SendKeys(By.XPath("(" + DropDownXpath + ")[5]"), "Ispolnitel");
+            selenium.SendKeys(By.XPath("(" + DropDownXpath + ")[10]"), "Ispolnitel");
             selenium.CheckElementIsUnVisible(By.XPath(LoaderOnUserFieldOnCollectionXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             Thread.Sleep(2000);
