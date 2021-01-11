@@ -112,6 +112,23 @@ namespace AutoTests.Pages
         public IWebElement StatusComplete { get { return _driver.FindElement(By.XPath("(" + StatusPlannedXpath + ")[3]")); } }
         public void CreateVersionTask()
         {
+            selenium.Click(By.XPath(VersionsTabXpath));
+            selenium.Click(By.XPath("(" + StatusPlannedXpath + ")[5]"));
+            Thread.Sleep(10000);
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + CheckBoxXpath + ")[4]"));
+            selenium.Click(By.XPath("(" + CheckBoxXpath + ")[5]"));
+            selenium.Click(By.XPath("(" + CheckBoxXpath + ")[6]"));
+            selenium.Click(By.XPath("(" + RadioButtonXpath + ")[2]"));
+            selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[8]"), "Test");
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            Thread.Sleep(8000);
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + ButtonOnStartFormXpath + ")[3]"));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CreateVersionTaskTest()
+        {
             // Thread.Sleep(15000);
             SeleniumHelper.waitUntilElementVisibile(EditConceptualDesign, 20000);
             Actions act = new Actions(_driver);
@@ -252,7 +269,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(FirstListCheckBoxXpath));
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            Thread.Sleep(15000);
+            Thread.Sleep(20000);
 
             Actions act1 = new Actions(_driver);
             act1.ContextClick(FirstCollectionFieldClick).Perform();

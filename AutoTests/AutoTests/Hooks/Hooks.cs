@@ -108,6 +108,9 @@ namespace AutoTests.Hooks
                 if (stepType == "Given")
                 {
                     scenario.CreateNode<Given>(scenarioContext.StepContext.StepInfo.Text).Fail(scenarioContext.TestError.Message);
+                    string path = Path.Combine(@"\\storage\Tmp\QA\Results", $"{scenarioContext.ScenarioInfo.Title}.png");
+                    _driver.TakeScreenshot().SaveAsFile(Path.Combine(@"\\storage\Tmp\QA\Results", $"{scenarioContext.ScenarioInfo.Title}.png"), ScreenshotImageFormat.Png);
+                    scenario.AddScreenCaptureFromPath(path);
 
                 }
                 else if (stepType == "When")

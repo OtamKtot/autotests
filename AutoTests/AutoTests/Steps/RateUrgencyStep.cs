@@ -28,8 +28,8 @@ namespace AutoTests.Steps
             _pageRateUrgency.CompleteTask();
             Thread.Sleep(2000);
         }
-        [Then(@"I should see that RateUrgency is complete")]
-        public void ThenIShouldSeeThatRateUrgencyIsComplete()
+        [Then(@"I should see that RateUrgency is completed")]
+        public void ThenIShouldSeeThatRateUrgencyIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

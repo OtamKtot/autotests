@@ -28,8 +28,8 @@ namespace AutoTests.Steps
             _pageOrganizeEvaluation.CompleteTask();
             Thread.Sleep(2000);
         }
-        [Then(@"I should see that OrganizeEvaluation is complete")]
-        public void ThenIShouldSeeThatOrganizeEvaluationIsComplete()
+        [Then(@"I should see that OrganizeEvaluation is completed")]
+        public void ThenIShouldSeeThatOrganizeEvaluationIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

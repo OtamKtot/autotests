@@ -93,6 +93,19 @@ namespace AutoTests.Steps
             _pageLogin.Submit.Click();
             SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
         }
+        [Given(@"I navigate to application and login as Admin")]
+        public void GivenINavigateToApplicationAndLoginAsAdmin()
+        {
+            var account = new Account
+            {
+                Username = "Admin",
+                Password = "admin123"
+            };
+            _pageLogin.Navigate(baseUrl);
+            _pageLogin.Login(account);
+            _pageLogin.Submit.Click();
+            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+        }
 
     }
 }

@@ -28,8 +28,8 @@ namespace AutoTests.Steps
             _pageAppointDirector.CompleteTask();
             Thread.Sleep(2000);
         }
-        [Then(@"I should see that AppointDirector is complete")]
-        public void ThenIShouldSeeThatAppointDirectorIsComplete()
+        [Then(@"I should see that AppointDirector is completed")]
+        public void ThenIShouldSeeThatAppointDirectorIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

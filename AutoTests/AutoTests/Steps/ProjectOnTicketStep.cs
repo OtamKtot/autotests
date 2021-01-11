@@ -27,8 +27,8 @@ namespace AutoTests.Steps
             _pageProjectOnTicket.CompleteTask();
             Thread.Sleep(2000);
         }
-        [Then(@"I should see that ProjectOnTicket is complete")]
-        public void ThenIShouldSeeThatProjectOnTicketIsComplete()
+        [Then(@"I should see that ProjectOnTicket is completed")]
+        public void ThenIShouldSeeThatProjectOnTicketIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

@@ -109,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I complete AcceptPhaseCP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
- testRunner.Then("I should see that AcceptPhaseCP is complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see that AcceptPhaseCP is completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

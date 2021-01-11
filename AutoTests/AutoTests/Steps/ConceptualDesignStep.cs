@@ -28,18 +28,19 @@ namespace AutoTests.Steps
             _pageConceptualDesign.EditTask();
             Thread.Sleep(2000);
         }
-        [Then(@"I should see that ConceptualDesign is edit")]
-        public void ThenIShouldSeeThatConceptualDesignIsEdit()
+        [Then(@"I should see that ConceptualDesign is edited")]
+        public void ThenIShouldSeeThatConceptualDesignIsEdited()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
         [When(@"I create version of ConceptualDesign")]
         public void WhenICreateVersionOfConceptualDesign()
         {
+            _pageConceptualDesign.OpenTask();
             _pageConceptualDesign.CreateVersionTask();
         }
-        [Then(@"I should see that version of ConceptualDesign is create")]
-        public void ThenIShouldSeeThatVersionOfConceptualDesignIsCreate()
+        [Then(@"I should see that version of ConceptualDesign is created")]
+        public void ThenIShouldSeeThatVersionOfConceptualDesignIsCreated()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
@@ -48,8 +49,8 @@ namespace AutoTests.Steps
         {
             _pageConceptualDesign.CompleteTask();
         }
-        [Then(@"I should see that ConceptualDesign is complete")]
-        public void ThenIShouldSeeThatConceptualDesignIsComplete()
+        [Then(@"I should see that ConceptualDesign is completed")]
+        public void ThenIShouldSeeThatConceptualDesignIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

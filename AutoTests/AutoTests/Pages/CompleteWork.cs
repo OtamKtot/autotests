@@ -16,6 +16,7 @@ namespace AutoTests.Pages
     {
         private readonly IWebDriver _driver;
         private readonly string _numberProject;
+        private readonly SeleniumHelperWithExpectedConditions selenium;
         private readonly string BuissnessResearchXpath = ConfigurationHelper.Get<string>("BuissnessResearchXpath");
         private readonly string EditorPopoutXpath = ConfigurationHelper.Get<string>("EditorPopoutXpath");
         private readonly string ExecuteStatusXpath = ConfigurationHelper.Get<string>("ExecuteStatusXpath");
@@ -30,6 +31,7 @@ namespace AutoTests.Pages
         {
             _driver = driver;
             _numberProject = numberProject;
+            selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
         public IWebElement BuissnessResearch { get { return _driver.FindElement(By.XPath("" + BuissnessResearchXpath + " (Проект – " + _numberProject + ")']")); } }
         //public IWebElement BuissnessResearch { get { return _driver.FindElement(By.XPath("" + BuissnessResearchXpath + " (Проект – 1902270605)']")); } }
@@ -53,6 +55,112 @@ namespace AutoTests.Pages
         public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
         public void CompleteTaskOfBuisnessResearch()
         {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.CheckElementIsVisible(By.XPath("" + BuissnessResearchXpath + " (Проект – " + _numberProject + ")']"));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(BuissnessResearch).Perform();
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
+            selenium.Click(By.XPath(ExecuteStatusXpath));
+            selenium.Click(By.XPath(ButtonOnToolbarXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CompleteTaskOfDevelopScheme()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.CheckElementIsVisible(By.XPath("" + DevelopShemeXpath + " (Проект – " + _numberProject + ")']"));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(BuissnessResearch).Perform();
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
+            selenium.Click(By.XPath(ExecuteStatusXpath));
+            selenium.Click(By.XPath(ButtonOnToolbarXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CompleteTaskOfDevelopTicket()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.CheckElementIsVisible(By.XPath("" + DevelopTicketXpath + " (Проект – " + _numberProject + ")']"));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(DevelopTicket).Perform();
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
+            selenium.Click(By.XPath(ExecuteStatusXpath));
+            selenium.Click(By.XPath(ButtonOnToolbarXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CompleteTaskOfNewRecord()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.CheckElementIsVisible(By.XPath("" + TitleXpath + "TestName (Проект – " + _numberProject + ")']"));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(TaskNewRecord).Perform();
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
+            selenium.Click(By.XPath(ExecuteStatusXpath));
+            selenium.Click(By.XPath(ButtonOnToolbarXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CompleteTaskOfNewRecord2()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.CheckElementIsVisible(By.XPath("(" + TitleXpath + "TestName (Проект – " + _numberProject + ")'])[2]"));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(TaskNewRecord2).Perform();
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
+            selenium.Click(By.XPath(ExecuteStatusXpath));
+            selenium.Click(By.XPath(ButtonOnToolbarXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CompleteTaskOfNewRecord3()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.CheckElementIsVisible(By.XPath("(" + TitleXpath + "TestName (Проект – " + _numberProject + ")'])[3]"));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(TaskNewRecord3).Perform();
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
+            selenium.Click(By.XPath(ExecuteStatusXpath));
+            selenium.Click(By.XPath(ButtonOnToolbarXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CompleteTaskDevelopTask()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.CheckElementIsVisible(By.XPath("" + DevelopTaskXpath + " (Проект – " + _numberProject + ")']"));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(DevelopTask).Perform();
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
+            selenium.Click(By.XPath(ExecuteStatusXpath));
+            selenium.Click(By.XPath(ButtonOnToolbarXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+
+        public void CompleteTaskOfBuisnessResearchTest()
+        {
             //Thread.Sleep(2000);
             SeleniumHelper.waitUntilElementVisibile(BuissnessResearch, 20000);
             Actions act = new Actions(_driver);
@@ -68,7 +176,7 @@ namespace AutoTests.Pages
             SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
             //Thread.Sleep(10000);
         }
-        public void CompleteTaskOfDevelopScheme()
+        public void CompleteTaskOfDevelopSchemeTest()
         {
             //Thread.Sleep(2000);
             SeleniumHelper.waitUntilElementVisibile(DevelopScheme, 20000);
@@ -85,7 +193,7 @@ namespace AutoTests.Pages
             SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
             //Thread.Sleep(10000);
         }
-        public void CompleteTaskOfDevelopTicket()
+        public void CompleteTaskOfDevelopTicketTest()
         {
             //Thread.Sleep(2000);
             SeleniumHelper.waitUntilElementVisibile(DevelopTicket, 20000);
@@ -102,7 +210,7 @@ namespace AutoTests.Pages
             SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
             //Thread.Sleep(10000);
         }
-        public void CompleteTaskOfNewRecord()
+        public void CompleteTaskOfNewRecordTest()
         {
             //Thread.Sleep(2000);
             SeleniumHelper.waitUntilElementVisibile(TaskNewRecord, 20000);
@@ -119,7 +227,7 @@ namespace AutoTests.Pages
             SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
             //Thread.Sleep(10000);
         }
-        public void CompleteTaskOfNewRecord2()
+        public void CompleteTaskOfNewRecord2Test()
         {
             //Thread.Sleep(2000);
             SeleniumHelper.waitUntilElementVisibile(TaskNewRecord2, 20000);
@@ -136,7 +244,7 @@ namespace AutoTests.Pages
             SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
             //Thread.Sleep(10000);
         }
-        public void CompleteTaskOfNewRecord3()
+        public void CompleteTaskOfNewRecord3Test()
         {
             //Thread.Sleep(2000);
             SeleniumHelper.waitUntilElementVisibile(TaskNewRecord3, 20000);
@@ -153,7 +261,7 @@ namespace AutoTests.Pages
             SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
             //Thread.Sleep(10000);
         }
-        public void CompleteTaskDevelopTask()
+        public void CompleteTaskDevelopTaskTest()
         {
             //Thread.Sleep(2000);
             SeleniumHelper.waitUntilElementVisibile(DevelopTask, 20000);

@@ -28,8 +28,8 @@ namespace AutoTests.Steps
             _pageTurnProject.CompleteTask();
             Thread.Sleep(2000);
         }
-        [Then(@"I should see that TurnProject is complete")]
-        public void ThenIShouldSeeThatTurnProjectIsComplete()
+        [Then(@"I should see that TurnProject is completed")]
+        public void ThenIShouldSeeThatTurnProjectIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

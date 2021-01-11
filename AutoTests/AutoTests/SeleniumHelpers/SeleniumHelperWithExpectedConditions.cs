@@ -46,6 +46,17 @@ namespace AutoTests.SeleniumHelpers
                 new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
                 _driver.FindElement(by).Click();
             }
+            catch (ElementClickInterceptedException)
+            {
+                try
+                {
+                    new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.InvisibilityOfElementLocated((By.XPath("//*[@class='loader']"))));
+                }
+                catch
+                {
+                    Assert.Fail($"Loader did not disappear after {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+                }
+            }
             catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)  
             {
                 Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");

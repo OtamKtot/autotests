@@ -109,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I complete RateUrgency", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
- testRunner.Then("I should see that RateUrgency is complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see that RateUrgency is completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

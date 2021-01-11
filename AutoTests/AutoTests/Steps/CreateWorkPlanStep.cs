@@ -26,8 +26,8 @@ namespace AutoTests.Steps
             _pageMyTasks.GoToMyWorkPlanList();
             _pageWorkPlan.CreateWorkPlan();
         }
-        [Then(@"I should see that WorkPlank is create")]
-        public void ThenIShouldSeeThatWorkPlankIsCreate()
+        [Then(@"I should see that WorkPlank is created")]
+        public void ThenIShouldSeeThatWorkPlankIsCreated()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

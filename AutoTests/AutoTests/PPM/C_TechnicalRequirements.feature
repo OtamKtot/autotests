@@ -5,4 +5,4 @@ I complete TechnicalRequirements
 Scenario: I complete TechnicalRequirements
 	Given I navigate to application and login as Project
 	When I complete TechnicalRequirements
-	Then I should see that TechnicalRequirements is complete
+	Then I should see that TechnicalRequirements is completed

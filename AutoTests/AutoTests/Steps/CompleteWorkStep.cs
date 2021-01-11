@@ -39,8 +39,8 @@ namespace AutoTests.Steps
             _pageCompleteWork.CompleteTaskOfDevelopTicket();
             _pageMyTasks.GoToMyTasks();
         }
-        [Then(@"I should see that all tasks of Work is complete")]
-        public void ThenIShouldSeeThatAllTasksOfWorkIsComplete()
+        [Then(@"I should see that all tasks of Work is completed")]
+        public void ThenIShouldSeeThatAllTasksOfWorkIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

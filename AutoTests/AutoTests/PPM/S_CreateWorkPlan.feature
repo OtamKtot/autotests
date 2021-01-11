@@ -5,4 +5,4 @@ I create CompleteWork
 Scenario: I create CreateWorkPlan
 	Given I navigate to application and login as Rukovoditel
 	When I create WorkPlan
-	Then I should see that WorkPlank is create
+	Then I should see that WorkPlank is created

@@ -112,7 +112,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I complete AppointDirector", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.Then("I should see that AppointDirector is complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see that AppointDirector is completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

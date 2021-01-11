@@ -7,4 +7,4 @@ Scenario: I complete ProjectPreparation
 	Given I open task and add Ispolnitel in collection and create phase
 	Given I add document in collection
 	When I complete ProjectPreparation
-	Then I should see that ProjectPreparation is complete
+	Then I should see that ProjectPreparation is completed

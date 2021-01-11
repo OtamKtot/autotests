@@ -112,45 +112,30 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 6
- testRunner.Given("I navigate to application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to application and login as Admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 7
+ testRunner.When("I navigate to global configuration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 8
+ testRunner.And("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                            "UserName",
-                            "Password"});
+                            "Name",
+                            "Alias"});
                 table5.AddRow(new string[] {
-                            "admin",
-                            "admin123"});
-#line 7
- testRunner.When("I enter username and password", ((string)(null)), table5, "When ");
-#line hidden
-#line 10
- testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 11
- testRunner.Then("I should see user logged in to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                            string.Format("{0}", testName),
+                            string.Format("{0}", testAlias)});
+#line 9
+ testRunner.And("I add RecordTemplate", ((string)(null)), table5, "And ");
 #line hidden
 #line 12
- testRunner.When("I navigate to global configuration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I navigate to global configuration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
  testRunner.And("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name",
-                            "Alias"});
-                table6.AddRow(new string[] {
-                            string.Format("{0}", testName),
-                            string.Format("{0}", testAlias)});
 #line 14
- testRunner.And("I add RecordTemplate", ((string)(null)), table6, "And ");
-#line hidden
-#line 17
- testRunner.And("I navigate to global configuration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 18
- testRunner.And("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 19
  testRunner.Then(string.Format("I should see {0} RecordTemplate in list Templates", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

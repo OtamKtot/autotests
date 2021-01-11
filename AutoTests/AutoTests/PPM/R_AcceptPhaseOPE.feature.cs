@@ -109,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I complete PreparationOPE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
- testRunner.Then("I should see that PreparationOPE is complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see that PreparationOPE is completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 9
  testRunner.When("I click logout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -121,7 +121,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I complete AcceptPhaseOPE", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.Then("I should see that AcceptPhaseOPE is complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see that AcceptPhaseOPE is completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

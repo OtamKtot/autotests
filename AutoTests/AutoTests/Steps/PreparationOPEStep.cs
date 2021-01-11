@@ -26,8 +26,8 @@ namespace AutoTests.Steps
         {
             _pagePreparationOPE.CompleteTask();
         }
-        [Then(@"I should see that PreparationOPE is complete")]
-        public void ThenIShouldSeeThatPreparationOPEIsComplete()
+        [Then(@"I should see that PreparationOPE is completed")]
+        public void ThenIShouldSeeThatPreparationOPEIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

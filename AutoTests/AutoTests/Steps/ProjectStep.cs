@@ -29,8 +29,8 @@ namespace AutoTests.Steps
             _pageProject.CompleteTask();
             Thread.Sleep(2000);
         }
-        [Then(@"I should see that taskform on Project is open")]
-        public void ThenIShouldSeeThatTaskformOnProjectIsOpen()
+        [Then(@"I should see that taskform on Project is opened")]
+        public void ThenIShouldSeeThatTaskformOnProjectIsOpened()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

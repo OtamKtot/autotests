@@ -109,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I complete OrganizeEvaluation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
- testRunner.Then("I should see that OrganizeEvaluation is complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see that OrganizeEvaluation is completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

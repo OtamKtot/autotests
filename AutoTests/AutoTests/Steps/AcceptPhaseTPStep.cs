@@ -25,8 +25,8 @@ namespace AutoTests.Steps
         {
             _pageAcceptPhaseTP.CompleteTask();
         }
-        [Then(@"I should see that AcceptPhaseTP is complete")]
-        public void ThenIShouldSeeThatAcceptPhaseTPIsComplete()
+        [Then(@"I should see that AcceptPhaseTP is completed")]
+        public void ThenIShouldSeeThatAcceptPhaseTPIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

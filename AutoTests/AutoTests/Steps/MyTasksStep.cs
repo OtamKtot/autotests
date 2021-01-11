@@ -33,8 +33,8 @@ namespace AutoTests.Steps
             _pageMyTasks.CreateTicket();
             Thread.Sleep(2000);
         }
-        [Then(@"I should see that Ticket is create")]
-        public void ThenIShouldSeeThatTicketIsCreate()
+        [Then(@"I should see that Ticket is created")]
+        public void ThenIShouldSeeThatTicketIsCreated()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

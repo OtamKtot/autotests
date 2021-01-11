@@ -115,7 +115,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I planned Work in ConceptualDesign", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
- testRunner.Then("I should see that ConceptualDesign is edit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see that ConceptualDesign is edited", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

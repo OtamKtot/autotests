@@ -39,8 +39,8 @@ namespace AutoTests.Steps
             _pageConfirmationWork.CompleteTaskOfDevelopTicket();
             _pageMyTasks.GoToMyTasks();
         }
-        [Then(@"I should see that all tasks of Work is confirmation")]
-        public void ThenIShouldSeeThatAllTasksOfWorkIsConfirmation()
+        [Then(@"I should see that all tasks of Work is confirmationed")]
+        public void ThenIShouldSeeThatAllTasksOfWorkIsConfirmationed()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

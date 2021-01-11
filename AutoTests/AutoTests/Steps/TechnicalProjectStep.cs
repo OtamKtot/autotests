@@ -26,8 +26,8 @@ namespace AutoTests.Steps
         {
             _pageTechnicalProject.CompleteTask();
         }
-        [Then(@"I should see that TechnicalProject is complete")]
-        public void ThenIShouldSeeThatTechnicalProjectIsComplete()
+        [Then(@"I should see that TechnicalProject is completed")]
+        public void ThenIShouldSeeThatTechnicalProjectIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

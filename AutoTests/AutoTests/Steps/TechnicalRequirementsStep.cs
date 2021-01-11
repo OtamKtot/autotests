@@ -28,8 +28,8 @@ namespace AutoTests.Steps
             _pageTechnicalRequirements.CompleteTask();
             Thread.Sleep(2000);
         }
-        [Then(@"I should see that TechnicalRequirements is complete")]
-        public void ThenIShouldSeeThatTechnicalRequirementsIsComplete()
+        [Then(@"I should see that TechnicalRequirements is completed")]
+        public void ThenIShouldSeeThatTechnicalRequirementsIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }

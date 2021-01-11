@@ -115,7 +115,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I complete ProjectPreparation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
- testRunner.Then("I should see that ProjectPreparation is complete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see that ProjectPreparation is completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

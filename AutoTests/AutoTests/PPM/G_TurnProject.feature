@@ -5,4 +5,4 @@ I complete TurnProject
 Scenario: I complete TurnProject
 	Given I navigate to application and login as Project
 	When I complete TurnProject
-	Then I should see that TurnProject is complete
+	Then I should see that TurnProject is completed

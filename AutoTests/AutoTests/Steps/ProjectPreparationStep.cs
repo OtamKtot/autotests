@@ -28,8 +28,8 @@ namespace AutoTests.Steps
             _pageProjectPreparation.CompleteTask();
             Thread.Sleep(5000);
         }
-        [Then(@"I should see that ProjectPreparation is complete")]
-        public void ThenIShouldSeeThatProjectPreparationIsComplete()
+        [Then(@"I should see that ProjectPreparation is completed")]
+        public void ThenIShouldSeeThatProjectPreparationIsCompleted()
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
