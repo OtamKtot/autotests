@@ -21,9 +21,13 @@ namespace AutoTests.Steps
             _pagePreparationOPE = new PreparationOPE(driver, code);
             _pageMyTasks = new MyTasks(driver);
         }
-        [When(@"I complete PreparationOPE")]
-        public void WhenICompletePreparationOPE()
+        [Given(@"I complete PreparationOPE")]
+        public void GivenICompletePreparationOPE()
         {
+            _pagePreparationOPE.OpenTask();
+            _pagePreparationOPE.DeleteRecordsOnCollection();
+            _pagePreparationOPE.AddRecordOnCollection();
+            _pagePreparationOPE.PlannedTask();
             _pagePreparationOPE.CompleteTask();
         }
         [Then(@"I should see that PreparationOPE is completed")]

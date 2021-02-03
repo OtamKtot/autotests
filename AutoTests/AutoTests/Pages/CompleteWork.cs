@@ -74,7 +74,7 @@ namespace AutoTests.Pages
             selenium.CheckElementIsVisible(By.XPath("" + DevelopShemeXpath + " (Проект – " + _numberProject + ")']"));
 
             Actions act = new Actions(_driver);
-            act.DoubleClick(BuissnessResearch).Perform();
+            act.DoubleClick(DevelopScheme).Perform();
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));

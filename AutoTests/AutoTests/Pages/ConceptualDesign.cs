@@ -274,6 +274,7 @@ namespace AutoTests.Pages
             Actions act1 = new Actions(_driver);
             act1.ContextClick(FirstCollectionFieldClick).Perform();
             selenium.Click(By.XPath("(" + CreateTittleXpath + ")[3]"));
+            Thread.Sleep(5000);
             selenium.Click(By.XPath("(" + CheckBoxCollectionXpath + ")[2]"));
             selenium.Click(By.XPath(AddNewRecordOnCollectionXpath));
             Thread.Sleep(5000);
@@ -632,6 +633,20 @@ namespace AutoTests.Pages
             //SaveTaskButton.Click();
         }
         public void CompleteTask()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.CheckElementIsVisible(By.XPath("" + ConceptualDesignXpath + " (" + _numberProject + " - TestName)']"));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(EditConceptualDesign).Perform();
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(CompletePhaseXpath));
+            Thread.Sleep(5000);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CompleteTaskTest()
         {
             // Thread.Sleep(15000);
             SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);

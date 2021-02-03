@@ -15,10 +15,14 @@ namespace AutoTests.Steps
             _pageAdministration = new AdministrationPage(driver);
         }
         [When(@"I select Template")]
-        public void ThenISelectTemplate()
+        public void WhenISelectTemplate()
         {
-            _pageAdministration.TemplateText.Click();
-            //ScenarioContext.Current.Pending();
+            _pageAdministration.NavigateIntoTemplates();
+        }
+        [Given(@"I select Template")]
+        public void GivenISelectTemplate()
+        {
+            _pageAdministration.NavigateIntoTemplates();
         }
     }
 }

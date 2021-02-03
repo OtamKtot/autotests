@@ -37,6 +37,7 @@ namespace AutoTests.Pages
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath"); 
         private readonly string CreateTicketXpath = ConfigurationHelper.Get<string>("CreateTicketXpath");
         private readonly string GlobalConfigurationXpath = ConfigurationHelper.Get<string>("GlobalConfigurationXpath");
+        private readonly string AdministrationTextXpath = ConfigurationHelper.Get<string>("AdministrationTextXpath");
         public MyTasks(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -113,6 +114,14 @@ namespace AutoTests.Pages
             // LogOutClick.Click();
             //Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 5));
             Thread.Sleep(12000);
+        }
+        public void GoToAdministration()
+        {
+            Thread.Sleep(2000);
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(LogoXpath));
+            selenium.Click(By.XPath(AdministrationTextXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void CreateTicket()
         {

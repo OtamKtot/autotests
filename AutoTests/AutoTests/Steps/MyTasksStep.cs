@@ -38,20 +38,15 @@ namespace AutoTests.Steps
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
-        [When(@"I click logout")]
-        public void WhenIClickLogout()
+        [Given(@"I click logout")]
+        public void GivenIClickLogout()
         {
             _pageMyTasks.LogOut();
         }
-        [When(@"I navigate to global configuration")]
-        public void ThenINavigateToGlobalConfiguration()
+        [Given(@"I navigate to global configuration")]
+        public void GivenINavigateToGlobalConfiguration()
         {
-            //ScenarioContext.Current.Pending();
-            SeleniumHelper.waitUntilElementInvisibile(_pageMyTasks.Loader, 100000);
-            SeleniumHelper.waitUntilElementVisibile(_pageMyTasks.Logo, 2000);
-            _pageMyTasks.Logo.Click();
-            Thread.Sleep(300);
-            _pageMyTasks.GlobalConfiguration.Click();
+            _pageMyTasks.GoToAdministration();
         }
     }
 }

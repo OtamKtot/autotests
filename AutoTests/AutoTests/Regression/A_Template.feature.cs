@@ -115,10 +115,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I navigate to application and login as Admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
- testRunner.When("I navigate to global configuration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I navigate to global configuration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.And("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
@@ -127,13 +127,13 @@ this.ScenarioInitialize(scenarioInfo);
                             string.Format("{0}", testName),
                             string.Format("{0}", testAlias)});
 #line 9
- testRunner.And("I add RecordTemplate", ((string)(null)), table5, "And ");
+ testRunner.Given("I add RecordTemplate", ((string)(null)), table5, "Given ");
 #line hidden
 #line 12
- testRunner.And("I navigate to global configuration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I navigate to global configuration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 13
- testRunner.And("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
  testRunner.Then(string.Format("I should see {0} RecordTemplate in list Templates", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

@@ -15,6 +15,7 @@ namespace AutoTests.Pages
     class AcceptPhaseTP : PageObject
     {
         private readonly IWebDriver _driver;
+        private readonly SeleniumHelperWithExpectedConditions selenium;
         private readonly string AcceptPhaseTPXpath = ConfigurationHelper.Get<string>("AcceptPhaseTPXpath");
         private readonly string AcceptPhaseTabXpath = ConfigurationHelper.Get<string>("AcceptPhaseTabXpath");
         private readonly string AddNewRecordOnCollectionXpath = ConfigurationHelper.Get<string>("AddNewRecordOnCollectionXpath");
@@ -28,6 +29,7 @@ namespace AutoTests.Pages
         public AcceptPhaseTP(IWebDriver driver) : base(driver)
         {
             _driver = driver;
+            selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
         public IWebElement AcceptPhase { get { return _driver.FindElement(By.XPath("" + AcceptPhaseTPXpath + "")); } }
         public IWebElement AddNewRecordOnCollection { get { return _driver.FindElement(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]")); } }
@@ -44,8 +46,34 @@ namespace AutoTests.Pages
         public IWebElement AcceptStatus2 { get { return _driver.FindElement(By.XPath("(" + AcceptStatusXpath + ")[4]")); } }
         public IWebElement CompleteTaskButton { get { return _driver.FindElement(By.XPath("" + ButtonCompleteXpath + "")); } }
         public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
-
         public void CompleteTask()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.CheckElementIsVisible(By.XPath(AcceptPhaseTPXpath));
+
+            Actions act = new Actions(_driver);
+            act.DoubleClick(AcceptPhase).Perform();
+
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AcceptPhaseTabXpath));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[181]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[9]"));
+            selenium.Click(By.XPath(PhaseTPTestAcceptXpath));
+            selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[182]"));
+            selenium.Click(By.XPath("(" + AcceptStatusXpath + ")[3]"));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[186]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[9]"));
+            selenium.Click(By.XPath(PhaseTPSolutionAcceptXpath));
+            selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[187]"));
+            selenium.Click(By.XPath("(" + AcceptStatusXpath + ")[4]"));
+            selenium.Click(By.XPath(ButtonCompleteXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CompleteTaskTest()
         {
             //Thread.Sleep(5000);
             SeleniumHelper.waitUntilElementVisibile(AcceptPhase, 20000);

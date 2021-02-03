@@ -20,8 +20,8 @@ namespace AutoTests.Steps
             _pageTemplates = new TemplatesPage(driver);
             act = new Actions(driver);
         }
-        [When(@"I add RecordTemplate")]
-        public void ThenIAddRecordTemplate(Table table)
+        [Given(@"I add RecordTemplate")]
+        public void GivenIAddRecordTemplate(Table table)
         {
 //            Assert.IsTrue(SeleniumHelper.wa)
             SeleniumHelper.waitUntilElementInvisibile(_pageTemplates.Loader, 10000);

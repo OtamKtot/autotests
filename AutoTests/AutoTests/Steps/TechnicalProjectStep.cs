@@ -21,9 +21,13 @@ namespace AutoTests.Steps
             _pageTechnicalProject = new TechnicalProject(driver, code);
             _pageMyTasks = new MyTasks(driver);
         }
-        [When(@"I complete TechnicalProject")]
-        public void WhenICompleteTechnicalProject()
+        [Given(@"I complete TechnicalProject")]
+        public void GivenICompleteTechnicalProject()
         {
+            _pageTechnicalProject.OpenTask();
+            _pageTechnicalProject.DeleteRecordsOnCollection();
+            _pageTechnicalProject.AddRecordOnCollection();
+            _pageTechnicalProject.PlannedTask();
             _pageTechnicalProject.CompleteTask();
         }
         [Then(@"I should see that TechnicalProject is completed")]
