@@ -75,7 +75,11 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath("(" + DayOldXpath + ")[1]"));
             selenium.Click(By.XPath(DateTimeXpath));
             selenium.Click(By.XPath(DayNewXpath));
-            selenium.Click(By.XPath(CheckBoxCollectionXpath));
+
+            //selenium.Click(By.XPath(CheckBoxCollectionXpath));
+            //element is not visible
+            AllCheckBoxCollection.Click();
+
             selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[3]"));
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.Click(By.XPath(ButtonOnStartFormXpath));

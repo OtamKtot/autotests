@@ -37,6 +37,7 @@ namespace AutoTests.Pages
         private readonly string CheckBoxXpath = ConfigurationHelper.Get<string>("CheckBoxXpath");
         private readonly string RadioButtonXpath = ConfigurationHelper.Get<string>("RadioButtonXpath");
         private readonly string CompletePhaseXpath = ConfigurationHelper.Get<string>("CompletePhaseXpath");
+        private readonly string VerticalLayoutXpath = ConfigurationHelper.Get<string>("VerticalLayoutXpath");
         private readonly string LoaderOnUserFieldOnCollectionXpath = ConfigurationHelper.Get<string>("LoaderOnUserFieldOnCollectionXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
         public ConceptualDesign(IWebDriver driver, string numberProject) : base(driver)
@@ -166,6 +167,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(DateTimeXpath));
             selenium.Click(By.XPath(DayNewXpath));
 
+            selenium.Click(By.XPath(VerticalLayoutXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[6]"));
             selenium.Click(By.XPath(DayOldXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[7]"));

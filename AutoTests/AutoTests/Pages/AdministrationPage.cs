@@ -22,7 +22,7 @@ namespace AutoTests.Pages
         public IWebElement TemplateText { get { return _driver.FindElement(By.XPath("" + TemplateTextXpath + "")); } }
         public void NavigateIntoTemplates()
         {
-            selenium.Click(By.XPath("TemplateTextXpath"));
+            selenium.Click(By.XPath(TemplateTextXpath));
         }
     }
 }
