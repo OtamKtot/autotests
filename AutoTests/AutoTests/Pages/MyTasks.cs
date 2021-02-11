@@ -22,7 +22,7 @@ namespace AutoTests.Pages
         private readonly string RecordOnProjectXpath = ConfigurationHelper.Get<string>("RecordOnProjectXpath");
         private readonly string CreateRecordOnProjectXpath = ConfigurationHelper.Get<string>("CreateRecordOnProjectXpath");
         private readonly string TextFieldXpath = ConfigurationHelper.Get<string>("TextFieldXpath");
-        private readonly string DropDownXpath = ConfigurationHelper.Get<string>("DropDownXpath"); 
+        private readonly string DropDownXpath = ConfigurationHelper.Get<string>("DropDownXpath");
         private readonly string FirstElementFromListXpath = ConfigurationHelper.Get<string>("FirstElementFromListXpath");
         private readonly string DateTimeNullXpath = ConfigurationHelper.Get<string>("DateTimeNullXpath");
         private readonly string DayOldXpath = ConfigurationHelper.Get<string>("DayOldXpath");
@@ -34,7 +34,7 @@ namespace AutoTests.Pages
         private readonly string MyWorkPlanXpath = ConfigurationHelper.Get<string>("MyWorkPlanXpath");
         private readonly string ProjectGroupXpath = ConfigurationHelper.Get<string>("ProjectGroupXpath");
         private readonly string MyProjectXpath = ConfigurationHelper.Get<string>("MyProjectXpath");
-        private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath"); 
+        private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
         private readonly string CreateTicketXpath = ConfigurationHelper.Get<string>("CreateTicketXpath");
         private readonly string GlobalConfigurationXpath = ConfigurationHelper.Get<string>("GlobalConfigurationXpath");
         private readonly string AdministrationTextXpath = ConfigurationHelper.Get<string>("AdministrationTextXpath");
@@ -138,43 +138,20 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath("(" + DayNewXpath + ")[2]"));
             selenium.Click(By.XPath("(" + CreateTicketXpath + ")[2]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-           // Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
+            // Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
         }
-        public void CreateTicketTest()
+
+        public void DragAndDrop()
         {
-            RecordOnProject.Click();
-            CreateRecordOnProject.Click();
-            Name.SendKeys("TestName");
-            NapravlenieDeyatelnosti.Click();
-            // wait = new WebDriverWait(_driver, TimeSpan.FromMinutes(ExplicityWait));
-            //wait.Until(_driver => FirstElementFromList.Enabled);
-            //Thread.Sleep(2000);
-            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, FirstElementFromListXpath, 2));
-            //SeleniumHelper.waitUntilElementVisibile(FirstElementFromList, 2000);
-            //Thread.Sleep(2000);
-            FirstElementFromList.Click();
-            //wait.Until(_driver => Zakazchik.Enabled);
-            Zakazchik.Click();
-            //wait.Until(_driver => FirstElementFromList.Enabled);
-            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, FirstElementFromListXpath, 2));
-            //SeleniumHelper.waitUntilElementVisibile(FirstElementFromList, 2000);
-            //Thread.Sleep(2000);
-            FirstElementFromList.Click();
-            DateTimeNull.Click();
-            //wait.Until(_driver => DayOld.Enabled);
-            //Thread.Sleep(2000);
-            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, DayOldXpath, 2));
-            //SeleniumHelper.waitUntilElementVisibile(DayOld, 2000);
-            DayOld.Click();
-            DateTimeNull.Click();
-            // wait.Until(_driver => DayNew.Enabled);
-            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, "(" + DayNewXpath + ")[2]", 2));
-            //Thread.Sleep(2000);
-            //SeleniumHelper.waitUntilElementVisibile(DayNew, 2000);
-            DayNew.Click();
-            CreateTicketButton.Click();
-            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
-            //SeleniumHelper.waitUntilElementInvisibile(Loader, 30000);
+            IJavaScriptExecutor ex = (IJavaScriptExecutor)_driver;
+            ex.ExecuteScript("var oEvent = new DragEvent('dragover');" +
+                "document.querySelector('.ld-view__canvas .region').dispatchEvent(oEvent); ");
+            ex.ExecuteScript("var sEvent = new DragEvent('dragstart', { dataTransfer: new DataTransfer() });" +
+                "document.querySelector('.ld-list-item[draggable=\"true\"]').dispatchEvent(sEvent); ");
+            ex.ExecuteScript("var dEvent = new DragEvent('drag', { dataTransfer: new DataTransfer(), clientX: 900, clientY: 500  });" +
+                "document.querySelector('.ld-list-item[draggable=\"true\"]').dispatchEvent(dEvent); ");
+            ex.ExecuteScript("var eEvent = new DragEvent('dragend', { dataTransfer: new DataTransfer() });" +
+                "document.querySelector('.ld-list-item[draggable=\"true\"]').dispatchEvent(eEvent); ");
         }
     }
 }

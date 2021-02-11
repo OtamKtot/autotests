@@ -120,52 +120,6 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ButtonCompleteXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
-        public void CompleteTaskTest()
-        {
-            //Thread.Sleep(15000);
-            SeleniumHelper.waitUntilElementVisibile(MakeProjectPrepare, 30000);
-            Actions act = new Actions(_driver);
-            act.DoubleClick(MakeProjectPrepare).Perform();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            Thread.Sleep(2000);
-            AddNewRecordOnCollection.Click();
-            //Thread.Sleep(15000);
-            Thread.Sleep(2000);
-            RoleClick.Click();
-            Thread.Sleep(2000);
-            FirstElementFromList.Click();
-            UserClick.Click();
-            Thread.Sleep(2000);
-            UserSendKeys.SendKeys("Ispolnitel");
-            Thread.Sleep(2000);
-            FirstListCheckBox.Click();
-            //Thread.Sleep(2000);
-            PhaseKP.Click();
-            PhaseTP.Click();
-            PhaseOPE.Click();
-            CreatePhase.Click();
-            Thread.Sleep(5000);
-            AcceptExecute.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            Thread.Sleep(2000);
-            DocumentsTab.Click();
-            Thread.Sleep(2000);
-            AddDocumentOnCollection.Click();
-            Thread.Sleep(2000);
-            VidDocClick.Click();
-            Thread.Sleep(2000);
-            FirstElementFromList.Click();
-            AttributeDoc.SendKeys("Test");
-            String filePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)+ @"\Report.pdf";
-            //String filePath = "C:/Users/aantipov/Documents/Report.pdf";
-            AddDocument.SendKeys(filePath);
-            CreatePopUp.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            Thread.Sleep(5000);
-            CompleteTaskButton.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //Thread.Sleep(2000);
-        }
     }
 }
 

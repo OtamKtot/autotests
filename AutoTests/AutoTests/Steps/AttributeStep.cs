@@ -29,6 +29,11 @@ namespace AutoTests.Steps
             _pageAttribute.Alias.SendKeys("Alias");
             _pageAttribute.Save.Click();
         }
+        [Then(@"I should see Name(.*) attribute in list attributes")]
+        public void ThenIShouldSeeNameAttributeInListAttributes(string nameAttribute)
+        {
+            SeleniumHelper.HasElementInList(_pageAttribute.Attributes, nameAttribute);
+        }
 
     }
 }

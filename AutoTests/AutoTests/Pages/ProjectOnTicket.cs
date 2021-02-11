@@ -138,49 +138,5 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             return code;
         }
-
-        public string CompleteTaskTest()
-        {
-            //Random rnd = new Random();
-            //string code = rnd.Next().ToString();
-            string code = "11";
-            SeleniumHelper.waitUntilElementVisibile(MakeProject, 20000);
-            Actions act = new Actions(_driver);
-            act.DoubleClick(MakeProject).Perform();
-            Thread.Sleep(2000);
-            AddNewRecordOnCollection.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            Thread.Sleep(2000);
-            //Thread.Sleep(15000);
-            CodeClick.Click();
-            CodeSendKeys.SendKeys(code);
-            Thread.Sleep(2000);
-            NameClick.Click();
-            Thread.Sleep(2000);
-            NameSendKeys.SendKeys("TestName");
-            StartDateClick.Click();
-            Thread.Sleep(2000);
-            StartDateSendKeys.Click();
-            Thread.Sleep(2000);
-            EndDateClick.Click();
-            Thread.Sleep(2000);
-            EndDateSendKeys.Click();
-            Thread.Sleep(2000);
-            UserClick.Click();
-            Thread.Sleep(2000);
-            UserSendKeys.SendKeys("Director");
-            Thread.Sleep(8000);
-            SeleniumHelper.waitUntilElementInvisibile(LoaderOnUserFieldOnCollection, 30000);
-            FirstListCheckBox.Click();
-            Status.Click();
-            Thread.Sleep(2000);
-            FirstListElement.Click();
-            Thread.Sleep(2000);
-            USEED.Click();
-            CompleteTaskButton.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //Thread.Sleep(2000);
-            return code;
-        }
     }
 }

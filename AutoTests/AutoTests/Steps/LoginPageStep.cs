@@ -40,6 +40,7 @@ namespace AutoTests.Steps
         {
             _pageLogin.Submit.Click();
             SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+            //_pageMyTasks.DragAndDrop();
         }
         [Given(@"I navigate to application and login as Project")]
         public void GivenINavigateToApplicationAndLoginAsProject()
@@ -105,6 +106,7 @@ namespace AutoTests.Steps
             _pageLogin.Login(account);
             _pageLogin.Submit.Click();
             SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+
         }
 
     }

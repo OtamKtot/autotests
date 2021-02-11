@@ -53,27 +53,5 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ButtonOnToolbarXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
-        public void CompleteTaskTest()
-        {
-            //SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //Thread.Sleep(8000);
-            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
-            MakeTechnicalRequirement.Click();
-            Actions act = new Actions(_driver);
-            act.DoubleClick(MakeTechnicalRequirement).Perform();
-            Goal.SendKeys("TestName");
-            Effect.SendKeys("TestName");
-            AddRecordToCollection.Click();
-            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
-            //SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //Thread.Sleep(2000);
-            Assert.IsTrue(SeleniumHelper.WaitForToBeDisplayed(_driver, FirstElementFromListXpath, 2));
-            FirstElementList.Click();
-            //Thread.Sleep(2000);
-            CompleteTaskButton.Click();
-            Assert.IsTrue(SeleniumHelper.WaitForToBeNotVisibleAndPresent(_driver, LoaderXpath, 30));
-            //SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //Thread.Sleep(8000);
-        }
     }
 }

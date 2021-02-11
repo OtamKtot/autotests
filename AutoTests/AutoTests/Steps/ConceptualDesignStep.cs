@@ -22,12 +22,6 @@ namespace AutoTests.Steps
             _pageConceptualDesign = new ConceptualDesign(driver, code);
             _pageMyTasks = new MyTasks(driver);
         }
-        [When(@"I edit ConceptualDesign")]
-        public void WhenIEditConceptualDesign()
-        {
-            _pageConceptualDesign.EditTask();
-            Thread.Sleep(2000);
-        }
         [Then(@"I should see that ConceptualDesign is edited")]
         public void ThenIShouldSeeThatConceptualDesignIsEdited()
         {

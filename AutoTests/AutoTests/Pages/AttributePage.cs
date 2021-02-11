@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace AutoTests.Pages
         private readonly string TextFieldXpath = ConfigurationHelper.Get<string>("TextFieldXpath");
         private readonly string ButtonOnStartFormXpath = ConfigurationHelper.Get<string>("ButtonOnStartFormXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
+        private readonly string ColumnsOfListXpath = ConfigurationHelper.Get<string>("ColumnsOfListXpath");
         public AttributePage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -24,5 +26,6 @@ namespace AutoTests.Pages
         public IWebElement Alias { get { return _driver.FindElement(By.XPath("(" + TextFieldXpath + ")[2]")); } }
         public IWebElement Save { get { return _driver.FindElement(By.XPath("" + ButtonOnStartFormXpath + "")); } }
         public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
+        public ReadOnlyCollection<IWebElement> Attributes { get { return _driver.FindElements(By.XPath("" + ColumnsOfListXpath + "")); } }
     }
 }

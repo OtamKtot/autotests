@@ -131,6 +131,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 12
  testRunner.And("I create attribute", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 13
+ testRunner.Then(string.Format("I should see {0} attribute in list attributes", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

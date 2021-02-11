@@ -73,41 +73,5 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ButtonCompleteXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
-        public void CompleteTaskTest()
-        {
-            //Thread.Sleep(5000);
-            SeleniumHelper.waitUntilElementVisibile(AcceptPhase, 20000);
-            Actions act = new Actions(_driver);
-            act.DoubleClick(AcceptPhase).Perform();
-            Thread.Sleep(2000);
-            AcceptPhaseTab.Click();
-            Thread.Sleep(2000);
-            AddNewRecordOnCollection.Click();
-            Thread.Sleep(2000);
-            NameClick.Click();
-            NameSendKeys.Click();
-            Thread.Sleep(2000);
-            PhaseTPTestAccept.Click();
-            Thread.Sleep(2000);
-            StatusClick.Click();
-            //StatusSendKeys.Click();
-            Thread.Sleep(2000);
-            AcceptStatus.Click();
-            Thread.Sleep(2000);
-            AddNewRecordOnCollection.Click();
-            Thread.Sleep(2000);
-            Name2Click.Click();
-            //NameSendKeys.Click();
-            Thread.Sleep(2000);
-            PhaseTPSolutionAccept.Click();
-            Thread.Sleep(2000);
-            Status2Click.Click();
-            //StatusSendKeys.Click();
-            Thread.Sleep(2000);
-            AcceptStatus2.Click();
-            CompleteTaskButton.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //Thread.Sleep(10000);
-        }
     }
 }

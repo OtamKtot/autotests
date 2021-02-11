@@ -69,25 +69,5 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ButtonCompleteXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
-        public void CompleteTaskTest()
-        {
-            //Thread.Sleep(15000);
-            SeleniumHelper.waitUntilElementVisibile(MakeAppointDirector, 20000);
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 50000);
-            Thread.Sleep(2000);
-            Actions act = new Actions(_driver);
-            act.DoubleClick(MakeAppointDirector).Perform();
-            Thread.Sleep(2000);
-            AddNewRecordOnCollection.Click();
-            Thread.Sleep(2000);
-            CollectionField.Click();
-            UserSendKeys.SendKeys("Rukovoditel");
-            Thread.Sleep(2000);
-            FirstListCheckBox.Click();
-            Thread.Sleep(5000);
-            CompleteTaskButton.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //Thread.Sleep(10000);
-        }
     }
 }

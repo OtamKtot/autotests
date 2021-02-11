@@ -45,17 +45,5 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             //Thread.Sleep(5000);
         }
-        public void CompleteTaskTest()
-        {
-            SeleniumHelper.waitUntilElementVisibile(MakeTurnProject, 20000);
-            Actions act = new Actions(_driver);
-            act.DoubleClick(MakeTurnProject).Perform();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //Thread.Sleep(2000);
-            RadioButton.Click();
-            CompleteTaskButton.Click();
-            SeleniumHelper.waitUntilElementInvisibile(Loader, 10000);
-            //Thread.Sleep(5000);
-        }
     }
 }
