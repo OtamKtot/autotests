@@ -10,6 +10,8 @@ Scenario Outline: Add Record
 	When I navigate into <TestName> RecordTemplate
 	And I navigate into Attribute
 	And I create attribute
+			| Name             | Alias           |
+		| <TestName>       | <TestAlias>     |
 	Then I should see <TestName> attribute in list attributes
 	Examples: 
 	| TestName     |

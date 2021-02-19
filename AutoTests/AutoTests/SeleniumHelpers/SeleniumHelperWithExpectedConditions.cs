@@ -5,6 +5,7 @@ using SeleniumExtras.WaitHelpers;
 using NUnit.Framework;
 using AutoTests.Utilies;
 using OpenQA.Selenium.Interactions;
+using System.Collections.ObjectModel;
 
 namespace AutoTests.SeleniumHelpers
 {
@@ -57,7 +58,7 @@ namespace AutoTests.SeleniumHelpers
                     Assert.Fail($"Loader did not disappear after {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
                 }
             }
-            catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)  
+            catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
             {
                 Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             }
@@ -118,6 +119,24 @@ namespace AutoTests.SeleniumHelpers
             catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
             {
                 Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+            }
+        }
+        public void HasElementInList(By by, string disabledName)
+        {
+            ReadOnlyCollection<IWebElement> webElements = _driver.FindElements(by);
+            int count = 0;
+            for (int i = 0; i < webElements.Count; i = i + 1)
+            {
+                if (webElements[i].Text == disabledName && webElements[i].Displayed)
+                {
+                    count = 1;
+                    break;
+
+                }
+            }
+            if (count == 0)
+            {
+                Assert.Fail($"Exception occurred in SeleniumHelper.HasElementInList(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             }
         }
     }

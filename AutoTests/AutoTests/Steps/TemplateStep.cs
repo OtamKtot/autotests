@@ -23,28 +23,13 @@ namespace AutoTests.Steps
         [Given(@"I add RecordTemplate")]
         public void GivenIAddRecordTemplate(Table table)
         {
-//            Assert.IsTrue(SeleniumHelper.wa)
-            SeleniumHelper.waitUntilElementInvisibile(_pageTemplates.Loader, 10000);
             var template = table.CreateInstance<Template>();
-            _pageTemplates.Add.Click();
-            _pageTemplates.Name.SendKeys(template.Name);
-            _pageTemplates.Alias.SendKeys(template.Alias);
-            _pageTemplates.Solution.Click();
-            SeleniumHelper.waitUntilElementVisibile(_pageTemplates.SolutionSystem, 2000);
-            _pageTemplates.SolutionSystem.Click();
-            _pageTemplates.Create.Click();
-        }
-        [Then(@"I should see RecordTemplate in list Templates")]
-        public void ThenIShouldSeeRecordTemplateInListTemplates()
-        {
-            SeleniumHelper.HasElementInList(_pageTemplates.Templates, "Name");
-            //ScenarioContext.Current.Pending();
+            _pageTemplates.AddRecordTemplate(template.Name, template.Alias);
         }
         [Then(@"I should see (.*) RecordTemplate in list Templates")]
         public void ThenIShouldSeeRecordTemplateInListTemplates(string nameTemplate)
         {
-            SeleniumHelper.HasElementInList(_pageTemplates.Templates, nameTemplate);
-            //ScenarioContext.Current.Pending();
+            _pageTemplates.HasElementInList(nameTemplate);
         }
         [When(@"I navigate into (.*) RecordTemplate")]
         public void ThenINavigateIntoNameRecordTemplate(string nameTemplate)

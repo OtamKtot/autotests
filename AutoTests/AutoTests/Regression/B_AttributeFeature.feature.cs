@@ -128,10 +128,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 11
  testRunner.And("I navigate into Attribute", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "Alias"});
+                table6.AddRow(new string[] {
+                            string.Format("{0}", testName),
+                            "<TestAlias>"});
 #line 12
- testRunner.And("I create attribute", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I create attribute", ((string)(null)), table6, "And ");
 #line hidden
-#line 13
+#line 15
  testRunner.Then(string.Format("I should see {0} attribute in list attributes", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
