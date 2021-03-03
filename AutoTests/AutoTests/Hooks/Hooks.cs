@@ -62,6 +62,7 @@ namespace AutoTests.Hooks
             _driverFactory = new DriverFactory();
             Directory.CreateDirectory(Path.Combine("..", "..", "TestResults"));
             string path1 = @"\\storage\Tmp\QA\Results";
+            //string path1 = @"C:\Tmp\QA\Results";
             string path = path1 + "Report\\index.html";
             ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(path);
             htmlReporter.Config.DocumentTitle = BuildNumber+" "+ DriverToUse;

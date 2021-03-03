@@ -6626,27 +6626,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aantipov\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\antip\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\AutoTestrepository\\AutoTests\\AutoTests\\AutoTests.csproj",
+      "projectUniqueName": "D:\\AutotestRepository\\AutoTests\\AutoTests\\AutoTests.csproj",
       "projectName": "AutoTests",
-      "projectPath": "C:\\AutoTestrepository\\AutoTests\\AutoTests\\AutoTests.csproj",
-      "packagesPath": "C:\\Users\\aantipov\\.nuget\\packages\\",
-      "outputPath": "C:\\AutoTestrepository\\AutoTests\\AutoTests\\obj\\",
+      "projectPath": "D:\\AutotestRepository\\AutoTests\\AutoTests\\AutoTests.csproj",
+      "packagesPath": "C:\\Users\\antip\\.nuget\\packages\\",
+      "outputPath": "D:\\AutotestRepository\\AutoTests\\AutoTests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\aantipov\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\antip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net472"
@@ -6657,6 +6650,7 @@
       },
       "frameworks": {
         "net472": {
+          "targetAlias": "net472",
           "projectReferences": {}
         }
       },
@@ -6668,6 +6662,7 @@
     },
     "frameworks": {
       "net472": {
+        "targetAlias": "net472",
         "dependencies": {
           "DotNetSeleniumExtras.WaitHelpers": {
             "target": "Package",
@@ -6721,7 +6716,8 @@
             "target": "Package",
             "version": "[4.3.0, )"
           }
-        }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

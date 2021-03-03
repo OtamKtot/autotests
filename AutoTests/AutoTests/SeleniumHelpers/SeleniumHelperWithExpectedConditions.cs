@@ -139,5 +139,25 @@ namespace AutoTests.SeleniumHelpers
                 Assert.Fail($"Exception occurred in SeleniumHelper.HasElementInList(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             }
         }
+        public void DragAndDrop(By by)
+        {
+            try
+            {
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                IJavaScriptExecutor ex = (IJavaScriptExecutor)_driver;
+                ex.ExecuteScript("var oEvent = new DragEvent('dragover');" +
+                    "document.querySelector('.ld-view__canvas .region').dispatchEvent(oEvent); ");
+                ex.ExecuteScript("var sEvent = new DragEvent('dragstart', { dataTransfer: new DataTransfer() });" +
+                    "document.querySelector('.ld-list-item[draggable=\"true\"]').dispatchEvent(sEvent); ");
+                ex.ExecuteScript("var dEvent = new DragEvent('drag', { dataTransfer: new DataTransfer(), clientX: 900, clientY: 500  });" +
+                    "document.querySelector('.ld-list-item[draggable=\"true\"]').dispatchEvent(dEvent); ");
+                ex.ExecuteScript("var eEvent = new DragEvent('dragend', { dataTransfer: new DataTransfer() });" +
+                    "document.querySelector('.ld-list-item[draggable=\"true\"]').dispatchEvent(eEvent); ");
+            }
+            catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
+            {
+                Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+            }
+        }
     }
 }
