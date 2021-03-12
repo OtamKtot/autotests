@@ -11,6 +11,6 @@ Scenario Outline: Add Attribute in Form
 	When I drag and drop Attribute into Form
 	Then I should see <TestName> attribute in Form
 	Examples: 
-	| TestName     |
+	| TestName |
 	| Name1 |
 	| TestName1 |

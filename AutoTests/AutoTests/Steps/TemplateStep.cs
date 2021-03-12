@@ -44,6 +44,19 @@ namespace AutoTests.Steps
                 }
             }
         }
+        [Given(@"I navigate into (.*) RecordTemplate")]
+        public void GivenINavigateIntoRecordTemplate(string nameTemplate)
+        {
+            //SeleniumHelper.waitUntilElementInvisibile(_pageTemplates.Loader, 10000);
+            foreach (var element in _pageTemplates.Templates)
+            {
+                if (element.Text == nameTemplate)
+                {
+                    act.DoubleClick(element).Perform();
+                    break;
+                }
+            }
+        }
         [When(@"I navigate into Attribute")]
         public void ThenINavigateIntoAttribute()
         {
@@ -54,6 +67,11 @@ namespace AutoTests.Steps
         public void WhenINavigateIntoForms()
         {
             _pageTemplates.FormText.Click();
+        }
+        [Given(@"I navigate into Form")]
+        public void GivenINavigateIntoForm()
+        {
+            _pageTemplates.NavigateIntoForm();
         }
 
     }

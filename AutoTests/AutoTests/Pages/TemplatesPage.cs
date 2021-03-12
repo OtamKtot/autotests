@@ -56,5 +56,11 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.HasElementInList(By.XPath(ColumnsOfListXpath),Name);
         }
+        public void NavigateIntoForm()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(FormTextXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
     }
 }

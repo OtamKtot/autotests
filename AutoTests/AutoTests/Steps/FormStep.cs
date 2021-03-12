@@ -11,6 +11,7 @@ using TechTalk.SpecFlow;
 
 namespace AutoTests.Steps
 {
+    [Binding]
     class FormStep
     {
         private readonly FormPage _pageForm;
@@ -22,8 +23,8 @@ namespace AutoTests.Steps
             selenium = new SeleniumHelperWithExpectedConditions(_driver);
             _pageMyTasks = new MyTasks(_driver);
         }
-        [Then(@"I should see Name(.*) attribute in Form")]
-        public void ThenIShouldSeeNameAttributeInForm(int p0)
+        [Then(@"I should see (.*) attribute in Form")]
+        public void ThenIShouldSeeAttributeInForm(string p0)
         {
             _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
