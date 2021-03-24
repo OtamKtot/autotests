@@ -31,6 +31,7 @@ namespace AutoTests.Steps
         [When(@"I drag and drop Attribute into Form")]
         public void WhenIDragAndDropAttributeIntoForm()
         {
+            _pageForm.NavigateIntoFirstForm();
             _pageForm.DragAndDropFirstAttribute();
         }
 

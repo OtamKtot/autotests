@@ -39,7 +39,10 @@ namespace AutoTests.Pages
         public IWebElement FormText { get { return _driver.FindElement(By.XPath("" + FormTextXpath + "")); } }
         public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
 
-
+        public void NavigateIntoTemplate()
+        {
+            selenium.DoubleClick(By.XPath(ColumnsOfListXpath), _driver);
+        }
         public void AddRecordTemplate(string Name, string Alias)
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));

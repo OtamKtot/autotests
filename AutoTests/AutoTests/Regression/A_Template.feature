@@ -6,6 +6,7 @@ Scenario: Add Record Template
 	Given I navigate to application and login as Admin
 	Given I navigate to global configuration
 	Given I select Template
+	Given I navigate into template
 	Given I add RecordTemplate
 		| Name             | Alias           |
 		| <TestName>       | <TestAlias>     |

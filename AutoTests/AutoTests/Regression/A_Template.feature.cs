@@ -120,22 +120,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.Given("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+#line 9
+ testRunner.Given("I navigate into template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Alias"});
                 table5.AddRow(new string[] {
                             string.Format("{0}", testName),
                             string.Format("{0}", testAlias)});
-#line 9
+#line 10
  testRunner.Given("I add RecordTemplate", ((string)(null)), table5, "Given ");
 #line hidden
-#line 12
+#line 13
  testRunner.Given("I navigate to global configuration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 13
+#line 14
  testRunner.When("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
+#line 15
  testRunner.Then(string.Format("I should see {0} RecordTemplate in list Templates", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

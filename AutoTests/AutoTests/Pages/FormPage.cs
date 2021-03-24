@@ -27,6 +27,10 @@ namespace AutoTests.Pages
             _driver = driver;
             selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
+        public void NavigateIntoFirstForm()
+        {
+            selenium.Click(By.XPath(ColumnsOfListXpath));
+        }
         public void DragAndDropFirstAttribute()
         {
             selenium.DragAndDrop(By.CssSelector(LoaderXpath));

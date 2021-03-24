@@ -20,6 +20,12 @@ namespace AutoTests.Steps
             _pageTemplates = new TemplatesPage(driver);
             act = new Actions(driver);
         }
+        [Given(@"I navigate into template")]
+        public void GivenINavigateIntoTemplate()
+        {
+            _pageTemplates.NavigateIntoTemplate();
+        }
+
         [Given(@"I add RecordTemplate")]
         public void GivenIAddRecordTemplate(Table table)
         {

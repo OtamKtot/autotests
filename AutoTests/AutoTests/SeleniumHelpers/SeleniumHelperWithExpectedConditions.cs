@@ -12,9 +12,12 @@ namespace AutoTests.SeleniumHelpers
     public class SeleniumHelperWithExpectedConditions
     {
         private IWebDriver _driver;
+        private Actions act;
+        private IWebElement webElement;
         public SeleniumHelperWithExpectedConditions(IWebDriver driver)
         {
             _driver = driver;
+            act = new Actions(_driver);
         }
         public void SendKeys(By by, string valueToType)
         {
@@ -101,20 +104,22 @@ namespace AutoTests.SeleniumHelpers
             }
             return true;
         }
-        public void DoubleClick(By by)
+        public void DoubleClick(By by, IWebDriver _driver)
         {
             try
             {
                 new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
-                Actions act = new Actions(_driver);
-                IWebElement webElement = _driver.FindElement(by);
-                act.DoubleClick(webElement);
+                //act = new Actions(_driver);
+                webElement = _driver.FindElement(by);
+                //webElement.Click();
+                act.DoubleClick(webElement).Build().Perform();
             }
             catch (StaleElementReferenceException)
             {
                 new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
-                Actions act1 = new Actions(_driver);
-                act1.DoubleClick(_driver.FindElement(by));
+                webElement = _driver.FindElement(by);
+                //webElement.Click();
+                act.DoubleClick(webElement).Build().Perform();
             }
             catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
             {
@@ -143,7 +148,8 @@ namespace AutoTests.SeleniumHelpers
         {
             try
             {
-                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                //TODO load Form and Attribute
+                //new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
                 IJavaScriptExecutor ex = (IJavaScriptExecutor)_driver;
                 ex.ExecuteScript("var oEvent = new DragEvent('dragover');" +
                     "document.querySelector('.ld-view__canvas .region').dispatchEvent(oEvent); ");

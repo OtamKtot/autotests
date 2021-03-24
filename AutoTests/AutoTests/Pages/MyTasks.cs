@@ -66,6 +66,12 @@ namespace AutoTests.Pages
         public IWebElement GlobalConfiguration { get { return _driver.FindElement(By.XPath("(" + GlobalConfigurationXpath + ")[3]")); } }
         public void GoToMyTasks()
         {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(MyTaskXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void GoToMyTasksTest()
+        {
             Thread.Sleep(5000);
             MyTask.Click();
             SeleniumHelper.waitUntilElementInvisibile(Loader, 30000);
@@ -80,12 +86,26 @@ namespace AutoTests.Pages
         }
         public void GoToMyWorkPlanList()
         {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(WorkPlanGroupXpath));
+            selenium.Click(By.XPath(MyWorkPlanXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void GoToMyWorkPlanListTEST()
+        {
             //Thread.Sleep(2000);
             WorkPlanGroup.Click();
             //Thread.Sleep(1000);
             MyWorkPlan.Click();
         }
         public void GoToMyProjectList()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ProjectGroupXpath));
+            selenium.Click(By.XPath(MyProjectXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void GoToMyProjectListTEST()
         {
             //Thread.Sleep(2000);
             ProjectGroup.Click();
