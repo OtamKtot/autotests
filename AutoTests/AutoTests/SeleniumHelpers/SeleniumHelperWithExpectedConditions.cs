@@ -96,7 +96,7 @@ namespace AutoTests.SeleniumHelpers
         {
             try
             {
-                var a = new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.InvisibilityOfElementLocated((by)));
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.InvisibilityOfElementLocated((by)));
             }
             catch (Exception ex) when (ex is NoSuchElementException || ex is WebDriverTimeoutException)
             {
@@ -104,7 +104,7 @@ namespace AutoTests.SeleniumHelpers
             }
             return true;
         }
-        public void DoubleClick(By by, IWebDriver _driver)
+        public void DoubleClick(By by)
         {
             try
             {

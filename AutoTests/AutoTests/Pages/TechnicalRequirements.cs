@@ -42,8 +42,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(MakeTechnicalRequirementXpath));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(MakeTechnicalRequirement).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(MakeTechnicalRequirement).Perform();
+            selenium.DoubleClick(By.XPath(MakeTechnicalRequirementXpath));
 
             selenium.SendKeys(By.XPath(TextFieldOnGroupXpath),"TestName");
             selenium.SendKeys(By.XPath("(" + TextFieldOnGroupXpath + ")[2]"), "TestName");

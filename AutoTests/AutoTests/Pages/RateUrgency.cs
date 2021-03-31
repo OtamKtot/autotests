@@ -34,8 +34,9 @@ namespace AutoTests.Pages
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(MakeRateUrgency).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(MakeRateUrgency).Perform();
+            selenium.DoubleClick(By.XPath(MakeRateUrgencyXpath));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(RadioButtonXpath));

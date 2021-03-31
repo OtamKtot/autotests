@@ -58,8 +58,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + BuissnessResearchXpath + " (Проект – " + _numberProject + ")']"));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(BuissnessResearch).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(BuissnessResearch).Perform();
+            selenium.DoubleClick(By.XPath("" + BuissnessResearchXpath + " (Проект – " + _numberProject + ")']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
@@ -73,8 +74,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + DevelopShemeXpath + " (Проект – " + _numberProject + ")']"));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(DevelopScheme).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(DevelopScheme).Perform();
+            selenium.DoubleClick(By.XPath("" + DevelopShemeXpath + " (Проект – " + _numberProject + ")']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
@@ -88,8 +90,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + DevelopTicketXpath + " (Проект – " + _numberProject + ")']"));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(DevelopTicket).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(DevelopTicket).Perform();
+            selenium.DoubleClick(By.XPath("" + DevelopTicketXpath + " (Проект – " + _numberProject + ")']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
@@ -103,8 +106,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + TitleXpath + "TestName (Проект – " + _numberProject + ")']"));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(TaskNewRecord).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(TaskNewRecord).Perform();
+            selenium.DoubleClick(By.XPath("" + TitleXpath + "TestName (Проект – " + _numberProject + ")']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
@@ -118,8 +122,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("(" + TitleXpath + "TestName (Проект – " + _numberProject + ")'])[2]"));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(TaskNewRecord2).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(TaskNewRecord2).Perform();
+            selenium.DoubleClick(By.XPath("(" + TitleXpath + "TestName (Проект – " + _numberProject + ")'])[2]"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
@@ -133,8 +138,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("(" + TitleXpath + "TestName (Проект – " + _numberProject + ")'])[3]"));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(TaskNewRecord3).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(TaskNewRecord3).Perform();
+            selenium.DoubleClick(By.XPath("(" + TitleXpath + "TestName (Проект – " + _numberProject + ")'])[3]"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));
@@ -148,8 +154,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + DevelopTaskXpath + " (Проект – " + _numberProject + ")']"));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(DevelopTask).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(DevelopTask).Perform();
+            selenium.DoubleClick(By.XPath("" + DevelopTaskXpath + " (Проект – " + _numberProject + ")']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));

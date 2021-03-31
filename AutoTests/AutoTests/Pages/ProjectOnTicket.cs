@@ -59,8 +59,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath(MakeProjectXpath));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(MakeProject).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(MakeProject).Perform();
+            selenium.DoubleClick(By.XPath(MakeProjectXpath));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }

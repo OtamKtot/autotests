@@ -133,8 +133,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + ConceptualDesignXpath + " (" + _numberProject + " - TestName)']"));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(EditConceptualDesign).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(EditConceptualDesign).Perform();
+            selenium.DoubleClick(By.XPath("" + ConceptualDesignXpath + " (" + _numberProject + " - TestName)']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
@@ -297,8 +298,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + ConceptualDesignXpath + " (" + _numberProject + " - TestName)']"));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(EditConceptualDesign).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(EditConceptualDesign).Perform();
+            selenium.DoubleClick(By.XPath("" + ConceptualDesignXpath + " (" + _numberProject + " - TestName)']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(CompletePhaseXpath));

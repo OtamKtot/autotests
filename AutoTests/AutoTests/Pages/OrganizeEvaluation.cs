@@ -33,8 +33,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath(MakeOrganizeEvaluationXpath));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(MakeOrganizeEvaluation).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(MakeOrganizeEvaluation).Perform();
+            selenium.DoubleClick(By.XPath(MakeOrganizeEvaluationXpath));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(ButtonOnToolbarXpath));

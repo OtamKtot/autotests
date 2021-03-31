@@ -52,8 +52,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath(AcceptPhaseOPEXpath));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(AcceptPhase).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(AcceptPhase).Perform();
+            selenium.DoubleClick(By.XPath(AcceptPhaseOPEXpath));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(AcceptPhaseTabXpath));

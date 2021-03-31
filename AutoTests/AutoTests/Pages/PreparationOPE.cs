@@ -64,8 +64,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + PreparationOPEXpath + " (" + _numberProject + " - TestName)']"));
 
-            Actions act = new Actions(_driver);
-            act.DoubleClick(MakePreparationOPE).Perform();
+            //Actions act = new Actions(_driver);
+            //act.DoubleClick(MakePreparationOPE).Perform();
+            selenium.DoubleClick(By.XPath("" + PreparationOPEXpath + " (" + _numberProject + " - TestName)']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }

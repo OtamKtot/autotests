@@ -41,7 +41,7 @@ namespace AutoTests.Pages
 
         public void NavigateIntoTemplate()
         {
-            selenium.DoubleClick(By.XPath(ColumnsOfListXpath), _driver);
+            selenium.DoubleClick(By.XPath(ColumnsOfListXpath));
         }
         public void AddRecordTemplate(string Name, string Alias)
         {
