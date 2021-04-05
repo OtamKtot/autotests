@@ -14,6 +14,6 @@ Scenario Outline: Add Record
 		| <TestName>       | <TestAlias>     |
 	Then I should see <TestName> attribute in list attributes
 	Examples: 
-	| TestName     |
-	| Name1 |
-	| TestName1 |
+    | TestName       | TestAlias |
+    | Name1          | Alias1    |
+    | TestName1      | TestAlias1    |

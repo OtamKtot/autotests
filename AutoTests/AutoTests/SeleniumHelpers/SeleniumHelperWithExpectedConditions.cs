@@ -144,26 +144,48 @@ namespace AutoTests.SeleniumHelpers
                 Assert.Fail($"Exception occurred in SeleniumHelper.HasElementInList(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             }
         }
-        public void DragAndDrop(By by)
+        public void DragAndDrop(string cssSelector)
         {
+            //string cssSelector = ".ld-list-item:nth-child(5)";
+            //String xpath = css2xpath.Transform(cssSelector);
             try
             {
                 //TODO load Form and Attribute
                 //new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                //".ld-list-item" for 3.5
+                //".ld-list-item__link" for 3.6
                 IJavaScriptExecutor ex = (IJavaScriptExecutor)_driver;
                 ex.ExecuteScript("var oEvent = new DragEvent('dragover');" +
                     "document.querySelector('.ld-view__canvas .region').dispatchEvent(oEvent); ");
                 ex.ExecuteScript("var sEvent = new DragEvent('dragstart', { dataTransfer: new DataTransfer() });" +
-                    "document.querySelector('.ld-list-item[draggable=\"true\"]').dispatchEvent(sEvent); ");
+                    "document.querySelector('"+ cssSelector+"[draggable=\"true\"]').dispatchEvent(sEvent); ");
                 ex.ExecuteScript("var dEvent = new DragEvent('drag', { dataTransfer: new DataTransfer(), clientX: 900, clientY: 500  });" +
-                    "document.querySelector('.ld-list-item[draggable=\"true\"]').dispatchEvent(dEvent); ");
+                    "document.querySelector('" + cssSelector + "[draggable=\"true\"]').dispatchEvent(dEvent); ");
                 ex.ExecuteScript("var eEvent = new DragEvent('dragend', { dataTransfer: new DataTransfer() });" +
-                    "document.querySelector('.ld-list-item[draggable=\"true\"]').dispatchEvent(eEvent); ");
+                    "document.querySelector('" + cssSelector + "[draggable=\"true\"]').dispatchEvent(eEvent); ");
             }
             catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
             {
-                Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+                Assert.Fail($"Exception occurred in SeleniumHelper.DragAndDrop(): element located by {cssSelector} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             }
+        }
+        public string SearchByTittle(string cssSelector, string Name, string Alias)
+        {
+            var count = _driver.FindElements(By.CssSelector(cssSelector)).Count;
+            for (int i=1; i<count; i++)
+            {
+                string NameAlias = Name + "\r\n" + Alias;
+                cssSelector = cssSelector + ":nth-child(" + i + ")";
+                webElement = _driver.FindElement(By.CssSelector(cssSelector));
+                var a = webElement.GetAttribute("title");
+                if (webElement.Text == NameAlias)
+                {
+                    return cssSelector;
+                }
+                cssSelector = cssSelector.Replace(":nth-child(" + i + ")", "");
+            }
+            Assert.Fail($"Exception occurred in SeleniumHelper.SearchByTittle(): element located by {Name} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+            return "false"; 
         }
     }
 }

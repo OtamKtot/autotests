@@ -22,6 +22,7 @@ namespace AutoTests.Pages
         private readonly string AttributeTextXpath = ConfigurationHelper.Get<string>("AttributeTextXpath");
         private readonly string FormTextXpath = ConfigurationHelper.Get<string>("FormTextXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
+        private readonly string FormAttributeCss = ConfigurationHelper.Get<string>("FormAttributeCss");
         public FormPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -29,11 +30,19 @@ namespace AutoTests.Pages
         }
         public void NavigateIntoFirstForm()
         {
-            selenium.Click(By.XPath(ColumnsOfListXpath));
+            selenium.DoubleClick(By.XPath(ColumnsOfListXpath));
         }
-        public void DragAndDropFirstAttribute()
+        //public void DragAndDropFirstAttribute()
+        //{
+         //   selenium.DragAndDrop(By.CssSelector(LoaderXpath));
+        //}
+        public string SearchByTittle(string Name, string Alias)
         {
-            selenium.DragAndDrop(By.CssSelector(LoaderXpath));
+            return selenium.SearchByTittle(FormAttributeCss, Name, Alias);
+        }
+        public void DragAndDropAttribute(string Name, string Alias)
+        {
+            selenium.DragAndDrop(SearchByTittle(Name, Alias));
         }
     }
 }

@@ -76,9 +76,9 @@ namespace AutoTests.Regression
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add Attribute in Form")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("Name1", null)]
-        [NUnit.Framework.TestCaseAttribute("TestName1", null)]
-        public virtual void AddAttributeInForm(string testName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Name1", "Alias1", null)]
+        [NUnit.Framework.TestCaseAttribute("TestName1", "TestAlias1", null)]
+        public virtual void AddAttributeInForm(string testName, string testAlias, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -89,6 +89,7 @@ namespace AutoTests.Regression
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("TestName", testName);
+            argumentsOfScenario.Add("TestAlias", testAlias);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Attribute in Form", null, tagsOfScenario, argumentsOfScenario);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
@@ -125,10 +126,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 10
  testRunner.Given("I navigate into Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 11
- testRunner.When("I drag and drop Attribute into Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 12
+ testRunner.When("I drag and drop \'{TestName}\' Attribute \'{TestAlias}\' into Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 13
  testRunner.Then(string.Format("I should see {0} attribute in Form", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

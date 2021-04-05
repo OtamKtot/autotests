@@ -76,9 +76,9 @@ namespace AutoTests.Regression
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add Record")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("Name1", null)]
-        [NUnit.Framework.TestCaseAttribute("TestName1", null)]
-        public virtual void AddRecord(string testName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Name1", "Alias1", null)]
+        [NUnit.Framework.TestCaseAttribute("TestName1", "TestAlias1", null)]
+        public virtual void AddRecord(string testName, string testAlias, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -89,6 +89,7 @@ namespace AutoTests.Regression
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("TestName", testName);
+            argumentsOfScenario.Add("TestAlias", testAlias);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Record", null, tagsOfScenario, argumentsOfScenario);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
@@ -133,7 +134,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Alias"});
                 table6.AddRow(new string[] {
                             string.Format("{0}", testName),
-                            "<TestAlias>"});
+                            string.Format("{0}", testAlias)});
 #line 12
  testRunner.And("I create attribute", ((string)(null)), table6, "And ");
 #line hidden
