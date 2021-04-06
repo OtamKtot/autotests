@@ -1,4 +1,5 @@
-﻿using AutoTests.Utilies;
+﻿using AutoTests.SeleniumHelpers;
+using AutoTests.Utilies;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace AutoTests.Pages
     class AttributePage : PageObject
     {
         private readonly IWebDriver _driver;
+        private readonly SeleniumHelperWithExpectedConditions selenium;
         private readonly string AddXpath = ConfigurationHelper.Get<string>("AddXpath");
         private readonly string TextFieldXpath = ConfigurationHelper.Get<string>("TextFieldXpath");
         private readonly string ButtonOnStartFormXpath = ConfigurationHelper.Get<string>("ButtonOnStartFormXpath");
@@ -20,6 +22,7 @@ namespace AutoTests.Pages
         public AttributePage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
+            selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
         public IWebElement Add { get { return _driver.FindElement(By.XPath("" + AddXpath + "")); } }
         public IWebElement Name { get { return _driver.FindElement(By.XPath("" + TextFieldXpath + "")); } }
@@ -27,5 +30,15 @@ namespace AutoTests.Pages
         public IWebElement Save { get { return _driver.FindElement(By.XPath("" + ButtonOnStartFormXpath + "")); } }
         public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
         public ReadOnlyCollection<IWebElement> Attributes { get { return _driver.FindElements(By.XPath("" + ColumnsOfListXpath + "")); } }
+        public void CreateAttribute(string Name, string Alias)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.SendKeys(By.XPath("("+TextFieldXpath+")[2]"), Alias);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
     }
 }

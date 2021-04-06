@@ -454,6 +454,10 @@ D:\AutotestRepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.csproj.Core
 D:\AutotestRepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.csproj.CopyComplete
 D:\AutotestRepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.dll
 D:\AutotestRepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.pdb
+C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\MongoDB.Bson.dll
+C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Collections.Immutable.dll
+C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Text.Encodings.Web.dll
+C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Utf8Json.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\NUnit3.TestAdapter.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\NUnit3.TestAdapter.pdb
@@ -529,7 +533,6 @@ C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Microsoft.Extensions.
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Microsoft.Extensions.Primitives.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Microsoft.Net.Http.Headers.dll
-C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\MongoDB.Bson.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\MongoDB.Driver.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\MongoDB.Driver.Core.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\MongoDB.Libmongocrypt.dll
@@ -544,7 +547,6 @@ C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\TechTalk.SpecFlow.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\LivingDoc.Dtos.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\LivingDoc.SpecFlowPlugin.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Buffers.dll
-C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Collections.Immutable.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.ComponentModel.Annotations.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Diagnostics.DiagnosticSource.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.IO.Pipelines.dll
@@ -557,10 +559,8 @@ C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Security.Crypt
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Security.Permissions.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Security.Principal.Windows.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Text.Encoding.CodePages.dll
-C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Text.Encodings.Web.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Threading.Tasks.Extensions.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.ValueTuple.dll
-C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Utf8Json.dll
 C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.dll.config
 C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.csproj.CoreCompileInputs.cache
 C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.AssemblyInfoInputs.cache

@@ -9,7 +9,7 @@ Scenario Outline: Add Attribute in Form
 	Given I navigate into <TestName> RecordTemplate
 	Given I navigate into Form
 	#When I drag and drop Attribute into Form
-	When I drag and drop '{TestName}' Attribute '{TestAlias}' into Form
+	When I drag and drop <TestName> Attribute <TestAlias> into Form
 	Then I should see <TestName> attribute in Form
 		Examples: 
     | TestName       | TestAlias |

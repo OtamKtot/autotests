@@ -66,7 +66,7 @@ namespace AutoTests.Steps
                 }
             }
         }
-        [When(@"I navigate into Attribute")]
+        [Given(@"I navigate into Attribute")]
         public void ThenINavigateIntoAttribute()
         {
             _pageTemplates.AttributeText.Click();

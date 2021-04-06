@@ -67,7 +67,7 @@ namespace AutoTests.Pages
         public void GoToMyTasks()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.Click(By.XPath("("+MyTaskXpath+")[2]"));
+            selenium.Click(By.XPath(MyTaskXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void GoToMyTasksTest()

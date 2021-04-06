@@ -127,7 +127,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I navigate into Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 12
- testRunner.When("I drag and drop \'{TestName}\' Attribute \'{TestAlias}\' into Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I drag and drop {0} Attribute {1} into Form", testName, testAlias), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
  testRunner.Then(string.Format("I should see {0} attribute in Form", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
