@@ -10,6 +10,8 @@ Scenario: Add Record Template
 		| Name             | Alias           |
 		| <TestName>       | <TestAlias>     |
 	Given I navigate to global configuration
+	Given I select BusinessApp
+	Given I select system BusinessApp
 	When I select Template
 	Then I should see <TestName> RecordTemplate in list Templates
 		Examples: 

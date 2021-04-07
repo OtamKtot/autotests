@@ -24,5 +24,10 @@ namespace AutoTests.Steps
         {
             _pageAdministration.NavigateIntoTemplates();
         }
+        [Given(@"I select BusinessApp")]
+        public void GivenISelectBusinessApp()
+        {
+            _pageAdministration.NavigateIntoBusinessApp();
+        }
     }
 }
