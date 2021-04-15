@@ -43,11 +43,11 @@ namespace AutoTests.Pages
         public void OpenTask()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.CheckElementIsVisible(By.XPath(MakeAppointDirectorXpath));
+            selenium.CheckElementIsVisible(By.XPath("" + MakeAppointDirectorXpath + " (" + _numberProject + " - TestName)']"));
 
             //Actions act = new Actions(_driver);
             //act.DoubleClick(MakeAppointDirector).Perform();
-            selenium.DoubleClick(By.XPath(MakeAppointDirectorXpath));
+            selenium.DoubleClick(By.XPath("" + MakeAppointDirectorXpath + " (" + _numberProject + " - TestName)']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }

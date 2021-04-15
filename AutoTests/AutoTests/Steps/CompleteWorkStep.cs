@@ -25,19 +25,19 @@ namespace AutoTests.Steps
         public void WhenICompleteAllTasksOfWork()
         {
             _pageCompleteWork.CompleteTaskOfBuisnessResearch();
-            _pageMyTasks.GoToMyTasks();
+            //_pageMyTasks.GoToMyTasks();
             _pageCompleteWork.CompleteTaskOfDevelopScheme();
-            _pageMyTasks.GoToMyTasks();
+//            _pageMyTasks.GoToMyTasks();
             _pageCompleteWork.CompleteTaskDevelopTask();
-            _pageMyTasks.GoToMyTasks();
+//            _pageMyTasks.GoToMyTasks();
             _pageCompleteWork.CompleteTaskOfDevelopTicket();
-            _pageMyTasks.GoToMyTasks();
+//            _pageMyTasks.GoToMyTasks();
             _pageCompleteWork.CompleteTaskOfNewRecord();
-            _pageMyTasks.GoToMyTasks();
+//            _pageMyTasks.GoToMyTasks();
             _pageCompleteWork.CompleteTaskOfNewRecord2();
-            _pageMyTasks.GoToMyTasks();
+//           _pageMyTasks.GoToMyTasks();
             _pageCompleteWork.CompleteTaskOfNewRecord3();
-            _pageMyTasks.GoToMyTasks();
+//            _pageMyTasks.GoToMyTasks();
         }
         [Then(@"I should see that all tasks of Work is completed")]
         public void ThenIShouldSeeThatAllTasksOfWorkIsCompleted()

@@ -133,11 +133,11 @@ namespace AutoTests.Pages
         public void CompleteTaskOfNewRecord3()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.CheckElementIsVisible(By.XPath("(" + TitleXpath + "Подтверждение работы - TestName (Проект – " + _numberProject + ")'])[3]"));
+            selenium.CheckElementIsVisible(By.XPath("(" + TitleXpath + "Подтверждение работы - TestName (Проект – " + _numberProject + ")'])[1]"));
 
             //Actions act = new Actions(_driver);
             //act.DoubleClick(TaskNewRecord3).Perform();
-            selenium.DoubleClick(By.XPath("(" + TitleXpath + "Подтверждение работы - TestName (Проект – " + _numberProject + ")'])[3]"));
+            selenium.DoubleClick(By.XPath("(" + TitleXpath + "Подтверждение работы - TestName (Проект – " + _numberProject + ")'])[1]"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + EditorPopoutXpath + ")[2]"));

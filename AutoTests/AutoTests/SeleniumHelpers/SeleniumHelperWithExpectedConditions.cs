@@ -6,18 +6,22 @@ using NUnit.Framework;
 using AutoTests.Utilies;
 using OpenQA.Selenium.Interactions;
 using System.Collections.ObjectModel;
+using System.Threading;
 
 namespace AutoTests.SeleniumHelpers
 {
     public class SeleniumHelperWithExpectedConditions
     {
         private IWebDriver _driver;
-        private Actions act;
+        //private Actions act;
+        //private Actions act2;
         private IWebElement webElement;
+        private IWebElement webElement2;
         public SeleniumHelperWithExpectedConditions(IWebDriver driver)
         {
             _driver = driver;
-            act = new Actions(_driver);
+            //act = new Actions(_driver);
+            //act2 = new Actions(_driver);
         }
         public void SendKeys(By by, string valueToType)
         {
@@ -112,14 +116,15 @@ namespace AutoTests.SeleniumHelpers
                 //act = new Actions(_driver);
                 webElement = _driver.FindElement(by);
                 //webElement.Click();
-                act.DoubleClick(webElement).Build().Perform();
+                new Actions(_driver).DoubleClick(webElement).Perform();
             }
             catch (StaleElementReferenceException)
             {
+                Thread.Sleep(2000);
                 new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
                 webElement = _driver.FindElement(by);
                 //webElement.Click();
-                act.DoubleClick(webElement).Build().Perform();
+                new Actions(_driver).DoubleClick(webElement2).Perform();
             }
             catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
             {

@@ -17,7 +17,8 @@ namespace AutoTests.Pages
         private readonly string AddXpath = ConfigurationHelper.Get<string>("AddXpath");
         private readonly string TextFieldXpath = ConfigurationHelper.Get<string>("TextFieldXpath");
         private readonly string DropDownXpath = ConfigurationHelper.Get<string>("DropDownXpath");
-        private readonly string SelectedListXpath = ConfigurationHelper.Get<string>("SelectedListXpath");
+        private readonly string SelectedListXpath = ConfigurationHelper.Get<string>("SelectedListXpath"); 
+        private readonly string SystemBusinessAppXpath = ConfigurationHelper.Get<string>("SystemBusinessAppXpath");
         private readonly string ButtonOnStartFormXpath = ConfigurationHelper.Get<string>("ButtonOnStartFormXpath");
         private readonly string ColumnsOfListXpath = ConfigurationHelper.Get<string>("ColumnsOfListXpath");
         private readonly string AttributeTextXpath = ConfigurationHelper.Get<string>("AttributeTextXpath");
@@ -50,7 +51,7 @@ namespace AutoTests.Pages
             selenium.SendKeys(By.XPath(TextFieldXpath), Name);
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[2]"), Alias);
             selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
-            selenium.Click(By.XPath(SelectedListXpath));
+            selenium.Click(By.XPath("("+SystemBusinessAppXpath+")[3]"));
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }

@@ -64,11 +64,11 @@ namespace AutoTests.Pages
         public void OpenTask()
         {
             Assert.IsTrue(selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath)));
-            selenium.CheckElementIsVisible(By.XPath(MakeProjectPrepareXpath));
+            selenium.CheckElementIsVisible(By.XPath("" + MakeProjectPrepareXpath + " (" + _numberProject + " - TestName)']"));
 
             //Actions act = new Actions(_driver);
             //act.DoubleClick(MakeProjectPrepare).Perform();
-            selenium.DoubleClick(By.XPath(MakeProjectPrepareXpath));
+            selenium.DoubleClick(By.XPath("" + MakeProjectPrepareXpath + " (" + _numberProject + " - TestName)']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
