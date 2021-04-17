@@ -48,5 +48,11 @@ namespace AutoTests.Steps
         {
             _pageMyTasks.GoToAdministration();
         }
+        [Then(@"I should see that SystemAccountTemplate is opened")]
+        public void ThenIShouldSeeThatSystemAccountTemplateIsOpened()
+        {
+            _pageMyTasks.WaitLoader();
+            _pageMyTasks.Logo.Displayed.Should().BeTrue();
+        }
     }
 }

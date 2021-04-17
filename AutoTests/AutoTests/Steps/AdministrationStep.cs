@@ -29,5 +29,10 @@ namespace AutoTests.Steps
         {
             _pageAdministration.NavigateIntoBusinessApp();
         }
+        [When(@"I open SystemAccountTemplate")]
+        public void WhenIOpenSystemAccountTemplate()
+        {
+            _pageAdministration.NavigateIntoSystemAccountTemplate();
+        }
     }
 }

@@ -173,5 +173,9 @@ namespace AutoTests.Pages
             ex.ExecuteScript("var eEvent = new DragEvent('dragend', { dataTransfer: new DataTransfer() });" +
                 "document.querySelector('.ld-list-item[draggable=\"true\"]').dispatchEvent(eEvent); ");
         }
+        public void WaitLoader()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
     }
 }

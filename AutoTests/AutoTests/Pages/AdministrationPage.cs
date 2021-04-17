@@ -14,6 +14,7 @@ namespace AutoTests.Pages
         private readonly IWebDriver _driver;
         private readonly string TemplateTextXpath = ConfigurationHelper.Get<string>("TemplateTextXpath");
         private readonly string BusinessAppTextXpath = ConfigurationHelper.Get<string>("BusinessAppTextXpath");
+        private readonly string SystemAccountXpath = ConfigurationHelper.Get<string>("SystemAccountXpath");
         private readonly SeleniumHelperWithExpectedConditions selenium;
         public AdministrationPage(IWebDriver driver) : base(driver)
         {
@@ -28,6 +29,10 @@ namespace AutoTests.Pages
         public void NavigateIntoBusinessApp()
         {
             selenium.Click(By.XPath(BusinessAppTextXpath));
+        }
+        public void NavigateIntoSystemAccountTemplate()
+        {
+            selenium.Click(By.XPath(SystemAccountXpath));
         }
     }
 }
