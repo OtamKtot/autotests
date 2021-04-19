@@ -39,7 +39,7 @@ namespace AutoTests.Steps
         public void WhenIClickLogin()
         {
             _pageLogin.Submit.Click();
-            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+            _pageMyTasks.WaitLoader();
             //_pageMyTasks.DragAndDrop();
         }
         [Given(@"I navigate to application and login as Project")]
@@ -53,7 +53,7 @@ namespace AutoTests.Steps
             _pageLogin.Navigate(baseUrl);
             _pageLogin.Login(account);
             _pageLogin.Submit.Click();
-            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+            _pageMyTasks.WaitLoader();
         }
         [Given(@"I navigate to application and login as Director")]
         public void GivenINavigateToApplicationAndLoginAsDirector()
@@ -66,7 +66,7 @@ namespace AutoTests.Steps
             _pageLogin.Navigate(baseUrl);
             _pageLogin.Login(account);
             _pageLogin.Submit.Click();
-            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+            _pageMyTasks.WaitLoader();
         }
         [Given(@"I navigate to application and login as Rukovoditel")]
         public void GivenINavigateToApplicationAndLoginAsRukovoditel()
@@ -79,7 +79,7 @@ namespace AutoTests.Steps
             _pageLogin.Navigate(baseUrl);
             _pageLogin.Login(account);
             _pageLogin.Submit.Click();
-            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+            _pageMyTasks.WaitLoader();
         }
         [Given(@"I navigate to application and login as Ispolnitel")]
         public void GivenINavigateToApplicationAndLoginAsIspolnitel()
@@ -92,7 +92,7 @@ namespace AutoTests.Steps
             _pageLogin.Navigate(baseUrl);
             _pageLogin.Login(account);
             _pageLogin.Submit.Click();
-            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+            _pageMyTasks.WaitLoader();
         }
         [Given(@"I navigate to application and login as Admin")]
         public void GivenINavigateToApplicationAndLoginAsAdmin()
@@ -105,7 +105,7 @@ namespace AutoTests.Steps
             _pageLogin.Navigate(baseUrl);
             _pageLogin.Login(account);
             _pageLogin.Submit.Click();
-            SeleniumHelper.waitUntilElementInvisibile(_pageLogin.Loader, 5000);
+            _pageMyTasks.WaitLoader();
 
         }
 

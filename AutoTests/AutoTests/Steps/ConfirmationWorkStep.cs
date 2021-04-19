@@ -25,19 +25,19 @@ namespace AutoTests.Steps
         public void WhenIConfirmationAllTasksOfWork()
         {
             _pageConfirmationWork.CompleteTaskOfBuisnessResearch();
-            //_pageMyTasks.GoToMyTasks();
+            _pageMyTasks.GoToMyTasks();
             _pageConfirmationWork.CompleteTaskOfDevelopScheme();
-            //_pageMyTasks.GoToMyTasks();
+            _pageMyTasks.GoToMyTasks();
             _pageConfirmationWork.CompleteTaskOfNewRecord();
-            //_pageMyTasks.GoToMyTasks();
+            _pageMyTasks.GoToMyTasks();
             _pageConfirmationWork.CompleteTaskOfNewRecord2();
-            //_pageMyTasks.GoToMyTasks();
+            _pageMyTasks.GoToMyTasks();
             _pageConfirmationWork.CompleteTaskOfNewRecord3();
-            //_pageMyTasks.GoToMyTasks();
+            _pageMyTasks.GoToMyTasks();
             _pageConfirmationWork.CompleteTaskDevelopTask();
-            //_pageMyTasks.GoToMyTasks();
+            _pageMyTasks.GoToMyTasks();
             _pageConfirmationWork.CompleteTaskOfDevelopTicket();
-            //_pageMyTasks.GoToMyTasks();
+            _pageMyTasks.GoToMyTasks();
         }
         [Then(@"I should see that all tasks of Work is confirmationed")]
         public void ThenIShouldSeeThatAllTasksOfWorkIsConfirmationed()

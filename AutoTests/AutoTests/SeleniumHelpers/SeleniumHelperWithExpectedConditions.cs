@@ -122,7 +122,7 @@ namespace AutoTests.SeleniumHelpers
             {
                 Thread.Sleep(2000);
                 new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
-                webElement = _driver.FindElement(by);
+                webElement2 = _driver.FindElement(by);
                 //webElement.Click();
                 new Actions(_driver).DoubleClick(webElement2).Perform();
             }

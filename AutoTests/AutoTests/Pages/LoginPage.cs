@@ -1,4 +1,5 @@
-﻿using AutoTests.Utilies;
+﻿using AutoTests.SeleniumHelpers;
+using AutoTests.Utilies;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
@@ -15,6 +16,7 @@ namespace AutoTests.Pages
     class LoginPage : PageObject
     {
         private readonly IWebDriver _driver;
+        private readonly SeleniumHelperWithExpectedConditions selenium;
         private readonly int ExplicityWait = ConfigurationHelper.Get<int>("ExplicityWait");
         private readonly string UserNameXpath = ConfigurationHelper.Get<string>("UserNameXpath");
         private readonly string PasswordXpath = ConfigurationHelper.Get<string>("PasswordXpath");
@@ -25,6 +27,7 @@ namespace AutoTests.Pages
         public LoginPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
+            selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
         public IWebElement UserName { get { return _driver.FindElement(By.XPath("" + UserNameXpath + "")); } }
         public IWebElement Password { get { return _driver.FindElement(By.XPath("" + PasswordXpath + "")); } }

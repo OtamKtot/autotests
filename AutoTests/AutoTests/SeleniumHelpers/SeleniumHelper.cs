@@ -26,7 +26,7 @@ namespace AutoTests.SeleniumHelpers
                 
                 return true;
             }
-            catch (StaleElementReferenceException ex)
+            catch (StaleElementReferenceException)
             {
                // if (end == 0) { return false; }
                // return WaitForToBeNotVisibleAndPresent(_driver, locator, timeout, end - 1);
@@ -52,7 +52,7 @@ namespace AutoTests.SeleniumHelpers
 
                 return true;
             }
-            catch (StaleElementReferenceException ex)
+            catch (StaleElementReferenceException)
             {
                 //if (end == 0) { return false; }
                 //return WaitForToBeDisplayed(_driver, locator, timeout, end - 1);
@@ -78,7 +78,7 @@ namespace AutoTests.SeleniumHelpers
 
                 return true;
             }
-            catch (StaleElementReferenceException ex)
+            catch (StaleElementReferenceException)
             {
                 //if (end == 0) { return false; }
                 //return WaitForToBePresent(_driver, locator, timeout, end - 1);
