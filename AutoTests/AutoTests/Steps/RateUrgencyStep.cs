@@ -24,7 +24,7 @@ namespace AutoTests.Steps
         [When(@"I complete RateUrgency")]
         public void WhenICompleteRateUrgency()
         {
-            _pageMyTasks.GoToMyTasks();
+            _pageMyTasks.RefreshMyList();
             _pageRateUrgency.CompleteTask();
             Thread.Sleep(2000);
         }

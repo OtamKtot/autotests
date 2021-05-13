@@ -24,7 +24,7 @@ namespace AutoTests.Steps
         [When(@"I complete TurnProject")]
         public void WhenICompleteTurnProject()
         {
-            _pageMyTasks.GoToMyTasks();
+            _pageMyTasks.RefreshMyList();
             _pageTurnProject.CompleteTask();
             Thread.Sleep(2000);
         }

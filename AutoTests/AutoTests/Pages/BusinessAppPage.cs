@@ -29,5 +29,18 @@ namespace AutoTests.Pages
             selenium.HasElementInList(By.XPath(ColumnsOfListXpath),Name);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
+        public void SelectFromListSystemBusinessApp(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            foreach (var element in BuisnessApp)
+            {
+                if (element.Text == Name)
+                {
+                    selenium.DoubleClick(element);
+                    break;
+                }
+            }
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
     }
 }

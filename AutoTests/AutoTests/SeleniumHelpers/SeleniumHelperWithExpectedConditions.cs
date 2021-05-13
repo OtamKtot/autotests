@@ -100,7 +100,9 @@ namespace AutoTests.SeleniumHelpers
         {
             try
             {
+                Thread.Sleep(1000);
                 new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.InvisibilityOfElementLocated((by)));
+                Thread.Sleep(1000);
             }
             catch (Exception ex) when (ex is NoSuchElementException || ex is WebDriverTimeoutException)
             {
@@ -131,8 +133,28 @@ namespace AutoTests.SeleniumHelpers
                 Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             }
         }
+        public void DoubleClick(IWebElement webElement)
+        {
+            try
+            {
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(webElement));
+                new Actions(_driver).DoubleClick(webElement).Perform();
+            }
+            catch (StaleElementReferenceException)
+            {
+                Thread.Sleep(2000);
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(webElement));
+                new Actions(_driver).DoubleClick(webElement).Perform();
+            }
+            catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
+            {
+                Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {webElement.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+            }
+        }
         public void HasElementInList(By by, string disabledName)
         {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(by)); 
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
             ReadOnlyCollection<IWebElement> webElements = _driver.FindElements(by);
             int count = 0;
             for (int i = 0; i < webElements.Count; i = i + 1)
@@ -149,9 +171,9 @@ namespace AutoTests.SeleniumHelpers
                 Assert.Fail($"Exception occurred in SeleniumHelper.HasElementInList(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             }
         }
-        public void DragAndDrop(string cssSelector)
+        public void DragAndDrop(By by)
         {
-            //string cssSelector = ".ld-list-item:nth-child(5)";
+            string cssSelector = ".ld-list-item__link";
             //String xpath = css2xpath.Transform(cssSelector);
             try
             {
@@ -174,8 +196,35 @@ namespace AutoTests.SeleniumHelpers
                 Assert.Fail($"Exception occurred in SeleniumHelper.DragAndDrop(): element located by {cssSelector} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             }
         }
+        public void DragAndDrop(string cssSelector)
+        {
+            //string cssSelector = ".ld-list-item:nth-child(5)";
+            //String xpath = css2xpath.Transform(cssSelector);
+            try
+            {
+                //TODO load Form and Attribute
+                //new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                //".ld-list-item" for 3.5
+                //".ld-list-item__link" for 3.6
+                IJavaScriptExecutor ex = (IJavaScriptExecutor)_driver;
+                ex.ExecuteScript("var oEvent = new DragEvent('dragover');" +
+                    "document.querySelector('.ld-view__canvas .region').dispatchEvent(oEvent); ");
+                ex.ExecuteScript("var sEvent = new DragEvent('dragstart', { dataTransfer: new DataTransfer() });" +
+                    "document.querySelector('" + cssSelector + "[draggable=\"true\"]').dispatchEvent(sEvent); ");
+                ex.ExecuteScript("var dEvent = new DragEvent('drag', { dataTransfer: new DataTransfer(), clientX: 900, clientY: 500  });" +
+                    "document.querySelector('" + cssSelector + "[draggable=\"true\"]').dispatchEvent(dEvent); ");
+                ex.ExecuteScript("var eEvent = new DragEvent('dragend', { dataTransfer: new DataTransfer() });" +
+                    "document.querySelector('" + cssSelector + "[draggable=\"true\"]').dispatchEvent(eEvent); ");
+            }
+            catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
+            {
+                Assert.Fail($"Exception occurred in SeleniumHelper.DragAndDrop(): element located by {cssSelector} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+            }
+        }
         public string SearchByTittle(string cssSelector, string Name, string Alias)
         {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
             var count = _driver.FindElements(By.CssSelector(cssSelector)).Count;
             for (int i=1; i<count; i++)
             {

@@ -37,7 +37,7 @@ namespace AutoTests.Steps
         public void GivenIOpenTaskAndAddRukovoditelInCollection()
         {
             Thread.Sleep(400000);
-            _pageMyTasks.GoToMyTasks();
+            _pageMyTasks.RefreshMyList();
             _pageAppointDirector.OpenTask();
             _pageAppointDirector.AddRukovoditelInCollection();
         }

@@ -31,10 +31,8 @@ namespace AutoTests.Steps
         [When(@"I drag and drop Attribute into Form")]
         public void WhenIDragAndDropAttributeIntoForm()
         {
-            string Name = "Name";
-            string Alias = "NameAlias";
-            var cssSelector = _pageForm.SearchByTittle(Name,Alias);
-            _pageForm.DragAndDropAttribute(Name, Alias);
+            _pageForm.NavigateIntoFirstForm();
+            _pageForm.DragAndDropFirstAttribute();
         }
         [When(@"I drag and drop (.*) Attribute (.*) into Form")]
         public void WhenIDragAndDropNameAttributeNameIntoForm(string Name, string Alias)

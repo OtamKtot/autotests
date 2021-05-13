@@ -5,6 +5,8 @@
 Scenario: Add Record Template
 	Given I navigate to application and login as Admin
 	Given I navigate to global configuration
+	Given I select BusinessApp
+	Given I select system BusinessApp
 	Given I select Template
 	Given I add RecordTemplate
 		| Name             | Alias           |

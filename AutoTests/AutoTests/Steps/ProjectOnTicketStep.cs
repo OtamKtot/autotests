@@ -35,7 +35,7 @@ namespace AutoTests.Steps
         [Given(@"I open task and add record in collection")]
         public void GivenIOpenTaskAndAddRecordInCollection()
         {
-            _pageMyTasks.GoToMyTasks();
+            _pageMyTasks.RefreshMyList();
             _pageProjectOnTicket.OpenTask();
             _pageProjectOnTicket.AddRecordInCollection();
         }

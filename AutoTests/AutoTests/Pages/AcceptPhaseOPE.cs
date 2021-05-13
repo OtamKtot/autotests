@@ -58,6 +58,7 @@ namespace AutoTests.Pages
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(AcceptPhaseTabXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[139]"));

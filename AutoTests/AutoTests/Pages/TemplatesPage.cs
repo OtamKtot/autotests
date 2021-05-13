@@ -50,8 +50,8 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(AddXpath));
             selenium.SendKeys(By.XPath(TextFieldXpath), Name);
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[2]"), Alias);
-            selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
-            selenium.Click(By.XPath("("+SystemBusinessAppXpath+")[3]"));
+            //selenium.Click(By.XPath("(" + DropDownXpath + ")[2]"));
+            //selenium.Click(By.XPath("("+SystemBusinessAppXpath+")[3]"));
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }

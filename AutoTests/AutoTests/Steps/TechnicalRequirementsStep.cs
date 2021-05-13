@@ -24,7 +24,7 @@ namespace AutoTests.Steps
         [When(@"I complete TechnicalRequirements")]
         public void WhenICompleteTechnicalRequirements()
         {
-            _pageMyTasks.GoToMyTasks();
+            _pageMyTasks.RefreshMyList();
             _pageTechnicalRequirements.CompleteTask();
             Thread.Sleep(2000);
         }

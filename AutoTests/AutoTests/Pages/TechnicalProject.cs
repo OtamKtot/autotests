@@ -89,6 +89,7 @@ namespace AutoTests.Pages
         public void AddRecordOnCollection()
         {
             selenium.Click(By.XPath(AddNewRecordOnCollectionXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[5]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[7]"),"TestName");
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[6]"));

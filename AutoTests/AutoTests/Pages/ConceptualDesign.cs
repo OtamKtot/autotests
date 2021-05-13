@@ -39,6 +39,7 @@ namespace AutoTests.Pages
         private readonly string CompletePhaseXpath = ConfigurationHelper.Get<string>("CompletePhaseXpath");
         private readonly string VerticalLayoutXpath = ConfigurationHelper.Get<string>("VerticalLayoutXpath");
         private readonly string LoaderOnUserFieldOnCollectionXpath = ConfigurationHelper.Get<string>("LoaderOnUserFieldOnCollectionXpath");
+        private readonly string LeftNavigationRollXpath = ConfigurationHelper.Get<string>("LeftNavigationRollXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
         public ConceptualDesign(IWebDriver driver, string numberProject) : base(driver)
         {
@@ -112,7 +113,8 @@ namespace AutoTests.Pages
         public IWebElement DeleteRecord { get { return _driver.FindElement(By.XPath("" + ButtonOnStartFormXpath + "")); } }
         public IWebElement StatusComplete { get { return _driver.FindElement(By.XPath("(" + StatusPlannedXpath + ")[3]")); } }
         public void CreateVersionTask()
-        {
+        {            
+            selenium.Click(By.XPath(LeftNavigationRollXpath));
             selenium.Click(By.XPath(VersionsTabXpath));
             selenium.Click(By.XPath("(" + StatusPlannedXpath + ")[5]"));
             Thread.Sleep(10000);

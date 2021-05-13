@@ -44,5 +44,9 @@ namespace AutoTests.Pages
         {
             selenium.DragAndDrop(SearchByTittle(Name, Alias));
         }
+        public void DragAndDropFirstAttribute()
+        {
+            selenium.DragAndDrop(By.CssSelector(LoaderXpath));
+        }
     }
 }

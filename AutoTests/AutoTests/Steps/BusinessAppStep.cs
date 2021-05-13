@@ -25,14 +25,7 @@ namespace AutoTests.Steps
         public void GivenISelectSystemBusinessApp()
         {
             var nameBuisnessApp = "systemSolution";
-            foreach (var element in _pageBusinessApp.BuisnessApp)
-            {
-                if (element.Text == nameBuisnessApp)
-                {
-                    act.DoubleClick(element).Perform();
-                    break;
-                }
-            }
+            _pageBusinessApp.SelectFromListSystemBusinessApp(nameBuisnessApp);
         }
 
     }

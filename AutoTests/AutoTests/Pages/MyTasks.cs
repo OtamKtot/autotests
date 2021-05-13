@@ -38,6 +38,7 @@ namespace AutoTests.Pages
         private readonly string CreateTicketXpath = ConfigurationHelper.Get<string>("CreateTicketXpath");
         private readonly string GlobalConfigurationXpath = ConfigurationHelper.Get<string>("GlobalConfigurationXpath");
         private readonly string AdministrationTextXpath = ConfigurationHelper.Get<string>("AdministrationTextXpath");
+        private readonly string RefreshListXpath = ConfigurationHelper.Get<string>("RefreshListXpath");
         public MyTasks(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -64,6 +65,12 @@ namespace AutoTests.Pages
         public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
         public IWebElement CreateTicketButton { get { return _driver.FindElement(By.XPath("(" + CreateTicketXpath + ")[2]")); } }
         public IWebElement GlobalConfiguration { get { return _driver.FindElement(By.XPath("(" + GlobalConfigurationXpath + ")[3]")); } }
+        public void RefreshMyList()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(RefreshListXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
         public void GoToMyTasks()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));

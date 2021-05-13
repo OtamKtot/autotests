@@ -24,7 +24,7 @@ namespace AutoTests.Steps
         [When(@"I complete OrganizeEvaluation")]
         public void WhenICompleteOrganizeEvaluation()
         {
-            _pageMyTasks.GoToMyTasks();
+            _pageMyTasks.RefreshMyList();
             _pageOrganizeEvaluation.CompleteTask();
             Thread.Sleep(2000);
         }
