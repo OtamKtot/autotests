@@ -144,12 +144,14 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add First Attribute in Form")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.CategoryAttribute("FirstAttribute")]
         [NUnit.Framework.TestCaseAttribute("Name1", "Alias1", null)]
         [NUnit.Framework.TestCaseAttribute("TestName1", "TestAlias1", null)]
         public virtual void AddFirstAttributeInForm(string testName, string testAlias, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "ignore",
                     "FirstAttribute"};
             if ((exampleTags != null))
             {
@@ -160,7 +162,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("TestName", testName);
             argumentsOfScenario.Add("TestAlias", testAlias);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add First Attribute in Form", null, tagsOfScenario, argumentsOfScenario);
-#line 22
+#line 23
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -180,31 +182,31 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 23
+#line 24
  testRunner.Given("I navigate to application and login as Admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 24
+#line 25
  testRunner.Given("I navigate to global configuration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 25
+#line 26
  testRunner.Given("I select BusinessApp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 26
+#line 27
  testRunner.Given("I select system BusinessApp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 27
+#line 28
  testRunner.Given("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 28
+#line 29
  testRunner.Given(string.Format("I navigate into {0} RecordTemplate", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 29
+#line 30
  testRunner.Given("I navigate into Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 30
+#line 31
  testRunner.When("I drag and drop Attribute into Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 33
  testRunner.Then(string.Format("I should see {0} attribute in Form", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

@@ -173,7 +173,7 @@ namespace AutoTests.SeleniumHelpers
         }
         public void DragAndDrop(By by)
         {
-            string cssSelector = ".ld-list-item__link";
+            string cssSelector = ".js-context-items-region>.js-context-ld-list-item";
             //String xpath = css2xpath.Transform(cssSelector);
             try
             {
@@ -228,7 +228,7 @@ namespace AutoTests.SeleniumHelpers
             var count = _driver.FindElements(By.CssSelector(cssSelector)).Count;
             for (int i=1; i<count; i++)
             {
-                string NameAlias = Name + "\r\n" + Alias;
+                string NameAlias = Name + "\r\n" + Name + Alias;
                 cssSelector = cssSelector + ":nth-child(" + i + ")";
                 webElement = _driver.FindElement(By.CssSelector(cssSelector));
                 var a = webElement.GetAttribute("title");
