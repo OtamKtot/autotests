@@ -71,7 +71,7 @@ namespace AutoTests.Pages
         public void AlertIsTrue()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            Assert.AreEqual(selenium.GetElementText(By.XPath(AlertBodyXpath)), "Сохранено");
+            Assert.AreEqual(selenium.GetElementText(By.XPath(AlertBodyXpath)), "Шаблон создан");
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
     }
