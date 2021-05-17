@@ -561,6 +561,7 @@ C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Text.Encodings
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.Threading.Tasks.Extensions.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\System.ValueTuple.dll
 C:\AutoTestrepository\AutoTests\AutoTests\bin\Debug\net472\Utf8Json.dll
+C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.csprojAssemblyReference.cache
 C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.dll.config
 C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.csproj.CoreCompileInputs.cache
 C:\AutoTestrepository\AutoTests\AutoTests\obj\Debug\net472\AutoTests.AssemblyInfoInputs.cache

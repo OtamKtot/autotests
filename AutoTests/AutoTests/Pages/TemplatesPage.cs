@@ -1,5 +1,6 @@
 ﻿using AutoTests.SeleniumHelpers;
 using AutoTests.Utilies;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,8 @@ namespace AutoTests.Pages
         private readonly string ButtonOnStartFormXpath = ConfigurationHelper.Get<string>("ButtonOnStartFormXpath");
         private readonly string ColumnsOfListXpath = ConfigurationHelper.Get<string>("ColumnsOfListXpath");
         private readonly string AttributeTextXpath = ConfigurationHelper.Get<string>("AttributeTextXpath");
-        private readonly string FormTextXpath = ConfigurationHelper.Get<string>("FormTextXpath");
+        private readonly string FormTextXpath = ConfigurationHelper.Get<string>("FormTextXpath"); 
+        private readonly string AlertBodyXpath = ConfigurationHelper.Get<string>("AlertBodyXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
         public TemplatesPage(IWebDriver driver) : base(driver)
         {
@@ -64,6 +66,12 @@ namespace AutoTests.Pages
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(FormTextXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void AlertIsTrue()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            Assert.AreEqual(selenium.GetElementText(By.XPath(AlertBodyXpath)), "Сохранено");
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
     }

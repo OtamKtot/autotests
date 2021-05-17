@@ -33,6 +33,7 @@ namespace AutoTests.Steps
         {
             var template = table.CreateInstance<Template>();
             _pageTemplates.AddRecordTemplate(template.Name, template.Alias);
+            _pageTemplates.AlertIsTrue();
         }
         [Then(@"I should see (.*) RecordTemplate in list Templates")]
         public void ThenIShouldSeeRecordTemplateInListTemplates(string nameTemplate)

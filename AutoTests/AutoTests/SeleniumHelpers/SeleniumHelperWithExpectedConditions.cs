@@ -230,6 +230,7 @@ namespace AutoTests.SeleniumHelpers
             {
                 string NameAlias = Name + "\r\n" + Name + Alias;
                 cssSelector = cssSelector + ":nth-child(" + i + ")";
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
                 webElement = _driver.FindElement(By.CssSelector(cssSelector));
                 var a = webElement.GetAttribute("title");
                 if (webElement.Text == NameAlias)
@@ -240,6 +241,29 @@ namespace AutoTests.SeleniumHelpers
             }
             Assert.Fail($"Exception occurred in SeleniumHelper.SearchByTittle(): element located by {Name} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             return "false"; 
+        }
+        public void MoveToElement(By by)
+        {
+            try
+            {
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                //act = new Actions(_driver);
+                webElement = _driver.FindElement(by);
+                //webElement.Click();
+                new Actions(_driver).MoveToElement(webElement).Perform();
+            }
+            catch (StaleElementReferenceException)
+            {
+                Thread.Sleep(2000);
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                webElement2 = _driver.FindElement(by);
+                //webElement.Click();
+                new Actions(_driver).MoveToElement(webElement2).Perform();
+            }
+            catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
+            {
+                Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ namespace AutoTests.Steps
         private readonly FormPage _pageForm;
         private readonly MyTasks _pageMyTasks;
         private readonly SeleniumHelperWithExpectedConditions selenium;
+        private string name = "Text";
         public FormStep(IWebDriver _driver)
         {
             _pageForm = new FormPage(_driver);
@@ -38,6 +39,22 @@ namespace AutoTests.Steps
         public void WhenIDragAndDropNameAttributeNameIntoForm(string Name, string Alias)
         {
             _pageForm.DragAndDropAttribute(Name, Alias);
+        }
+        [Given(@"I create all type attributes")]
+        public void GivenICreateAllTypeAttributes()
+        {
+            _pageForm.HoverOverAttributes();
+            _pageForm.CreateAttribute(name);
+        }
+        [When(@"I drag and drop Attributes into Form")]
+        public void WhenIDragAndDropAttributesIntoForm()
+        {
+            _pageForm.DragAndDropAttribute(name, "");
+        }
+        [Then(@"I should see attributes in Form")]
+        public void ThenIShouldSeeAttributesInForm()
+        {
+            _pageMyTasks.Logo.Displayed.Should().BeTrue();
         }
 
     }

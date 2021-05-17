@@ -21,8 +21,12 @@ namespace AutoTests.Pages
         private readonly string ColumnsOfListXpath = ConfigurationHelper.Get<string>("ColumnsOfListXpath");
         private readonly string AttributeTextXpath = ConfigurationHelper.Get<string>("AttributeTextXpath");
         private readonly string FormTextXpath = ConfigurationHelper.Get<string>("FormTextXpath");
-        private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
+        private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath"); 
+        private readonly string CreateAttributeOnFormXpath = ConfigurationHelper.Get<string>("CreateAttributeOnFormXpath");
         private readonly string FormAttributeCss = ConfigurationHelper.Get<string>("FormAttributeCss");
+        private readonly string SaveButtonXpath = ConfigurationHelper.Get<string>("SaveButtonXpath");
+
+
         public FormPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -43,10 +47,22 @@ namespace AutoTests.Pages
         public void DragAndDropAttribute(string Name, string Alias)
         {
             selenium.DragAndDrop(SearchByTittle(Name, Alias));
+            selenium.Click(By.XPath(SaveButtonXpath));
         }
         public void DragAndDropFirstAttribute()
         {
             selenium.DragAndDrop(By.CssSelector(LoaderXpath));
+        }
+        public void HoverOverAttributes()
+        {
+            selenium.MoveToElement(By.XPath(AttributeTextXpath));
+        }
+        public string CreateAttribute(string name)
+        {
+            selenium.Click(By.XPath(CreateAttributeOnFormXpath));
+            selenium.SendKeys(By.XPath("("+TextFieldXpath+")[3]"), name); 
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            return name;
         }
     }
 }
