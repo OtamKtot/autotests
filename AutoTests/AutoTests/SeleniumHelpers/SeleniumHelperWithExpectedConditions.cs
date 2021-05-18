@@ -100,9 +100,9 @@ namespace AutoTests.SeleniumHelpers
         {
             try
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.InvisibilityOfElementLocated((by)));
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
             }
             catch (Exception ex) when (ex is NoSuchElementException || ex is WebDriverTimeoutException)
             {

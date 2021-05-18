@@ -31,6 +31,7 @@ namespace AutoTests.Pages
         private readonly string AddDocumentXpath = ConfigurationHelper.Get<string>("AddDocumentXpath");
         private readonly string CreatePopUpXpath = ConfigurationHelper.Get<string>("ButtonOnStartFormXpath");
         private readonly string ButtonCompleteXpath = ConfigurationHelper.Get<string>("ButtonCompleteXpath");
+        private readonly string VerticalLayoutXpath = ConfigurationHelper.Get<string>("VerticalLayoutXpath");
         private readonly string LoaderOnUserFieldOnCollectionXpath = ConfigurationHelper.Get<string>("LoaderOnUserFieldOnCollectionXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath"); 
         private readonly string LoaderCollectionXpath = ConfigurationHelper.Get<string>("LoaderCollectionXpath");
@@ -75,7 +76,7 @@ namespace AutoTests.Pages
         public void AddIspolnitelInCollectionAndCreatePhase()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderCollectionXpath));
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             selenium.Click(By.XPath(AddNewRecordOnCollectionXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[8]"));
@@ -88,6 +89,7 @@ namespace AutoTests.Pages
             Thread.Sleep(2000);
             selenium.Click(By.XPath(FirstListCheckBoxXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(VerticalLayoutXpath));
             selenium.Click(By.XPath(RadioButtonXpath));
             selenium.Click(By.XPath("(" + RadioButtonXpath + ")[2]"));
             selenium.Click(By.XPath("(" + RadioButtonXpath + ")[3]"));

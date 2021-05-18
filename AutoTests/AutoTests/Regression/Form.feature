@@ -36,6 +36,7 @@ Scenario Outline: Add Attribute in Form
     | Name1          | Alias1    |
     | TestName1      | TestAlias1    |
 
+		@ignore
 		@mytag
 Scenario Outline: Add All Type Attributes in Form
 	Given I navigate to application and login as Admin
