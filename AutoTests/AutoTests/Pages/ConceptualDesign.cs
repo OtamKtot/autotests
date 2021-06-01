@@ -264,10 +264,16 @@ namespace AutoTests.Pages
             Thread.Sleep(5000);
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[22]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[7]"), "TestName");
+            selenium.Click(By.XPath(VerticalLayoutXpath));
+            Thread.Sleep(2000);
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[39]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[7]"), "TestName");
+            selenium.Click(By.XPath(VerticalLayoutXpath));
+            Thread.Sleep(2000);
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[56]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[7]"), "TestName");
+            selenium.Click(By.XPath(VerticalLayoutXpath));
+            Thread.Sleep(2000);
 
 
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[43]"));

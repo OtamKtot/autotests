@@ -27,6 +27,7 @@ namespace AutoTests.Pages
         private readonly string AcceptStatusXpath = ConfigurationHelper.Get<string>("AcceptStatusXpath");
         private readonly string ButtonCompleteXpath = ConfigurationHelper.Get<string>("ButtonCompleteXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
+        private readonly string VerticalLayoutXpath = ConfigurationHelper.Get<string>("VerticalLayoutXpath");
         public AcceptPhaseCP(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -66,6 +67,8 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(PhaseCPTaskAcceptXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[237]"));
             selenium.Click(By.XPath(AcceptStatusXpath));
+            selenium.Click(By.XPath(VerticalLayoutXpath));
+            Thread.Sleep(2000);
             selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[241]"));
@@ -73,6 +76,8 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(PhaseCPTicketAcceptXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[242]"));
             selenium.Click(By.XPath("(" + AcceptStatusXpath + ")[2]"));
+            selenium.Click(By.XPath(VerticalLayoutXpath));
+            Thread.Sleep(2000);
             selenium.Click(By.XPath(ButtonCompleteXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
