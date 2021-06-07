@@ -34,5 +34,9 @@ namespace AutoTests.Pages
         {
             selenium.Click(By.XPath(SystemAccountXpath));
         }
+        public void NavigateIntoTestBusinessApp()
+        {
+            selenium.Click(By.XPath(BusinessAppTextXpath));
+        }
     }
 }

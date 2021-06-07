@@ -74,5 +74,25 @@ namespace AutoTests.Pages
             Assert.AreEqual(selenium.GetElementText(By.XPath(AlertBodyXpath)), "Шаблон создан");
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
+        public void AddThreeRecordTemplate(string Name1, string Name2, string Name3)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name1);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            NavigateBack();
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name2);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            NavigateBack();
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name3);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
     }
 }

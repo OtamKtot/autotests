@@ -59,6 +59,7 @@ namespace AutoTests.SeleniumHelpers
                 try
                 {
                     new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.InvisibilityOfElementLocated((By.XPath("//*[@class='loader']"))));
+                    _driver.FindElement(by).Click();
                 }
                 catch
                 {
@@ -241,6 +242,27 @@ namespace AutoTests.SeleniumHelpers
             }
             Assert.Fail($"Exception occurred in SeleniumHelper.SearchByTittle(): element located by {Name} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             return "false"; 
+        }
+        public string SearchByTittle(string Xpath, string Name)
+        {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
+            var count = _driver.FindElements(By.XPath(Xpath)).Count;
+            Xpath = "(" + Xpath;
+            for (int i = 1; i < count; i++)
+            {
+                Xpath = Xpath + ")[" + i + "]";
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
+                webElement = _driver.FindElement(By.XPath(Xpath));
+                var a = webElement.GetAttribute("title");
+                if (webElement.Text == Name)
+                {
+                    return Xpath;
+                }
+                Xpath = Xpath.Replace(")[" + i + "]", "");
+            }
+            Assert.Fail($"Exception occurred in SeleniumHelper.SearchByTittle(): element located by {Name} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+            return "false";
         }
         public void MoveToElement(By by)
         {

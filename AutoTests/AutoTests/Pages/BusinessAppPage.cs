@@ -1,5 +1,6 @@
 ﻿using AutoTests.SeleniumHelpers;
 using AutoTests.Utilies;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,12 @@ namespace AutoTests.Pages
     {
         private readonly IWebDriver _driver;
         private readonly SeleniumHelperWithExpectedConditions selenium;
-        private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
-        private readonly string ColumnsOfListXpath = ConfigurationHelper.Get<string>("ColumnsOfListXpath");
+        private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath"); 
+        private readonly string ColumnsOfListXpath = ConfigurationHelper.Get<string>("ColumnsOfListXpath"); 
+        private readonly string AddXpath = ConfigurationHelper.Get<string>("AddXpath"); 
+        private readonly string TextFieldXpath = ConfigurationHelper.Get<string>("TextFieldXpath");
+        private readonly string ButtonOnStartFormXpath = ConfigurationHelper.Get<string>("ButtonOnStartFormXpath");
+        private readonly string AlertBodyXpath = ConfigurationHelper.Get<string>("AlertBodyXpath");
         public BusinessAppPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -40,6 +45,26 @@ namespace AutoTests.Pages
                     break;
                 }
             }
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void AddBusinessApp(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void AlertIsTrue()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            Assert.AreEqual(selenium.GetElementText(By.XPath(AlertBodyXpath)), "Приложение создано");
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void NavigateIntoTestBusinessApp(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.DoubleClick(By.XPath(selenium.SearchByTittle(ColumnsOfListXpath, Name)));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
     }

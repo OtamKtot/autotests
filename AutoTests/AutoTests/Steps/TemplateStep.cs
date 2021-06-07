@@ -1,4 +1,5 @@
-﻿using AutoTests.Pages;
+﻿using AutoTests.Globals;
+using AutoTests.Pages;
 using AutoTests.SeleniumHelpers;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -84,6 +85,28 @@ namespace AutoTests.Steps
             _pageTemplates.NavigateIntoForm();
             _pageForms.NavigateIntoFirstForm();
         }
-
+        [Then(@"I should see RecordTemplate in list Templates")]
+        public void ThenIShouldSeeRecordTemplateInListTemplates()
+        {
+            //TODO:Search
+            //ScenarioContext.Current.Pending();
+        }
+        [Given(@"I add three RecordTemplate")]
+        public void GivenIAddThreeRecordTemplate()
+        {
+            var Template1 = new Template
+            {
+                Name = Constants.RecordTemplate1
+            };
+            var Template2 = new Template
+            {
+                Name = Constants.RecordTemplate2
+            };
+            var Template3 = new Template
+            {
+                Name = Constants.RecordTemplate3
+            };
+            _pageTemplates.AddThreeRecordTemplate(Template1.Name, Template2.Name, Template3.Name);
+        }
     }
 }

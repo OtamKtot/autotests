@@ -1,4 +1,5 @@
-﻿using AutoTests.Pages;
+﻿using AutoTests.Globals;
+using AutoTests.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System;
@@ -27,6 +28,28 @@ namespace AutoTests.Steps
             var nameBuisnessApp = "systemSolution";
             _pageBusinessApp.SelectFromListSystemBusinessApp(nameBuisnessApp);
         }
-
+        [When(@"I add BusinessApp")]
+        public void WhenIAddBusinessApp()
+        {
+            var businessApp = new BusinessApp
+            {
+                Name = Constants.BusinessApp
+            };
+            _pageBusinessApp.AddBusinessApp(businessApp.Name);
+        }
+        [Then(@"I should see BusinessApp is created")]
+        public void ThenIShouldSeeBusinessAppIsCreated()
+        {
+            _pageBusinessApp.AlertIsTrue();
+        }
+        [Given(@"I select Test BusinessApp")]
+        public void GivenISelectTestBusinessApp()
+        {
+            var businessApp = new BusinessApp
+            {
+                Name = Constants.BusinessApp
+            };
+            _pageBusinessApp.NavigateIntoTestBusinessApp(businessApp.Name);
+        }
     }
 }

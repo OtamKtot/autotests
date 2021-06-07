@@ -27,5 +27,9 @@ namespace AutoTests.Pages
             string pageTitle = _driver.Title;
             pageTitle.Should().Be(title);
         }
+        public void NavigateBack()
+        {
+            _driver.Navigate().Back();
+        }
     }
 }
