@@ -40,5 +40,14 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
+        public void CreateTextAttribute(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
     }
 }

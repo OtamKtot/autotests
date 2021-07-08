@@ -1,4 +1,5 @@
-﻿using AutoTests.Pages;
+﻿using AutoTests.Globals;
+using AutoTests.Pages;
 using AutoTests.SeleniumHelpers;
 using OpenQA.Selenium;
 using System;
@@ -25,17 +26,20 @@ namespace AutoTests.Steps
         {
             var attribute = table.CreateInstance<Attribute>();
             _pageAttribute.CreateAttribute(attribute.Name,attribute.Alias);
-            //SeleniumHelper.waitUntilElementInvisibile(_pageAttribute.Loader, 5000);
-            //SeleniumHelper.waitUntilElementVisibile(_pageAttribute.Add , 2000);
-            //_pageAttribute.Add.Click();
-            //_pageAttribute.Name.SendKeys("Name");
-            //_pageAttribute.Alias.SendKeys("Alias");
-            //_pageAttribute.Save.Click();
         }
         [Then(@"I should see (.*) attribute in list attributes")]
         public void ThenIShouldSeeNameAttributeInListAttributes(string nameAttribute)
         {
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, nameAttribute);
+        }
+        [When(@"I create attribute Text type")]
+        public void WhenICreateAttributeTextType()
+        {
+            var attribute = new Attribute
+            {
+                Name = Constants.BusinessApp
+            };
+            _pageAttribute.CreateTextAttribute(attribute.Name);
         }
 
     }
