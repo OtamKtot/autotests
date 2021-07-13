@@ -48,7 +48,7 @@ namespace AutoTests.Pages
 
             selenium.SendKeys(By.XPath(TextFieldOnGroupXpath),"TestName");
             selenium.SendKeys(By.XPath("(" + TextFieldOnGroupXpath + ")[2]"), "TestName");
-            selenium.Click(By.XPath(AddRecordToCollectionXpath));
+            selenium.Click(By.XPath("("+AddRecordToCollectionXpath+")[5]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(FirstElementFromListXpath));
             selenium.Click(By.XPath(ButtonOnToolbarXpath));

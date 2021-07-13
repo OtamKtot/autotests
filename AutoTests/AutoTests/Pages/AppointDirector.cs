@@ -53,7 +53,7 @@ namespace AutoTests.Pages
         }
         public void AddRukovoditelInCollection()
         {
-            selenium.Click(By.XPath(AddNewRecordOnCollectionXpath));
+            selenium.Click(By.XPath("("+AddNewRecordOnCollectionXpath+")[3]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
 
             selenium.Click(By.XPath("" + CollectionFieldXpath + "[3]"));

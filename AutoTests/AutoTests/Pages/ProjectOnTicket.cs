@@ -69,7 +69,7 @@ namespace AutoTests.Pages
         public void AddRecordInCollection()
         {
             string code = "11";
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[3]"));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[6]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + "[2])[2]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[7]"), code);

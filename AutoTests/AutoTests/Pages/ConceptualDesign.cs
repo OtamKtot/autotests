@@ -260,7 +260,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath("(" + CreateTittleXpath + ")[3]"));
             Thread.Sleep(5000);
             selenium.Click(By.XPath("(" + CheckBoxCollectionXpath + ")[2]"));
-            selenium.Click(By.XPath(AddNewRecordOnCollectionXpath));
+            selenium.Click(By.XPath("("+AddNewRecordOnCollectionXpath+")[2]"));
             Thread.Sleep(5000);
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[22]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[7]"), "TestName");
