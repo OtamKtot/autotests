@@ -975,17 +975,6 @@
           "buildMultiTargeting/Microsoft.NET.Test.Sdk.props": {}
         }
       },
-      "Microsoft.TestApi/0.6.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/TestApiCore.dll": {},
-          "lib/net40/TestApiWpf.dll": {}
-        },
-        "runtime": {
-          "lib/net40/TestApiCore.dll": {},
-          "lib/net40/TestApiWpf.dll": {}
-        }
-      },
       "MongoDB.Bson/2.10.0": {
         "type": "package",
         "compile": {
@@ -3095,23 +3084,6 @@
         "buildMultiTargeting/Microsoft.NET.Test.Sdk.props",
         "microsoft.net.test.sdk.16.7.1.nupkg.sha512",
         "microsoft.net.test.sdk.nuspec"
-      ]
-    },
-    "Microsoft.TestApi/0.6.0": {
-      "sha512": "bvbJVGx0dg7tJ7/W6kdvI6T4qgk19zU3Jo7o9/1Ha3hYbpuG7ErTQAtlas1CipX/C539YXoWCgrUbbJcokI6YA==",
-      "type": "package",
-      "path": "microsoft.testapi/0.6.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40/TestApiCore.dll",
-        "lib/net40/TestApiCore.pdb",
-        "lib/net40/TestApiCore.xml",
-        "lib/net40/TestApiWpf.dll",
-        "lib/net40/TestApiWpf.pdb",
-        "lib/net40/TestApiWpf.xml",
-        "microsoft.testapi.0.6.0.nupkg.sha512",
-        "microsoft.testapi.nuspec"
       ]
     },
     "MongoDB.Bson/2.10.0": {
@@ -6642,7 +6614,6 @@
       "ExtentReports >= 4.1.0",
       "FluentAssertions >= 5.10.3",
       "Microsoft.NET.Test.Sdk >= 16.7.1",
-      "Microsoft.TestApi >= 0.6.0",
       "NUnit >= 3.12.0",
       "NUnit.ConsoleRunner >= 3.11.1",
       "NUnit3TestAdapter >= 3.17.0",
@@ -6713,10 +6684,6 @@
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.7.1, )"
-          },
-          "Microsoft.TestApi": {
-            "target": "Package",
-            "version": "[0.6.0, )"
           },
           "NUnit": {
             "target": "Package",

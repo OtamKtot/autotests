@@ -644,8 +644,6 @@ C:\AutoTests\develop36\AutoTests\AutoTests\bin\Debug\net472\Microsoft.Extensions
 C:\AutoTests\develop36\AutoTests\AutoTests\bin\Debug\net472\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\AutoTests\develop36\AutoTests\AutoTests\bin\Debug\net472\Microsoft.Extensions.Primitives.dll
 C:\AutoTests\develop36\AutoTests\AutoTests\bin\Debug\net472\Microsoft.Net.Http.Headers.dll
-C:\AutoTests\develop36\AutoTests\AutoTests\bin\Debug\net472\TestApiCore.dll
-C:\AutoTests\develop36\AutoTests\AutoTests\bin\Debug\net472\TestApiWpf.dll
 C:\AutoTests\develop36\AutoTests\AutoTests\bin\Debug\net472\MongoDB.Bson.dll
 C:\AutoTests\develop36\AutoTests\AutoTests\bin\Debug\net472\MongoDB.Driver.dll
 C:\AutoTests\develop36\AutoTests\AutoTests\bin\Debug\net472\MongoDB.Driver.Core.dll

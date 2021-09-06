@@ -20,11 +20,8 @@ namespace AutoTests.Pages
         private readonly string MakeTechnicalRequirementXpath = ConfigurationHelper.Get<string>("MakeTechnicalRequirementXpath");
         private readonly string TextFieldOnGroupXpath = ConfigurationHelper.Get<string>("TextFieldOnGroupXpath");
         private readonly string AddRecordToCollectionXpath = ConfigurationHelper.Get<string>("AddRecordToCollectionXpath");
-        private readonly string FirstListCheckBoxXpath = ConfigurationHelper.Get<string>("FirstListCheckBoxXpath");
+        private readonly string FirstElementFromListXpath = ConfigurationHelper.Get<string>("FirstElementFromListXpath");
         private readonly string ButtonOnToolbarXpath = ConfigurationHelper.Get<string>("ButtonOnToolbarXpath");
-        private readonly string DropDownXpath = ConfigurationHelper.Get<string>("DropDownXpath"); 
-        private readonly string ButtonOnStartFormXpath = ConfigurationHelper.Get<string>("ButtonOnStartFormXpath");
-        private readonly string PopupHeaderXpath = ConfigurationHelper.Get<string>("PopupHeaderXpath"); 
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath"); 
         private readonly string LoaderVisibleXpath = ConfigurationHelper.Get<string>("LoaderVisibleXpath");
         public TechnicalRequirements(IWebDriver driver) : base(driver)
@@ -32,6 +29,14 @@ namespace AutoTests.Pages
             _driver = driver;
             selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
+        public IWebElement MakeTechnicalRequirement { get { return _driver.FindElement(By.XPath("" + MakeTechnicalRequirementXpath + "")); } }
+        public IWebElement Goal { get { return _driver.FindElement(By.XPath("" + TextFieldOnGroupXpath + "")); } }
+        public IWebElement Effect { get { return _driver.FindElement(By.XPath("(" + TextFieldOnGroupXpath + ")[2]")); } }
+        public IWebElement AddRecordToCollection { get { return _driver.FindElement(By.XPath("" + AddRecordToCollectionXpath + "")); } }
+        public IWebElement FirstElementList { get { return _driver.FindElement(By.XPath("" + FirstElementFromListXpath + "")); } }
+        public IWebElement CompleteTaskButton { get { return _driver.FindElement(By.XPath("" + ButtonOnToolbarXpath + "")); } }
+        public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }        
+        public IWebElement LoaderVisible { get { return _driver.FindElement(By.XPath("" + LoaderVisibleXpath + "")); } }
         public void CompleteTask()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
@@ -45,12 +50,7 @@ namespace AutoTests.Pages
             selenium.SendKeys(By.XPath("(" + TextFieldOnGroupXpath + ")[2]"), "TestName");
             selenium.Click(By.XPath("("+AddRecordToCollectionXpath+")[5]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.Click(By.XPath("("+DropDownXpath+")[2]"));
-            selenium.Click(By.XPath(FirstListCheckBoxXpath));
-            Thread.Sleep(1000);
-            selenium.Click(By.XPath(PopupHeaderXpath));
-            Thread.Sleep(1000);
-            selenium.Click(By.XPath("(" + ButtonOnStartFormXpath + ")[2]"));
+            selenium.Click(By.XPath(FirstElementFromListXpath));
             selenium.Click(By.XPath(ButtonOnToolbarXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
