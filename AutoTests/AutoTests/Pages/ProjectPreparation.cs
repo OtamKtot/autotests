@@ -95,7 +95,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath("(" + RadioButtonXpath + ")[3]"));
             selenium.Click(By.XPath(CreatePhaseXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.Click(By.XPath(CreatePopUpXpath));
+            selenium.Click(By.XPath("("+CreatePhaseXpath+")[2]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void AddDocumentOnFormCollection()
