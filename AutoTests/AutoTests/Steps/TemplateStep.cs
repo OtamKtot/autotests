@@ -55,19 +55,16 @@ namespace AutoTests.Steps
                 }
             }
         }
-        [Given(@"I navigate into (.*) RecordTemplate")]
-        public void GivenINavigateIntoRecordTemplate(string nameTemplate)
+        [Given(@"I select Test Record Template")]
+        public void GivenISelectTemplate()
         {
-            //SeleniumHelper.waitUntilElementInvisibile(_pageTemplates.Loader, 10000);
-            foreach (var element in _pageTemplates.Templates)
+            var RecordTemplate = new Template
             {
-                if (element.Text == nameTemplate)
-                {
-                    act.DoubleClick(element).Perform();
-                    break;
-                }
-            }
+                Name = Constants.RecordTemplate1
+            };
+            _pageTemplates.NavigateIntoNameTemplate(RecordTemplate.Name);
         }
+
         [Given(@"I navigate into Attribute")]
         public void ThenINavigateIntoAttribute()
         {

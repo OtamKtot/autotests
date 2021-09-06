@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AutotestRepository\\AutoTests\\AutoTests\\AutoTests.csproj": {}
+    "C:\\Users\\asvet\\Documents\\autotests\\AutoTests\\AutoTests\\AutoTests.csproj": {}
   },
   "projects": {
-    "D:\\AutotestRepository\\AutoTests\\AutoTests\\AutoTests.csproj": {
+    "C:\\Users\\asvet\\Documents\\autotests\\AutoTests\\AutoTests\\AutoTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AutotestRepository\\AutoTests\\AutoTests\\AutoTests.csproj",
+        "projectUniqueName": "C:\\Users\\asvet\\Documents\\autotests\\AutoTests\\AutoTests\\AutoTests.csproj",
         "projectName": "AutoTests",
-        "projectPath": "D:\\AutotestRepository\\AutoTests\\AutoTests\\AutoTests.csproj",
-        "packagesPath": "C:\\Users\\antip\\.nuget\\packages\\",
-        "outputPath": "D:\\AutotestRepository\\AutoTests\\AutoTests\\obj\\",
+        "projectPath": "C:\\Users\\asvet\\Documents\\autotests\\AutoTests\\AutoTests\\AutoTests.csproj",
+        "packagesPath": "C:\\Users\\asvet\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\asvet\\Documents\\autotests\\AutoTests\\AutoTests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\antip\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\asvet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net472"
@@ -93,7 +99,7 @@
               "version": "[4.3.0, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

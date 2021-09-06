@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace AutoTests.Pages
 {
@@ -46,6 +47,12 @@ namespace AutoTests.Pages
         {
             selenium.DoubleClick(By.XPath(ColumnsOfListXpath));
         }
+        public void NavigateIntoNameTemplate(string name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.DoubleClick(By.XPath(selenium.SearchByTittle(ColumnsOfListXpath, name)));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
         public void AddRecordTemplate(string Name, string Alias)
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
@@ -78,6 +85,7 @@ namespace AutoTests.Pages
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(AddXpath));
+            Thread.Sleep(200);
             selenium.SendKeys(By.XPath(TextFieldXpath), Name1);
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));

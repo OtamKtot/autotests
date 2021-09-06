@@ -27,7 +27,7 @@ namespace AutoTests.Steps
             var attribute = table.CreateInstance<Attribute>();
             _pageAttribute.CreateAttribute(attribute.Name,attribute.Alias);
         }
-        [Then(@"I should see (.*) attribute in list attributes")]
+        [Then(@"I should see Text attribute in list attributes")]
         public void ThenIShouldSeeNameAttributeInListAttributes(string nameAttribute)
         {
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, nameAttribute);
