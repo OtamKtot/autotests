@@ -17,7 +17,7 @@ Scenario Outline: Add Record
 	Examples: 
     | TestName       | TestAlias |
     | Name1          | Alias1    |
-    | TestName1      | TestAlias1    |
+    | TestName1      | TestAlias1|
 
 		@mytag
 Scenario Outline: Add Text Attribute
@@ -26,7 +26,7 @@ Scenario Outline: Add Text Attribute
 	Given I select BusinessApp
 	Given I select Test BusinessApp
 	Given I select Template
-	Given I navigate into <TestName> RecordTemplate
+	Given I select Test Record Template
 	Given I navigate into Attribute
 	When I create attribute Text type
-	Then I should see <TestName> attribute in list attributes
+	Then I should see Text attribute in list attributes
