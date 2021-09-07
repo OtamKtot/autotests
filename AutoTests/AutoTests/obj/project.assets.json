@@ -6655,28 +6655,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\asvet\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\aantipov\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\asvet\\Documents\\autotests\\AutoTests\\AutoTests\\AutoTests.csproj",
+      "projectUniqueName": "C:\\AutoTests\\develop36\\AutoTests\\AutoTests\\AutoTests.csproj",
       "projectName": "AutoTests",
-      "projectPath": "C:\\Users\\asvet\\Documents\\autotests\\AutoTests\\AutoTests\\AutoTests.csproj",
-      "packagesPath": "C:\\Users\\asvet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asvet\\Documents\\autotests\\AutoTests\\AutoTests\\obj\\",
+      "projectPath": "C:\\AutoTests\\develop36\\AutoTests\\AutoTests\\AutoTests.csproj",
+      "packagesPath": "C:\\Users\\aantipov\\.nuget\\packages\\",
+      "outputPath": "C:\\AutoTests\\develop36\\AutoTests\\AutoTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\asvet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\aantipov\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "net472"
@@ -6687,7 +6686,6 @@
       },
       "frameworks": {
         "net472": {
-          "targetAlias": "net472",
           "projectReferences": {}
         }
       },
@@ -6699,7 +6697,6 @@
     },
     "frameworks": {
       "net472": {
-        "targetAlias": "net472",
         "dependencies": {
           "DotNetSeleniumExtras.WaitHelpers": {
             "target": "Package",
@@ -6757,8 +6754,7 @@
             "target": "Package",
             "version": "[4.3.0, )"
           }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
       }
     }
   }
