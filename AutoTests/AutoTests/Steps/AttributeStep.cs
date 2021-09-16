@@ -28,16 +28,16 @@ namespace AutoTests.Steps
             _pageAttribute.CreateAttribute(attribute.Name,attribute.Alias);
         }
         [Then(@"I should see Text attribute in list attributes")]
-        public void ThenIShouldSeeNameAttributeInListAttributes(string nameAttribute)
+        public void ThenIShouldSeeNameAttributeInListAttributes()
         {
-            SeleniumHelper.HasElementInList(_pageAttribute.Attributes, nameAttribute);
+            SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.TextAttribute1);
         }
         [When(@"I create attribute Text type")]
         public void WhenICreateAttributeTextType()
         {
             var attribute = new Attribute
             {
-                Name = Constants.BusinessApp
+                Name = Constants.TextAttribute1
             };
             _pageAttribute.CreateTextAttribute(attribute.Name);
         }
