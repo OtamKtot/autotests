@@ -19,6 +19,9 @@ namespace AutoTests.Pages
         private readonly string ButtonOnStartFormXpath = ConfigurationHelper.Get<string>("ButtonOnStartFormXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
         private readonly string ColumnsOfListXpath = ConfigurationHelper.Get<string>("ColumnsOfListXpath");
+        private readonly string ListTypeAttributeXpath = ConfigurationHelper.Get<string>("ListTypeAttributeXpath");
+        private readonly string ListDataXpath = ConfigurationHelper.Get<string>("ListDataXpath");
+
         public AttributePage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -36,7 +39,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(AddXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.SendKeys(By.XPath(TextFieldXpath), Name);
-            selenium.SendKeys(By.XPath("("+TextFieldXpath+")[2]"), Alias);
+            selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[2]"), Alias);
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
@@ -49,5 +52,16 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
-    }
+        public void CreateDateAndTimeAttribute(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ListTypeAttributeXpath));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Дата / Время")));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+    } 
 }

@@ -202,6 +202,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I create attribute Text type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 32
+ testRunner.When("I create attribute Date and time type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 33
  testRunner.Then("I should see Text attribute in list attributes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
