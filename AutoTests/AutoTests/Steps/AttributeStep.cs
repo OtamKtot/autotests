@@ -25,7 +25,7 @@ namespace AutoTests.Steps
         public void ThenICreateAttribute(Table table)
         {
             var attribute = table.CreateInstance<Attribute>();
-            _pageAttribute.CreateAttribute(attribute.Name,attribute.Alias);
+            _pageAttribute.CreateAttribute(attribute.Name, attribute.Alias);
         }
         [Then(@"I should see Text attribute in list attributes")]
         public void ThenIShouldSeeNameAttributeInListAttributes()
@@ -41,6 +41,14 @@ namespace AutoTests.Steps
             };
             _pageAttribute.CreateTextAttribute(attribute.Name);
         }
-
+        [When(@"I create attribute Date and time type")]
+        public void WhenICreateDateAndTimeAttribute()
+        {
+            var attribute = new Attribute
+            {
+                Name = Constants.DateAndTimeAttribute1
+            };
+            _pageAttribute.CreateDateAndTimeAttribute(attribute.Name);
+        }
     }
 }

@@ -99,8 +99,8 @@ namespace AutoTests.Steps
         {
             var account = new Account
             {
-                Username = "Admin",
-                Password = "admin123"
+                Username = "admin",
+                Password = "C0m1ndw4r3Pl@tf0rm"
             };
             _pageLogin.Navigate(baseUrl);
             _pageLogin.Login(account);

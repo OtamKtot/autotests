@@ -29,4 +29,5 @@ Scenario Outline: Add Text Attribute
 	Given I select Test Record Template
 	Given I navigate into Attribute
 	When I create attribute Text type
+	When I create attribute Date and time type
 	Then I should see Text attribute in list attributes
