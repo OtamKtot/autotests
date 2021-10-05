@@ -52,6 +52,17 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
+        public void CreateNumberAttribute(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ListTypeAttributeXpath));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Число")));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
         public void CreateDateAndTimeAttribute(string Name)
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
@@ -63,5 +74,51 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
+        public void CreateDurationAttribute(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ListTypeAttributeXpath));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Длительность")));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CreateLogicAttribute(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ListTypeAttributeXpath));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Логический")));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CreateUserAttribute(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ListTypeAttributeXpath));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Пользователь")));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CreateDocumentAttribute(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ListTypeAttributeXpath));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Документ")));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+
+
     } 
 }
