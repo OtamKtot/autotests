@@ -29,10 +29,11 @@ namespace AutoTests.Pages
             selenium.Click(By.Id("LoginButton"));
             selenium.Click(By.XPath("//*[@class='configure__skip-button']"));
             selenium.Click(By.XPath("//*[@class='configure__submit']"));
-            selenium.SendKeys(By.Id("Uri"), "http://autoqa:9200/");
-            selenium.Click(By.XPath("//*[@class='configure__submit configure__submit_elastic']"));
-            selenium.Click(By.XPath("(//*[@class='configure__submit configure__submit_elastic-btn'])[2]"));
-            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            //To upgrade 3.5 to 3.6
+            //selenium.SendKeys(By.Id("Uri"), "http://autoqa:9200/");
+            //selenium.Click(By.XPath("//*[@class='configure__submit configure__submit_elastic']"));
+            //selenium.Click(By.XPath("(//*[@class='configure__submit configure__submit_elastic-btn'])[2]"));
+            //selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void ILoginInSystem()
         {

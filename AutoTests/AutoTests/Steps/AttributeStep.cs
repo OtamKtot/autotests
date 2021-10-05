@@ -32,14 +32,59 @@ namespace AutoTests.Steps
         {
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.TextAttribute1);
         }
+        [When(@"I create attribute Document type")]
+        public void WhenICreateAttributeDocumentType()
+        {
+            var attribure = new Attribute
+            {
+                Name = Constants.DocumentAttribute1
+            };
+            _pageAttribute.CreateDocumentAttribute(attribure.Name);
+        }
+        [When(@"I create attribute User type")]
+        public void WhenICreateAttributeUserType()
+        {
+            var attribute = new Attribute
+            {
+                Name = Constants.UserAttribute1
+            };
+            _pageAttribute.CreateUserAttribute(attribute.Name);
+        }
+        [When(@"I create attribute Duration type")]
+        public void WhenICreateAttributeDurationType()
+        {
+            var attrbute = new Attribute
+            {
+                Name = Constants.DurationAttribute1
+            };
+            _pageAttribute.CreateDurationAttribute(attrbute.Name);
+        }
+        [When(@"I create attribute Logic type")]
+        public void WhenICreateAttributeLogicType()
+        {
+            var attribute = new Attribute
+            {
+                Name = Constants.LogicAttribute1
+            };
+            _pageAttribute.CreateLogicAttribute(attribute.Name);
+        }
         [When(@"I create attribute Text type")]
-        public void WhenICreateAttributeTextType()
+    public void WhenICreateAttributeTextType()
         {
             var attribute = new Attribute
             {
                 Name = Constants.TextAttribute1
             };
             _pageAttribute.CreateTextAttribute(attribute.Name);
+        }
+        [When(@"I create attribute Number type")]
+        public void WhenICreateNumberAttribute()
+        {
+            var attribute = new Attribute
+            {
+                Name = Constants.NumberAttribute1
+            };
+            _pageAttribute.CreateNumberAttribute(attribute.Name);
         }
         [When(@"I create attribute Date and time type")]
         public void WhenICreateDateAndTimeAttribute()
