@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Diagnostics;
+using System.Drawing;
 using AutoTests.Utilies;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -54,6 +55,7 @@ namespace AutoTests.SeleniumHelpers
                     throw new ArgumentOutOfRangeException();
             }
 
+            //driver.Manage().Window.Size = new Size(1920, 1080);
             driver.Manage().Window.Maximize();
             var timeouts = driver.Manage().Timeouts();
 
