@@ -217,20 +217,12 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("Add All Type Attributes in Form")]
         [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("Name1", "Alias1", null)]
-        public virtual void AddAllTypeAttributesInForm(string testName, string testAlias, string[] exampleTags)
+        public virtual void AddAllTypeAttributesInForm()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "ignore",
                     "mytag"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("TestName", testName);
-            argumentsOfScenario.Add("TestAlias", testAlias);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add All Type Attributes in Form", null, tagsOfScenario, argumentsOfScenario);
 #line 41
 this.ScenarioInitialize(scenarioInfo);
@@ -268,7 +260,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I select Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 47
- testRunner.Given(string.Format("I navigate into {0} RecordTemplate", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I select Test Record Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 48
  testRunner.Given("I navigate into Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
