@@ -33,7 +33,7 @@ namespace AutoTests.Steps
         [When(@"I drag and drop Attribute into Form")]
         public void WhenIDragAndDropAttributeIntoForm()
         {
-            _pageForm.NavigateIntoFirstForm();
+           // _pageForm.NavigateIntoFirstForm();
             _pageForm.DragAndDropFirstAttribute();
         }
         [When(@"I drag and drop (.*) Attribute (.*) into Form")]
@@ -52,11 +52,12 @@ namespace AutoTests.Steps
         {
             _pageForm.DragAndDropAttribute(Constants.TextAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.DateAndTimeAttribute1, "");
-            _pageForm.DragAndDropAttribute(Constants.UserAttribute1, "");
+            //_pageForm.DragAndDropAttribute(Constants.UserAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.NumberAttribute1, "");
-            _pageForm.DragAndDropAttribute(Constants.UserAttribute1, "");
+            _pageForm.DragAndDropAttribute(Constants.DurationAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.DocumentAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.LogicAttribute1, "");
+            _pageForm.DragAndDropAttribute(Constants.ImageAttribute1, "");
         }
         [Then(@"I should see attributes in Form")]
         public void ThenIShouldSeeAttributesInForm()

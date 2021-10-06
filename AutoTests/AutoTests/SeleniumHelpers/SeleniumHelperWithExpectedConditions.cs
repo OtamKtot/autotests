@@ -174,7 +174,8 @@ namespace AutoTests.SeleniumHelpers
         }
         public void DragAndDrop(By by)
         {
-            string cssSelector = ".js-context-items-region>.js-context-ld-list-item";
+            Thread.Sleep(1000);
+            string cssSelector = ".js-context-ld-list-item.ld-list-item-block";
             //String xpath = css2xpath.Transform(cssSelector);
             try
             {
