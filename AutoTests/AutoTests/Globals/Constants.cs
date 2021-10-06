@@ -23,6 +23,8 @@ namespace AutoTests.Globals
         public const string LinkAttribute1 = @"LinkAttribute1";
         public const string CollectionAttribute1 = @"CollectionAttribute1";
         public const string Operation1 = @"Operation1";
+        public const string ImageAttribute1 = @"ImageAttribute1";
+        public const string URIAttribute1 = @"URIAttribute1";
 
 
         public const int DEFAULT_TIMEOUT = 10;

@@ -1,4 +1,5 @@
-﻿using AutoTests.Pages;
+﻿using AutoTests.Globals;
+using AutoTests.Pages;
 using AutoTests.SeleniumHelpers;
 using FluentAssertions;
 using OpenQA.Selenium;
@@ -49,7 +50,13 @@ namespace AutoTests.Steps
         [When(@"I drag and drop Attributes into Form")]
         public void WhenIDragAndDropAttributesIntoForm()
         {
-            _pageForm.DragAndDropAttribute(name, "");
+            _pageForm.DragAndDropAttribute(Constants.TextAttribute1, "");
+            _pageForm.DragAndDropAttribute(Constants.DateAndTimeAttribute1, "");
+            _pageForm.DragAndDropAttribute(Constants.UserAttribute1, "");
+            _pageForm.DragAndDropAttribute(Constants.NumberAttribute1, "");
+            _pageForm.DragAndDropAttribute(Constants.UserAttribute1, "");
+            _pageForm.DragAndDropAttribute(Constants.DocumentAttribute1, "");
+            _pageForm.DragAndDropAttribute(Constants.LogicAttribute1, "");
         }
         [Then(@"I should see attributes in Form")]
         public void ThenIShouldSeeAttributesInForm()

@@ -32,6 +32,15 @@ namespace AutoTests.Steps
         {
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.TextAttribute1);
         }
+        [When(@"I create attribute Image type")]
+        public void WhenICreateAttributeImageType()
+        {
+            var attribute = new Attribute
+            {
+                Name = Constants.ImageAttribute1
+            };
+            _pageAttribute.CreateImageAttribute(attribute.Name);
+        }
         [When(@"I create attribute Document type")]
         public void WhenICreateAttributeDocumentType()
         {

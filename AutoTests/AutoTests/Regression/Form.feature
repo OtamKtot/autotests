@@ -36,20 +36,17 @@ Scenario Outline: Add Attribute in Form
     | Name1          | Alias1    |
     | TestName1      | TestAlias1    |
 
-		@ignore
+		#@ignore
 		@mytag
 Scenario Outline: Add All Type Attributes in Form
 	Given I navigate to application and login as Admin
 	Given I navigate to global configuration
 	Given I select BusinessApp
-	Given I select system BusinessApp
+	Given I select Test BusinessApp
 	Given I select Template
-	Given I navigate into <TestName> RecordTemplate
+	Given I select Test Record Template
 	Given I navigate into Form
 	Given I create all type attributes
 	#When I drag and drop Attribute into Form
 	When I drag and drop Attributes into Form
 	Then I should see attributes in Form
-		Examples: 
-    | TestName       | TestAlias |
-    | Name1          | Alias1    |

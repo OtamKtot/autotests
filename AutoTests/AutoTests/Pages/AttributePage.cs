@@ -118,6 +118,17 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
+        public void CreateImageAttribute(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ListTypeAttributeXpath));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Изображение")));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
 
 
     } 
