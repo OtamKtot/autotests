@@ -36,13 +36,13 @@ Scenario Outline: Add Attribute in Form
     | Name1          | Alias1    |
     | TestName1      | TestAlias1    |
 
-		@ignore
+		#@ignore
 		@mytag
 Scenario Outline: Add All Type Attributes in Form
 	Given I navigate to application and login as Admin
 	Given I navigate to global configuration
 	Given I select BusinessApp
-	Given I select system BusinessApp
+	Given I select Test BusinessApp
 	Given I select Template
 	Given I select Test Record Template
 	Given I navigate into Form
