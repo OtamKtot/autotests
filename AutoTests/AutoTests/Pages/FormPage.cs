@@ -47,7 +47,11 @@ namespace AutoTests.Pages
         public void DragAndDropAttribute(string Name, string Alias)
         {
             selenium.DragAndDrop(SearchByTittle(Name, Alias));
+        }
+        public void SaveButton()
+        {
             selenium.Click(By.XPath(SaveButtonXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void DragAndDropFirstAttribute()
         {

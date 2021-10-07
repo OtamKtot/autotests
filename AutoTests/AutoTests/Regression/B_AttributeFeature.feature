@@ -30,7 +30,7 @@ Scenario Outline: Add Text Attribute
 	Given I navigate into Attribute
 	When I create attribute Image type
 	When I create attribute Document type
-	When I create attribute User type
+	#When I create attribute User type
 	When I create attribute Duration type
 	When I create attribute Logic type
 	When I create attribute Text type
