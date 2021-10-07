@@ -96,13 +96,14 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(CreatePhaseXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("("+CreatePhaseXpath+")[2]"));
+            Thread.Sleep(2000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void AddDocumentOnFormCollection()
         {
             selenium.Click(By.XPath("(" + DocumentsTabXpath + ")[2]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[5]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + DropDownXpath + ")[5]"));
             selenium.Click(By.XPath(FirstElementFromListXpath));
