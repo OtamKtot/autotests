@@ -59,6 +59,11 @@ namespace AutoTests.Steps
             _pageForm.DragAndDropAttribute(Constants.LogicAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.ImageAttribute1, "");
         }
+        [When(@"I save form")]
+        public void SaveButton()
+        {
+            _pageForm.SaveButton();
+        }
         [Then(@"I should see attributes in Form")]
         public void ThenIShouldSeeAttributesInForm()
         {

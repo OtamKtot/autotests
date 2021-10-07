@@ -47,6 +47,7 @@ Scenario Outline: Add All Type Attributes in Form
 	Given I select Test Record Template
 	Given I navigate into Form
 	#Given I create all type attributes
-	When I drag and drop Attribute into Form
+	#When I drag and drop Attribute into Form
 	When I drag and drop Attributes into Form
+	When I save form
 	Then I should see attributes in Form
