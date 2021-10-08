@@ -32,6 +32,24 @@ namespace AutoTests.Steps
         {
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.TextAttribute1);
         }
+        [When(@"I create attribute Link type")]
+        public void WhenICreateAttributeLinkType()
+        {
+            var attribute = new Attribute
+            {
+                Name = Constants.LinkAttribute1
+            };
+            _pageAttribute.CreateLinkAttribute(attribute.Name);
+        }
+        [When(@"I create attribute URI type")]
+        public void WhenICreateURIAttributeURIType()
+        {
+            var attribute = new Attribute
+            {
+                Name = Constants.URIAttribute1
+            };
+            _pageAttribute.CreateURIAttribute(attribute.Name);
+        }
         [When(@"I create attribute Image type")]
         public void WhenICreateAttributeImageType()
         {

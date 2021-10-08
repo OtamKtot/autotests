@@ -28,6 +28,8 @@ Scenario Outline: Add Text Attribute
 	Given I select Template
 	Given I select Test Record Template
 	Given I navigate into Attribute
+	When I create attribute Link type
+	When I create attribute URI type
 	When I create attribute Image type
 	When I create attribute Document type
 	#When I create attribute User type

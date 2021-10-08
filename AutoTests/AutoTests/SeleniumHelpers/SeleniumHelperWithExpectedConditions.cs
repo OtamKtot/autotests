@@ -23,6 +23,23 @@ namespace AutoTests.SeleniumHelpers
             //act = new Actions(_driver);
             //act2 = new Actions(_driver);
         }
+        public void SendKeysWithoutClear(By by, string valueToType)
+        {
+            try
+            {
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                _driver.FindElement(by).SendKeys(valueToType);
+            }
+            catch (StaleElementReferenceException)
+            {
+                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                _driver.FindElement(by).SendKeys(valueToType);
+            }
+            catch (Exception ex) when (ex is NoSuchElementException || ex is WebDriverTimeoutException)
+            {
+                Assert.Fail($"Exception occurred in SeleniumHelper.SendKeys(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+            }
+        }
         public void SendKeys(By by, string valueToType)
         {
             try
@@ -287,6 +304,29 @@ namespace AutoTests.SeleniumHelpers
             {
                 Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             }
+        }
+        public void ScrollTo(int xPosition = 0, int yPosition = 0)
+        {
+            var js = String.Format("window.scrollTo({0}, {1})", xPosition, yPosition);
+            IJavaScriptExecutor ex = (IJavaScriptExecutor)_driver;
+            ex.ExecuteScript(js);
+        }
+
+        //public IWebElement ScrollToView(string Xpath)
+        //{
+         //   webElement = _driver.FindElement(By.XPath(Xpath));
+         //   ScrollToView(element);
+         //   return element;
+       // }
+
+        public void ScrollToView(string Xpath)
+        {
+            webElement = _driver.FindElement(By.XPath(Xpath));
+            if (webElement.Location.Y > 200)
+            {
+                ScrollTo(0, webElement.Location.Y - 100); // Make sure element is in the view but below the top navigation pane
+            }
+
         }
     }
 }
