@@ -204,6 +204,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 32
  testRunner.When("I create attribute URI type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 33
+ testRunner.When("I create attribute Image type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 34
  testRunner.When("I create attribute Document type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

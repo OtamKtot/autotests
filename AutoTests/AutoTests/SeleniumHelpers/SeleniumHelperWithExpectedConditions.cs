@@ -249,8 +249,21 @@ namespace AutoTests.SeleniumHelpers
             {
                 string NameAlias = Name + "\r\n" + Name + Alias;
                 cssSelector = cssSelector + ":nth-child(" + i + ")";
-                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
-                webElement = _driver.FindElement(By.CssSelector(cssSelector));
+                try
+                {
+                    new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
+                    webElement = _driver.FindElement(By.CssSelector(cssSelector));
+                }
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(2000);
+                    new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
+                    webElement = _driver.FindElement(By.CssSelector(cssSelector));
+                }
+                catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
+                {
+                    Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {webElement.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+                }
                 var a = webElement.GetAttribute("title");
                 if (webElement.Text == NameAlias)
                 {
@@ -272,12 +285,45 @@ namespace AutoTests.SeleniumHelpers
                 Xpath = Xpath + ")[" + i + "]";
                 new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
                 webElement = _driver.FindElement(By.XPath(Xpath));
-                var a = webElement.GetAttribute("title");
-                if (webElement.Text == Name)
+                try
                 {
-                    return Xpath;
+                    new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
+                    webElement = _driver.FindElement(By.XPath(Xpath));
                 }
-                Xpath = Xpath.Replace(")[" + i + "]", "");
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(2000);
+                    new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
+                    webElement = _driver.FindElement(By.XPath(Xpath));
+                }
+                catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
+                {
+                    Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {webElement.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+                }
+                var a = webElement.GetAttribute("title");
+                try
+                {
+                    if (webElement.Text == Name)
+                    {
+                        return Xpath;
+                    }
+                    Xpath = Xpath.Replace(")[" + i + "]", "");
+                }
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(2000);
+                    new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
+                    webElement = _driver.FindElement(By.XPath(Xpath));
+                    if (webElement.Text == Name)
+                    {
+                        return Xpath;
+                    }
+                    Xpath = Xpath.Replace(")[" + i + "]", "");
+                }
+                catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
+                {
+                    Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {webElement.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+                }
             }
             Assert.Fail($"Exception occurred in SeleniumHelper.SearchByTittle(): element located by {Name} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             return "false";

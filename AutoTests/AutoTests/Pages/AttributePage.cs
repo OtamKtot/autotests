@@ -152,7 +152,8 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(AddXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(ListTypeAttributeXpath));
-            selenium.ScrollTo()
+            //selenium.ScrollTo()
+            selenium.SendKeysWithoutClear(By.XPath(DropDownXpath), "Ссылка");
             selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Ссылка")));
             selenium.SendKeys(By.XPath(TextFieldXpath), Name);
             selenium.Click(By.XPath("(" + DropDownXpath + ")[5]"));
