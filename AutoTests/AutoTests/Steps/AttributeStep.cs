@@ -32,6 +32,15 @@ namespace AutoTests.Steps
         {
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.TextAttribute1);
         }
+        [When(@"I create attribute Collection type")]
+        public void WhenICreateAttributeCollectionType()
+        {
+            var attribute = new Attribute
+            {
+                Name = Constants.CollectionAttribute1
+            };
+            _pageAttribute.CreateCollectionAttribute(attribute.Name);
+        }
         [When(@"I create attribute Link type")]
         public void WhenICreateAttributeLinkType()
         {

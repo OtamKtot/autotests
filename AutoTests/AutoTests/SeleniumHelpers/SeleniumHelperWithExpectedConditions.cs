@@ -245,7 +245,7 @@ namespace AutoTests.SeleniumHelpers
             new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
             new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
             var count = _driver.FindElements(By.CssSelector(cssSelector)).Count;
-            for (int i=1; i<count; i++)
+            for (int i=1; i<=count; i++)
             {
                 string NameAlias = Name + "\r\n" + Name + Alias;
                 cssSelector = cssSelector + ":nth-child(" + i + ")";
@@ -280,7 +280,7 @@ namespace AutoTests.SeleniumHelpers
             new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
             var count = _driver.FindElements(By.XPath(Xpath)).Count;
             Xpath = "(" + Xpath;
-            for (int i = 1; i < count; i++)
+            for (int i = 1; i <= count; i++)
             {
                 Xpath = Xpath + ")[" + i + "]";
                 new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
