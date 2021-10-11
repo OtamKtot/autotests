@@ -22,7 +22,7 @@ namespace AutoTests.Pages
         private readonly string ListTypeAttributeXpath = ConfigurationHelper.Get<string>("ListTypeAttributeXpath");
         private readonly string ListDataXpath = ConfigurationHelper.Get<string>("ListDataXpath");
         private readonly string DropDownXpath = ConfigurationHelper.Get<string>("DropDownXpath");
-        private readonly string TelegramXpath = ConfigurationHelper.Get<string>("TelegramXpath");
+        private readonly string ListTypeURIXpath = ConfigurationHelper.Get<string>("ListTypeURIXpath");
         private readonly string LinkTemplate = ConfigurationHelper.Get<string>("LinkTemplate");
 
         public AttributePage(IWebDriver driver) : base(driver)
@@ -141,7 +141,9 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Гиперссылка")));
             selenium.SendKeys(By.XPath(TextFieldXpath), Name);
             selenium.Click(By.XPath("(" + DropDownXpath + ")[7]"));
-            selenium.Click(By.XPath(selenium.SearchByTittle(TelegramXpath, "Telegram")));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListTypeURIXpath, "HTTP")));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListTypeURIXpath, "Https")));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListTypeURIXpath, "Git")));
             selenium.Click(By.XPath(TextFieldXpath));
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
@@ -152,12 +154,26 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(AddXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(ListTypeAttributeXpath));
-            //selenium.ScrollTo()
             selenium.SendKeysWithoutClear(By.XPath(DropDownXpath), "Ссылка");
-            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Ссылка")));
+            selenium.Click(By.XPath(selenium.SearchByTittle(LinkTemplate, "Ссылка")));
             selenium.SendKeys(By.XPath(TextFieldXpath), Name);
             selenium.Click(By.XPath("(" + DropDownXpath + ")[5]"));
-            selenium.Click(By.XPath(LinkTemplate));
+            selenium.Click(By.XPath(selenium.SearchByTittle(LinkTemplate, "RecordTemplate2")));
+            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void CreateCollectionAttribute(string Name)
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(AddXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ListTypeAttributeXpath));
+            selenium.SendKeysWithoutClear(By.XPath(DropDownXpath), "К");
+            selenium.Click(By.XPath(selenium.SearchByTittle(LinkTemplate, "Коллекция")));
+            selenium.SendKeys(By.XPath(TextFieldXpath), Name);
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[5]"));
+            selenium.Click(By.XPath(selenium.SearchByTittle(LinkTemplate, "RecordTemplate3")));
+            selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[5]"), "CollLink1");
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
