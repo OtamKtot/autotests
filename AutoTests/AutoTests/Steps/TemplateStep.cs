@@ -105,5 +105,14 @@ namespace AutoTests.Steps
             };
             _pageTemplates.AddThreeRecordTemplate(Template1.Name, Template2.Name, Template3.Name);
         }
+        [Given(@"I select Test Record Template3")]
+        public void GivenISelectTestRecordTemplate3()
+        {
+            var RecordTemplate = new Template
+            {
+                Name = Constants.RecordTemplate3
+            };
+            _pageTemplates.NavigateIntoNameTemplate(RecordTemplate.Name);
+        }
     }
 }

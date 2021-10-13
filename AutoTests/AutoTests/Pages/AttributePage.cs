@@ -143,6 +143,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath("(" + DropDownXpath + ")[7]"));
             selenium.Click(By.XPath(selenium.SearchByTittle(ListTypeURIXpath, "HTTP")));
             selenium.Click(By.XPath(selenium.SearchByTittle(ListTypeURIXpath, "Https")));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListTypeURIXpath, "Telegram")));
             selenium.Click(By.XPath(selenium.SearchByTittle(ListTypeURIXpath, "Git")));
             selenium.Click(By.XPath(TextFieldXpath));
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
