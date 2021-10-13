@@ -27,6 +27,7 @@ namespace AutoTests.Pages
         private readonly string FormTextXpath = ConfigurationHelper.Get<string>("FormTextXpath"); 
         private readonly string AlertBodyXpath = ConfigurationHelper.Get<string>("AlertBodyXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
+        private readonly string FormDesigner = ConfigurationHelper.Get<string>("FormDesigner");
         public TemplatesPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -72,7 +73,7 @@ namespace AutoTests.Pages
         public void NavigateIntoForm()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.Click(By.XPath(FormTextXpath));
+            selenium.Click(By.Id(FormDesigner));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void AlertIsTrue()
