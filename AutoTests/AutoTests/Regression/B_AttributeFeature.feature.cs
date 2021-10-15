@@ -213,9 +213,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line 35
  testRunner.When("I create attribute Document type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 36
- testRunner.When("I create attribute User type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 37
  testRunner.When("I create attribute Duration type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -287,6 +284,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 52
  testRunner.Given("I navigate into Attribute", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 53
+ testRunner.When("I create attribute URI type for collection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 54
+ testRunner.When("I create attribute Image type for collection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 55
+ testRunner.When("I create attribute Document type for collection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 57
  testRunner.When("I create attribute Duration type for collection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

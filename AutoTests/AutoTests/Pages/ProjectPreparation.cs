@@ -30,7 +30,8 @@ namespace AutoTests.Pages
         private readonly string TextFieldXpath = ConfigurationHelper.Get<string>("TextFieldXpath");
         private readonly string AddDocumentXpath = ConfigurationHelper.Get<string>("AddDocumentXpath");
         private readonly string CreatePopUpXpath = ConfigurationHelper.Get<string>("ButtonOnStartFormXpath");
-        private readonly string ButtonCompleteXpath = ConfigurationHelper.Get<string>("ButtonCompleteXpath");
+        private readonly string ButtonCompleteXpath = ConfigurationHelper.Get<string>("ButtonCompleteXpath"); 
+        private readonly string ButtonOnFormCollectionXpath = ConfigurationHelper.Get<string>("ButtonOnFormCollectionXpath");
         private readonly string VerticalLayoutXpath = ConfigurationHelper.Get<string>("VerticalLayoutXpath");
         private readonly string LoaderOnUserFieldOnCollectionXpath = ConfigurationHelper.Get<string>("LoaderOnUserFieldOnCollectionXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath"); 
@@ -101,6 +102,7 @@ namespace AutoTests.Pages
         }
         public void AddDocumentOnFormCollection()
         {
+            Thread.Sleep(5000);
             selenium.Click(By.XPath("(" + DocumentsTabXpath + ")[2]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[5]"));
@@ -114,7 +116,7 @@ namespace AutoTests.Pages
 
             //selenium.SendKeys(By.XPath(AddDocumentXpath), filePath);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.Click(By.XPath(CreatePopUpXpath));
+            selenium.Click(By.XPath(ButtonOnFormCollectionXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             Thread.Sleep(5000);
         }
