@@ -28,12 +28,12 @@ Scenario Outline: Add Text Attribute
 	Given I select Template
 	Given I select Test Record Template
 	Given I navigate into Attribute
-	When I create attribute Collection type
+	#When I create attribute Collection type
 	When I create attribute Link type
 	When I create attribute URI type
 	When I create attribute Image type
 	When I create attribute Document type 
-	#When I create attribute User type
+	When I create attribute User type
 	When I create attribute Duration type
 	When I create attribute Logic type
 	When I create attribute Text type
@@ -53,7 +53,7 @@ Scenario Outline: Add Attribute All Type For Collection
 	When I create attribute URI type for collection
 	When I create attribute Image type for collection
 	When I create attribute Document type for collection
-	#When I create attribute User type for collection
+	When I create attribute User type for collection
 	When I create attribute Duration type for collection
 	When I create attribute Logic type for collection
 	When I create attribute Text type for collection

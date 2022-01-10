@@ -23,7 +23,7 @@ namespace AutoTests.Pages
         private readonly string FirstListCheckBoxXpath = ConfigurationHelper.Get<string>("FirstListCheckBoxXpath");
         private readonly string ButtonOnToolbarXpath = ConfigurationHelper.Get<string>("ButtonOnToolbarXpath");
         private readonly string DropDownXpath = ConfigurationHelper.Get<string>("DropDownXpath"); 
-        private readonly string ButtonOnStartFormXpath = ConfigurationHelper.Get<string>("ButtonOnStartFormXpath");
+        private readonly string ButtonOnAddFormXpath = ConfigurationHelper.Get<string>("ButtonOnAddFormXpath");
         private readonly string PopupHeaderXpath = ConfigurationHelper.Get<string>("PopupHeaderXpath"); 
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath"); 
         private readonly string LoaderVisibleXpath = ConfigurationHelper.Get<string>("LoaderVisibleXpath");
@@ -43,14 +43,14 @@ namespace AutoTests.Pages
 
             selenium.SendKeys(By.XPath(TextFieldOnGroupXpath),"TestName");
             selenium.SendKeys(By.XPath("(" + TextFieldOnGroupXpath + ")[2]"), "TestName");
-            selenium.Click(By.XPath("("+AddRecordToCollectionXpath+")[5]"));
+            selenium.Click(By.XPath("("+AddRecordToCollectionXpath+")[4]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("("+DropDownXpath+")[2]"));
             selenium.Click(By.XPath(FirstListCheckBoxXpath));
             Thread.Sleep(1000);
             selenium.Click(By.XPath(PopupHeaderXpath));
             Thread.Sleep(1000);
-            selenium.Click(By.XPath("(" + ButtonOnStartFormXpath + ")[2]"));
+            selenium.Click(By.XPath("(" + ButtonOnAddFormXpath + ")[2]"));
             selenium.Click(By.XPath(ButtonOnToolbarXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }

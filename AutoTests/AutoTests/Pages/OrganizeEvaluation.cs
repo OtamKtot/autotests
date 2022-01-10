@@ -25,9 +25,6 @@ namespace AutoTests.Pages
             _driver = driver;
             selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
-        public IWebElement MakeOrganizeEvaluation { get { return _driver.FindElement(By.XPath("" + MakeOrganizeEvaluationXpath + "")); } }
-        public IWebElement CompleteTaskButton { get { return _driver.FindElement(By.XPath("" + ButtonOnToolbarXpath + "")); } }
-        public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
         public void CompleteTask()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
