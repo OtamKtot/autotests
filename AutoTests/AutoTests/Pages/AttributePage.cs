@@ -72,7 +72,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(AddXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(ListTypeAttributeXpath));
-            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Дата / Время")));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Дата и время")));
             selenium.SendKeys(By.XPath(TextFieldXpath), Name);
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
@@ -105,7 +105,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(AddXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(ListTypeAttributeXpath));
-            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Пользователь")));
+            selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Аккаунт")));
             selenium.SendKeys(By.XPath(TextFieldXpath), Name);
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
@@ -140,7 +140,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ListTypeAttributeXpath));
             selenium.Click(By.XPath(selenium.SearchByTittle(ListDataXpath, "Гиперссылка")));
             selenium.SendKeys(By.XPath(TextFieldXpath), Name);
-            selenium.Click(By.XPath("(" + DropDownXpath + ")[7]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[9]"));
             selenium.Click(By.XPath(selenium.SearchByTittle(ListTypeURIXpath, "HTTP")));
             selenium.Click(By.XPath(selenium.SearchByTittle(ListTypeURIXpath, "Https")));
             selenium.Click(By.XPath(selenium.SearchByTittle(ListTypeURIXpath, "Telegram")));
@@ -155,10 +155,10 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(AddXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(ListTypeAttributeXpath));
-            selenium.SendKeysWithoutClear(By.XPath(DropDownXpath), "Ссылка");
-            selenium.Click(By.XPath(selenium.SearchByTittle(LinkTemplate, "Ссылка")));
+            selenium.SendKeysWithoutClear(By.XPath(DropDownXpath), "Запись");
+            selenium.Click(By.XPath(selenium.SearchByTittle(LinkTemplate, "Запись")));
             selenium.SendKeys(By.XPath(TextFieldXpath), Name);
-            selenium.Click(By.XPath("(" + DropDownXpath + ")[5]"));
+            selenium.Click(By.XPath("(" + DropDownXpath + ")[7]"));
             selenium.Click(By.XPath(selenium.SearchByTittle(LinkTemplate, "RecordTemplate2")));
             selenium.Click(By.XPath(ButtonOnStartFormXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));

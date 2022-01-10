@@ -192,7 +192,7 @@ namespace AutoTests.SeleniumHelpers
         public void DragAndDrop(By by)
         {
             Thread.Sleep(1000);
-            string cssSelector = ".js-context-ld-list-item.ld-list-item-block";
+            string cssSelector = ".js-elements-region div.js-context-ld-list-item";
             //String xpath = css2xpath.Transform(cssSelector);
             try
             {
@@ -280,11 +280,12 @@ namespace AutoTests.SeleniumHelpers
             new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
             var count = _driver.FindElements(By.XPath(Xpath)).Count;
             Xpath = "(" + Xpath;
+            Thread.Sleep(2000);
             for (int i = 1; i <= count; i++)
             {
                 Xpath = Xpath + ")[" + i + "]";
-                new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
-                webElement = _driver.FindElement(By.XPath(Xpath));
+                //new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
+                //webElement = _driver.FindElement(By.XPath(Xpath));
                 try
                 {
                     new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));
@@ -373,6 +374,21 @@ namespace AutoTests.SeleniumHelpers
                 ScrollTo(0, webElement.Location.Y - 100); // Make sure element is in the view but below the top navigation pane
             }
 
+        }
+        public void PageDown()
+        {
+            try
+            {
+                //new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(by));
+                //act = new Actions(_driver);
+                //webElement = _driver.FindElement(by);
+                //webElement.Click();
+                new Actions(_driver).SendKeys(Keys.PageDown).Perform();
+            }
+            catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
+            {
+                Assert.Fail($"Exception occurred in SeleniumHelper.PageDown(): element located by could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+            }
         }
     }
 }

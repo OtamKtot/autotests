@@ -50,16 +50,17 @@ namespace AutoTests.Steps
         [When(@"I drag and drop Attributes into Form")]
         public void WhenIDragAndDropAttributesIntoForm()
         {
+            _pageForm.DragAndDropFirstAttribute();
             _pageForm.DragAndDropAttribute(Constants.TextAttribute1, "");
-            _pageForm.DragAndDropAttribute(Constants.DateAndTimeAttribute1, "");
-            //_pageForm.DragAndDropAttribute(Constants.UserAttribute1, "");
+            //_pageForm.DragAndDropAttribute(Constants.DateAndTimeAttribute1, "");
+            _pageForm.DragAndDropAttribute(Constants.UserAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.NumberAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.DurationAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.DocumentAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.LogicAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.ImageAttribute1, "");
             _pageForm.DragAndDropAttribute(Constants.URIAttribute1, "");
-            _pageForm.DragAndDropAttribute(Constants.CollectionAttribute1, "");
+            //_pageForm.DragAndDropAttribute(Constants.CollectionAttribute1, "");
         }
         [When(@"I save form")]
         public void SaveButton()

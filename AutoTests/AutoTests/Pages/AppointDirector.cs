@@ -32,14 +32,6 @@ namespace AutoTests.Pages
             _numberProject = numberProject;
             selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
-        public IWebElement MakeAppointDirector { get { return _driver.FindElement(By.XPath("" + MakeAppointDirectorXpath + " ("+ _numberProject + " - TestName)']")); } }
-        public IWebElement AddNewRecordOnCollection { get { return _driver.FindElement(By.XPath("" + AddNewRecordOnCollectionXpath + "")); } }
-        public IWebElement CollectionField { get { return _driver.FindElement(By.XPath("" + CollectionFieldXpath + "[3]")); } }
-        public IWebElement UserSendKeys { get { return _driver.FindElement(By.XPath("(" + DropDownXpath + ")[4]")); } }
-        public IWebElement FirstListCheckBox { get { return _driver.FindElement(By.XPath("" + FirstListCheckBoxXpath + "")); } }
-        public IWebElement CompleteTaskButton { get { return _driver.FindElement(By.XPath("" + ButtonCompleteXpath + "")); } }
-        public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
-
         public void OpenTask()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));

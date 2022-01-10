@@ -134,10 +134,10 @@ namespace AutoTests.Steps
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.DateAndTimeAttribute1);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.DurationAttribute1);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.NumberAttribute1);
-            //SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.UserAttribute1);
+            SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.UserAttribute1);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.DocumentAttribute1);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.LinkAttribute1);
-            SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.CollectionAttribute1);
+            //SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.CollectionAttribute1);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.ImageAttribute1);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.URIAttribute1);   
         }
@@ -230,7 +230,7 @@ namespace AutoTests.Steps
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.DateAndTimeAttribute2);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.DurationAttribute2);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.NumberAttribute2);
-            //SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.UserAttribute2);
+            SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.UserAttribute2);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.DocumentAttribute2);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.ImageAttribute2);
             SeleniumHelper.HasElementInList(_pageAttribute.Attributes, Constants.URIAttribute2);
