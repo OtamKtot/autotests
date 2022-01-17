@@ -24,6 +24,7 @@ namespace AutoTests.Pages
         private readonly string DevelopTicketXpath = ConfigurationHelper.Get<string>("DevelopTicketXpath");
         private readonly string DevelopTaskXpath = ConfigurationHelper.Get<string>("DevelopTaskXpath");
         private readonly string TitleXpath = ConfigurationHelper.Get<string>("TitleXpath"); 
+        private readonly string CreationDateXpath = ConfigurationHelper.Get<string>("CreationDateXpath");
         private readonly string ButtonOnToolbarXpath = ConfigurationHelper.Get<string>("ButtonOnToolbarXpath");
         private readonly string DropDownXpath = ConfigurationHelper.Get<string>("DropDownXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
@@ -71,6 +72,8 @@ namespace AutoTests.Pages
         }
         public void CompleteTaskOfDevelopScheme()
         {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(CreationDateXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + DevelopShemeXpath + " (Проект – " + _numberProject + ")']"));
 

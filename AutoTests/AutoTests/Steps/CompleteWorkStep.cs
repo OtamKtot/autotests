@@ -26,7 +26,7 @@ namespace AutoTests.Steps
         {
             _pageCompleteWork.CompleteTaskOfBuisnessResearch();
             //_pageMyTasks.WaitLoader();
-            _pageMyTasks.GoToMyTasks();
+            //_pageMyTasks.GoToMyTasks();
             _pageCompleteWork.CompleteTaskOfDevelopScheme();
             //_pageMyTasks.WaitLoader();
             _pageMyTasks.GoToMyTasks();

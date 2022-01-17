@@ -25,7 +25,7 @@ namespace AutoTests.Steps
         public void WhenIConfirmationAllTasksOfWork()
         {
             _pageConfirmationWork.CompleteTaskOfBuisnessResearch();
-            _pageMyTasks.GoToMyTasks();
+            //_pageMyTasks.GoToMyTasks();
             _pageConfirmationWork.CompleteTaskOfDevelopScheme();
             _pageMyTasks.GoToMyTasks();
             _pageConfirmationWork.CompleteTaskOfNewRecord();

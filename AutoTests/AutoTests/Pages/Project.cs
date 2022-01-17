@@ -17,8 +17,9 @@ namespace AutoTests.Pages
         private readonly IWebDriver _driver;
         private readonly string _numberProject;
         private readonly SeleniumHelperWithExpectedConditions selenium;
-        private readonly string TitleXpath = ConfigurationHelper.Get<string>("TitleXpath");
+        private readonly string TitleXpath = ConfigurationHelper.Get<string>("TitleXpath"); 
         private readonly string GoToTaskXpath = ConfigurationHelper.Get<string>("GoToTaskXpath");
+        private readonly string CodeXpath = ConfigurationHelper.Get<string>("CodeXpath");
         private readonly string ColumnsOfListXpath = ConfigurationHelper.Get<string>("ColumnsOfListXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
         public Project(IWebDriver driver, string numberProject) : base(driver)
@@ -31,7 +32,12 @@ namespace AutoTests.Pages
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("("+ ColumnsOfListXpath+")[3]"));
-            selenium.PageDown();
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            //selenium.PageDown();
+            selenium.Click(By.XPath(CodeXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(CodeXpath));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + TitleXpath + _numberProject + "']"));
 
             //Actions act = new Actions(_driver);

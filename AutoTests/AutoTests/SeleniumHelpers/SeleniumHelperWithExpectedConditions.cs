@@ -80,7 +80,7 @@ namespace AutoTests.SeleniumHelpers
                 }
                 catch
                 {
-                    Assert.Fail($"Loader did not disappear after {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+                    Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {by.ToString()}, Loader did not disappear after {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
                 }
             }
             catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
