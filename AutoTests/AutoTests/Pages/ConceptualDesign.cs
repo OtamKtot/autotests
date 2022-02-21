@@ -1,8 +1,10 @@
 ﻿using AutoTests.SeleniumHelpers;
 using AutoTests.Utilies;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,8 +44,10 @@ namespace AutoTests.Pages
         private readonly string CompletePhaseXpath = ConfigurationHelper.Get<string>("CompletePhaseXpath");
         private readonly string VerticalLayoutXpath = ConfigurationHelper.Get<string>("VerticalLayoutXpath");
         private readonly string LoaderOnUserFieldOnCollectionXpath = ConfigurationHelper.Get<string>("LoaderOnUserFieldOnCollectionXpath");
-        private readonly string LeftNavigationRollXpath = ConfigurationHelper.Get<string>("LeftNavigationRollXpath");
+        private readonly string LeftNavigationRollXpath = ConfigurationHelper.Get<string>("LeftNavigationRollXpath"); 
+        private readonly string CreateVersionXpath = ConfigurationHelper.Get<string>("CreateVersionXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
+        private readonly string AlertBodyXpath = ConfigurationHelper.Get<string>("AlertBodyXpath");
         public ConceptualDesign(IWebDriver driver, string numberProject) : base(driver)
         {
             _driver = driver;
@@ -63,10 +67,9 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath("(" + CheckBoxXpath + ")[6]"));
             selenium.Click(By.XPath("(" + RadioButtonXpath + ")[2]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[8]"), "Test");
-            selenium.Click(By.XPath(ButtonOnStartFormXpath));
-            Thread.Sleep(8000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.Click(By.XPath("(" + ButtonOnStartFormXpath + ")[3]"));
+            selenium.Click(By.XPath(CreateVersionXpath));
+            Thread.Sleep(10000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void OpenTask()
@@ -172,7 +175,8 @@ namespace AutoTests.Pages
             Thread.Sleep(2000);
             selenium.Click(By.XPath(MainDataXpath));
             selenium.PageDown();
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[5]"));
+            //Thread.Sleep(2000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[74]"));
             selenium.Click(By.XPath(DayOldXpath));
@@ -192,9 +196,11 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             Thread.Sleep(2000);
             selenium.Click(By.XPath(FirstListCheckBoxXpath));
+            Thread.Sleep(2000);
             selenium.Click(By.XPath(ButtonOnFormCollectionXpath));
+            Thread.Sleep(30000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            Thread.Sleep(20000);
+            //Thread.Sleep(20000);
 
             Actions act1 = new Actions(_driver);
             act1.ContextClick(FirstCollectionFieldClick).Perform();
@@ -240,7 +246,9 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             Thread.Sleep(10000);
             selenium.Click(By.XPath(AcceptPlannedXpath));
-            Thread.Sleep(10000);
+            Thread.Sleep(60000);
+            //selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            //Assert.AreEqual(selenium.GetElementText(By.XPath(AlertBodyXpath)), "Операция выполнена");
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void CompleteTask()
@@ -253,9 +261,11 @@ namespace AutoTests.Pages
             selenium.DoubleClick(By.XPath("" + ConceptualDesignXpath + " (" + _numberProject + " - TestName)']"));
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            //Thread.Sleep(10000);
             selenium.Click(By.XPath(CompletePhaseXpath));
-            Thread.Sleep(5000);
-            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            Thread.Sleep(50000);
+            selenium.Click(By.XPath("("+CompletePhaseXpath+")[2]"));
+            Thread.Sleep(30000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
     }

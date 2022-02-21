@@ -60,7 +60,8 @@ namespace AutoTests.Pages
 
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(AcceptPhaseTabXpath));
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
+            Thread.Sleep(2000);
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[3]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[236]"));
             selenium.Click(By.XPath("(" + DropDownXpath + ")[9]"));
@@ -69,7 +70,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(AcceptStatusXpath));
             selenium.Click(By.XPath(VerticalLayoutXpath));
             Thread.Sleep(2000);
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[3]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[241]"));
             selenium.Click(By.XPath("(" + DropDownXpath + ")[9]"));

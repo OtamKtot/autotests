@@ -26,6 +26,7 @@ namespace AutoTests.Pages
         private readonly string TitleXpath = ConfigurationHelper.Get<string>("TitleXpath"); 
         private readonly string ButtonOnToolbarXpath = ConfigurationHelper.Get<string>("ButtonOnToolbarXpath");
         private readonly string DateTimeXpath = ConfigurationHelper.Get<string>("DateTimeXpath");
+        private readonly string CreationDateXpath = ConfigurationHelper.Get<string>("CreationDateXpath");
         private readonly string DayNewXpath = ConfigurationHelper.Get<string>("DayNewXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
         public ConfirmationWork(IWebDriver driver, string numberProject) : base(driver)
@@ -72,6 +73,8 @@ namespace AutoTests.Pages
         }
         public void CompleteTaskOfDevelopScheme()
         {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(CreationDateXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.CheckElementIsVisible(By.XPath("" + TitleXpath + "Подтверждение работы - Разработка Схемы бизнес-процесса и направление на согласование (Проект – " + _numberProject + ")']"));
 
