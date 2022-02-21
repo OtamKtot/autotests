@@ -79,6 +79,7 @@ namespace AutoTests.Pages
 
             //selenium.Click(By.XPath(CheckBoxCollectionXpath));
             //element is not visible
+            Thread.Sleep(2000);
             AllCheckBoxCollection.Click();
 
             selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[3]"));

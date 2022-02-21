@@ -175,7 +175,7 @@ namespace AutoTests.Pages
             Thread.Sleep(2000);
             selenium.Click(By.XPath(MainDataXpath));
             selenium.PageDown();
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[5]"));
             //Thread.Sleep(2000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[74]"));

@@ -34,7 +34,7 @@ namespace AutoTests.Globals
         public const string ImageAttribute2 = @"ImageAttribute2";
         public const string URIAttribute1 = @"URIAttribute1";
         public const string URIAttribute2 = @"URIAttribute2";
-
+        public const string Button1 = @"Button1";
 
         public const int DEFAULT_TIMEOUT = 10;
     }

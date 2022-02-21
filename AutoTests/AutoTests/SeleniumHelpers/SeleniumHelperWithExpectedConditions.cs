@@ -274,6 +274,39 @@ namespace AutoTests.SeleniumHelpers
             Assert.Fail($"Exception occurred in SeleniumHelper.SearchByTittle(): element located by {Name} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
             return "false"; 
         }
+        public string SearchByTittleCss(string cssSelector, string Name)
+        {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
+            var count = _driver.FindElements(By.CssSelector(cssSelector)).Count;
+            for (int i = 1; i <= count; i++)
+            {
+                cssSelector = cssSelector + ":nth-child(" + i + ")";
+                try
+                {
+                    new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
+                    webElement = _driver.FindElement(By.CssSelector(cssSelector));
+                }
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(2000);
+                    new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(cssSelector)));
+                    webElement = _driver.FindElement(By.CssSelector(cssSelector));
+                }
+                catch (Exception ex) when (ex is WebDriverTimeoutException || ex is NoSuchElementException)
+                {
+                    Assert.Fail($"Exception occurred in SeleniumHelper.Click(): element located by {webElement.ToString()} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+                }
+                var a = webElement.GetAttribute("title");
+                if (webElement.Text == Name)
+                {
+                    return cssSelector;
+                }
+                cssSelector = cssSelector.Replace(":nth-child(" + i + ")", "");
+            }
+            Assert.Fail($"Exception occurred in SeleniumHelper.SearchByTittle(): element located by {Name} could not be located within {ConfigurationHelper.Get<int>("ChromeWaitConfig")} seconds.");
+            return "false";
+        }
         public string SearchByTittle(string Xpath, string Name)
         {
             new WebDriverWait(_driver, TimeSpan.FromSeconds(ConfigurationHelper.Get<int>("ChromeWaitConfig"))).Until(ExpectedConditions.ElementToBeClickable(By.XPath(Xpath)));

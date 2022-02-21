@@ -26,19 +26,16 @@ namespace AutoTests.Pages
         private readonly string AttributeTextXpath = ConfigurationHelper.Get<string>("AttributeTextXpath");
         private readonly string FormTextXpath = ConfigurationHelper.Get<string>("FormTextXpath"); 
         private readonly string AlertBodyXpath = ConfigurationHelper.Get<string>("AlertBodyXpath");
-        private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
+        private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath"); 
         private readonly string FormDesigner = ConfigurationHelper.Get<string>("FormDesigner");
+        private readonly string Administration = ConfigurationHelper.Get<string>("Administration");
+        private readonly string Button = ConfigurationHelper.Get<string>("Button");
+        private readonly string ButtonToExemplarXpath = ConfigurationHelper.Get<string>("ButtonToExemplarXpath");
         public TemplatesPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
             selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
-        public IWebElement Add { get { return _driver.FindElement(By.XPath("" + AddXpath + "")); } }
-        public IWebElement Name { get { return _driver.FindElement(By.XPath("" + TextFieldXpath + "")); } }
-        public IWebElement Alias { get { return _driver.FindElement(By.XPath("(" + TextFieldXpath + ")[2]")); } }
-        public IWebElement Solution { get { return _driver.FindElement(By.XPath("(" + DropDownXpath + ")[2]")); } }
-        public IWebElement SolutionSystem { get { return _driver.FindElement(By.XPath("" + SelectedListXpath + "")); } }
-        public IWebElement Create { get { return _driver.FindElement(By.XPath("" + ButtonOnStartFormXpath + "")); } }
         public ReadOnlyCollection<IWebElement> Templates { get { return _driver.FindElements(By.XPath("" + ColumnsOfListXpath + "")); } }
         public IWebElement AttributeText { get { return _driver.FindElement(By.XPath("" + AttributeTextXpath + "")); } }
         public IWebElement FormText { get { return _driver.FindElement(By.XPath("" + FormTextXpath + "")); } }
@@ -74,6 +71,20 @@ namespace AutoTests.Pages
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.Id(FormDesigner));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void NavigateIntoButton()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.Id(Button));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+        }
+        public void NavigateIntoExemplar()
+        {
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.Id(Administration));
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
+            selenium.Click(By.XPath(ButtonToExemplarXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void AlertIsTrue()
