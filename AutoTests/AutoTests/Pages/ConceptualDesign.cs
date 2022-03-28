@@ -45,9 +45,10 @@ namespace AutoTests.Pages
         private readonly string VerticalLayoutXpath = ConfigurationHelper.Get<string>("VerticalLayoutXpath");
         private readonly string LoaderOnUserFieldOnCollectionXpath = ConfigurationHelper.Get<string>("LoaderOnUserFieldOnCollectionXpath");
         private readonly string LeftNavigationRollXpath = ConfigurationHelper.Get<string>("LeftNavigationRollXpath"); 
-        private readonly string CreateVersionXpath = ConfigurationHelper.Get<string>("CreateVersionXpath");
+        private readonly string CreateVersionXpath = ConfigurationHelper.Get<string>("CreateVersionXpath"); 
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
         private readonly string AlertBodyXpath = ConfigurationHelper.Get<string>("AlertBodyXpath");
+        private readonly string ManageProjectXpath = ConfigurationHelper.Get<string>("ManageProjectXpath");
         public ConceptualDesign(IWebDriver driver, string numberProject) : base(driver)
         {
             _driver = driver;
@@ -90,7 +91,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(DateTimeXpath));
             selenium.Click(By.XPath(DayNewXpath));
             Thread.Sleep(5000);
-            selenium.Click(By.XPath(VerticalLayoutXpath));
+            selenium.Click(By.XPath(ManageProjectXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[6]"));
             selenium.Click(By.XPath(DayOldXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[7]"));
@@ -175,7 +176,7 @@ namespace AutoTests.Pages
             Thread.Sleep(2000);
             selenium.Click(By.XPath(MainDataXpath));
             selenium.PageDown();
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[5]"));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
             //Thread.Sleep(2000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[74]"));
@@ -200,10 +201,12 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(ButtonOnFormCollectionXpath));
             Thread.Sleep(30000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            //Thread.Sleep(20000);
+            selenium.PageDown();
+            Thread.Sleep(5000);
 
             Actions act1 = new Actions(_driver);
             act1.ContextClick(FirstCollectionFieldClick).Perform();
+            Thread.Sleep(5000);
             selenium.Click(By.XPath("(" + CreateTittleXpath + ")[3]"));
             Thread.Sleep(5000);
             //selenium.Click(By.XPath("(" + CheckBoxCollectionXpath + ")[2]"));
@@ -211,15 +214,15 @@ namespace AutoTests.Pages
             Thread.Sleep(5000);
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[22]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[7]"), "TestName");
-            selenium.Click(By.XPath(VerticalLayoutXpath));
+            selenium.Click(By.XPath(ManageProjectXpath));
             Thread.Sleep(2000);
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[39]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[7]"), "TestName");
-            selenium.Click(By.XPath(VerticalLayoutXpath));
+            selenium.Click(By.XPath(ManageProjectXpath));
             Thread.Sleep(2000);
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[56]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[7]"), "TestName");
-            selenium.Click(By.XPath(VerticalLayoutXpath));
+            selenium.Click(By.XPath(ManageProjectXpath));
             Thread.Sleep(2000);
 
 
