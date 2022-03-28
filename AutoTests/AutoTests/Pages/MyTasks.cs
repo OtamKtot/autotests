@@ -129,7 +129,7 @@ namespace AutoTests.Pages
         }
         public void CreateTicket()
         {
-            selenium.Click(By.XPath(RecordOnProjectXpath));
+            //selenium.Click(By.XPath(RecordOnProjectXpath));
             selenium.Click(By.XPath(CreateRecordOnProjectXpath));
             selenium.SendKeys(By.XPath(TextFieldXpath), "TestName");
             selenium.Click(By.XPath(DropDownXpath));

@@ -105,7 +105,7 @@ namespace AutoTests.Pages
             Thread.Sleep(5000);
             selenium.Click(By.XPath("(" + DocumentsTabXpath + ")[2]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[5]"));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + DropDownXpath + ")[5]"));
             selenium.Click(By.XPath(FirstElementFromListXpath));

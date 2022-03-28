@@ -31,34 +31,17 @@ namespace AutoTests.Pages
         private readonly string StatusPlannedXpath = ConfigurationHelper.Get<string>("StatusPlannedXpath");
         private readonly string CompletePhaseXpath = ConfigurationHelper.Get<string>("CompletePhaseXpath");
         private readonly string ButtonCompleteXpath = ConfigurationHelper.Get<string>("ButtonCompleteXpath");
+        private readonly string FirstElementFromListXpath = ConfigurationHelper.Get<string>("FirstElementFromListXpath");
         private readonly string LoaderOnUserFieldOnCollectionXpath = ConfigurationHelper.Get<string>("LoaderOnUserFieldOnCollectionXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
+        private readonly string AcceptPlannedXpath = ConfigurationHelper.Get<string>("AcceptPlannedXpath");
         public PreparationOPE(IWebDriver driver, string numberProject) : base(driver)
         {
             _driver = driver;
             _numberProject = numberProject;
             selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
-        public IWebElement MakePreparationOPE { get { return _driver.FindElement(By.XPath("" + PreparationOPEXpath + " (" + _numberProject + " - TestName)']")); } }
         public IWebElement AllCheckBoxCollection { get { return _driver.FindElement(By.XPath("" + CheckBoxCollectionXpath + "")); } }
-        public IWebElement DateTime { get { return _driver.FindElement(By.XPath("" + DateTimeXpath + "")); } }
-        public IWebElement FirstStartDateSendKeys { get { return _driver.FindElement(By.XPath("(" + DayOldXpath + ")[1]")); } }
-        public IWebElement FirstEndDateSendKeys { get { return _driver.FindElement(By.XPath("" + DayNewXpath + "")); } }
-        public IWebElement AddNewRecordOnCollection { get { return _driver.FindElement(By.XPath("" + AddNewRecordOnCollectionXpath + "")); } }
-        public IWebElement DeleteRecordOnCollection { get { return _driver.FindElement(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[3]")); } }
-        public IWebElement NameClick { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[5]")); } }
-        public IWebElement NameSendKeys { get { return _driver.FindElement(By.XPath("(" + TextFieldXpath + ")[7]")); } }
-        public IWebElement FirstStartDateClick { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[6]")); } }
-        public IWebElement FirstEndDateClick { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[7]")); } }
-        public IWebElement FirstResponsibleClick { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[8]")); } }
-        public IWebElement UserSendKeys { get { return _driver.FindElement(By.XPath("(" + DropDownXpath + ")[5]")); } }
-        public IWebElement FirstListCheckBox { get { return _driver.FindElement(By.XPath("" + FirstListCheckBoxXpath + "")); } }
-        public IWebElement FirstAssigneeClick { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[9]")); } }
-        public IWebElement DeleteRecord { get { return _driver.FindElement(By.XPath("" + ButtonOnStartFormXpath + "")); } }
-        public IWebElement StatusComplete { get { return _driver.FindElement(By.XPath("(" + StatusPlannedXpath + ")[3]")); } }
-        public IWebElement ButtonOnStartForm { get { return _driver.FindElement(By.XPath("" + ButtonOnStartFormXpath + "")); } }
-        public IWebElement CompletePhase { get { return _driver.FindElement(By.XPath("" + CompletePhaseXpath + "")); } }
-        public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
         public void OpenTask()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
@@ -79,17 +62,20 @@ namespace AutoTests.Pages
 
             //selenium.Click(By.XPath(CheckBoxCollectionXpath));
             //element is not visible
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             AllCheckBoxCollection.Click();
+            selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
 
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[3]"));
-            selenium.Click(By.XPath(ButtonOnStartFormXpath));
-            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
+            //selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            //selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            Thread.Sleep(20000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void AddRecordOnCollection()
         {
-            selenium.Click(By.XPath(AddNewRecordOnCollectionXpath));
+            selenium.Click(By.XPath("("+AddNewRecordOnCollectionXpath+")[2]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[5]"));
             selenium.SendKeys(By.XPath("(" + TextFieldXpath + ")[7]"), "TestName");
@@ -103,7 +89,7 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderOnUserFieldOnCollectionXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             Thread.Sleep(2000);
-            selenium.Click(By.XPath(FirstListCheckBoxXpath));
+            selenium.Click(By.XPath(FirstElementFromListXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[9]"));
             Thread.Sleep(2000);
             selenium.SendKeys(By.XPath("(" + DropDownXpath + ")[5]"), "Ispolnitel");
@@ -119,14 +105,16 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath("(" + StatusPlannedXpath + ")[3]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             Thread.Sleep(10000);
-            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            selenium.Click(By.XPath(AcceptPlannedXpath));
+            Thread.Sleep(60000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
         public void CompleteTask()
         {
             selenium.Click(By.XPath(CompletePhaseXpath));
-            Thread.Sleep(5000);
-            selenium.Click(By.XPath(ButtonOnStartFormXpath));
+            Thread.Sleep(50000);
+            selenium.Click(By.XPath("(" + CompletePhaseXpath + ")[2]"));
+            Thread.Sleep(30000);
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
         }
     }

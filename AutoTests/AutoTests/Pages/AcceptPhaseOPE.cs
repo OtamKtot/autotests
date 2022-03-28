@@ -32,22 +32,6 @@ namespace AutoTests.Pages
             _driver = driver;
             selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
-        public IWebElement AcceptPhase { get { return _driver.FindElement(By.XPath("" + AcceptPhaseOPEXpath + "")); } }
-        public IWebElement AddNewRecordOnCollection { get { return _driver.FindElement(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]")); } }
-        public IWebElement AcceptPhaseTab { get { return _driver.FindElement(By.XPath("" + AcceptPhaseTabXpath + "")); } }
-        public IWebElement NameClick { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[139]")); } }
-        public IWebElement NameSendKeys { get { return _driver.FindElement(By.XPath("(" + DropDownXpath + ")[9]")); } }
-        public IWebElement PhaseOPEAktOPEAccept { get { return _driver.FindElement(By.XPath("" + PhaseOPEAktOPEAcceptXpath + "")); } }
-        public IWebElement StatusClick { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[140]")); } }
-        public IWebElement StatusSendKeys { get { return _driver.FindElement(By.XPath("(" + DropDownXpath + ")[9]")); } }
-        public IWebElement AcceptStatus { get { return _driver.FindElement(By.XPath("(" + AcceptStatusXpath + ")[5]")); } }
-        public IWebElement Name2Click { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[144]")); } }
-        public IWebElement Status2Click { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[145]")); } }
-        public IWebElement PhaseOPEAktPEAccept { get { return _driver.FindElement(By.XPath("" + PhaseOPEAktPEAcceptXpath + "")); } }
-        public IWebElement AcceptStatus2 { get { return _driver.FindElement(By.XPath("(" + AcceptStatusXpath + ")[6]")); } }
-        public IWebElement CompleteTaskButton { get { return _driver.FindElement(By.XPath("" + ButtonCompleteXpath + "")); } }
-        public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
-
         public void CompleteTask()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
@@ -60,23 +44,23 @@ namespace AutoTests.Pages
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath(AcceptPhaseTabXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[3]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[139]"));
             selenium.Click(By.XPath("(" + DropDownXpath + ")[9]"));
             selenium.Click(By.XPath(PhaseOPEAktOPEAcceptXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[140]"));
             selenium.Click(By.XPath("(" + AcceptStatusXpath + ")[5]"));
-            selenium.Click(By.XPath(VerticalLayoutXpath));
+            selenium.Click(By.XPath(AcceptPhaseTabXpath));
             Thread.Sleep(2000);
-            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]"));
+            selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[3]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[144]"));
             selenium.Click(By.XPath("(" + DropDownXpath + ")[9]"));
             selenium.Click(By.XPath(PhaseOPEAktPEAcceptXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[145]"));
             selenium.Click(By.XPath("(" + AcceptStatusXpath + ")[6]"));
-            selenium.Click(By.XPath(VerticalLayoutXpath));
+            selenium.Click(By.XPath(AcceptPhaseTabXpath));
             Thread.Sleep(2000);
             selenium.Click(By.XPath(ButtonCompleteXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));

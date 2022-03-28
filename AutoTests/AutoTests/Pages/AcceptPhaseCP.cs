@@ -28,27 +28,12 @@ namespace AutoTests.Pages
         private readonly string ButtonCompleteXpath = ConfigurationHelper.Get<string>("ButtonCompleteXpath");
         private readonly string LoaderXpath = ConfigurationHelper.Get<string>("LoaderXpath");
         private readonly string VerticalLayoutXpath = ConfigurationHelper.Get<string>("VerticalLayoutXpath");
+        private readonly string ManageProjectXpath = ConfigurationHelper.Get<string>("ManageProjectXpath");
         public AcceptPhaseCP(IWebDriver driver) : base(driver)
         {
             _driver = driver;
             selenium = new SeleniumHelperWithExpectedConditions(_driver);
         }
-        public IWebElement AcceptPhase { get { return _driver.FindElement(By.XPath("" + AcceptPhaseCPXpath + "")); } }
-        public IWebElement AddNewRecordOnCollection { get { return _driver.FindElement(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[4]")); } }
-        public IWebElement AcceptPhaseTab { get { return _driver.FindElement(By.XPath("" + AcceptPhaseTabXpath + "")); } }
-        public IWebElement NameClick { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[236]")); } }
-        public IWebElement NameSendKeys { get { return _driver.FindElement(By.XPath("(" + DropDownXpath + ")[9]")); } }
-        public IWebElement PhaseCPTaskAccept { get { return _driver.FindElement(By.XPath("" + PhaseCPTaskAcceptXpath + "")); } }
-        public IWebElement StatusClick { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[237]")); } }
-        public IWebElement StatusSendKeys { get { return _driver.FindElement(By.XPath("(" + DropDownXpath + ")[9]")); } }
-        public IWebElement AcceptStatus { get { return _driver.FindElement(By.XPath("" + AcceptStatusXpath + "")); } }
-        public IWebElement Name2Click { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[241]")); } }
-        public IWebElement Status2Click { get { return _driver.FindElement(By.XPath("(" + CollectionFieldXpath + ")[242]")); } }
-        public IWebElement PhaseCPTicketAccept { get { return _driver.FindElement(By.XPath("" + PhaseCPTicketAcceptXpath + "")); } }
-        public IWebElement AcceptStatus2 { get { return _driver.FindElement(By.XPath("(" + AcceptStatusXpath + ")[2]")); } }
-        public IWebElement CompleteTaskButton { get { return _driver.FindElement(By.XPath("" + ButtonCompleteXpath + "")); } }
-        public IWebElement Loader { get { return _driver.FindElement(By.XPath("" + LoaderXpath + "")); } }
-
         public void CompleteTask()
         {
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
@@ -68,7 +53,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(PhaseCPTaskAcceptXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[237]"));
             selenium.Click(By.XPath(AcceptStatusXpath));
-            selenium.Click(By.XPath(VerticalLayoutXpath));
+            selenium.Click(By.XPath(AcceptPhaseTabXpath));
             Thread.Sleep(2000);
             selenium.Click(By.XPath("(" + AddNewRecordOnCollectionXpath + ")[3]"));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
@@ -77,7 +62,7 @@ namespace AutoTests.Pages
             selenium.Click(By.XPath(PhaseCPTicketAcceptXpath));
             selenium.Click(By.XPath("(" + CollectionFieldXpath + ")[242]"));
             selenium.Click(By.XPath("(" + AcceptStatusXpath + ")[2]"));
-            selenium.Click(By.XPath(VerticalLayoutXpath));
+            selenium.Click(By.XPath(AcceptPhaseTabXpath));
             Thread.Sleep(2000);
             selenium.Click(By.XPath(ButtonCompleteXpath));
             selenium.CheckElementIsUnVisible(By.XPath(LoaderXpath));
