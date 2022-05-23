@@ -1,11 +1,11 @@
-package ru.antipant.tests;
+package ru.comindware.tests;
 
 import org.junit.jupiter.api.*;
-import ru.antipant.pages.BaseTest;
-import ru.antipant.pages.RegistrationFormPage;
+import ru.comindware.pages.BaseTest;
+import ru.comindware.pages.RegistrationFormPage;
 
 import static java.lang.String.format;
-import static ru.antipant.utils.FakerUtils.*;
+import static ru.comindware.utils.FakerUtils.*;
 
 public class RegistrationFormTest extends BaseTest {
 

@@ -1,6 +1,6 @@
-package ru.antipant.docs;
+package ru.comindware.docs;
 
-import static ru.antipant.utils.RandomUtils.*;
+import static ru.comindware.utils.RandomUtils.*;
 
 public class RandomUtilsExamples {
 

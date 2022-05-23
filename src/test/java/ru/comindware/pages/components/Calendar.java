@@ -1,4 +1,4 @@
-package ru.antipant.pages.components;
+package ru.comindware.pages.components;
 
 import static com.codeborne.selenide.Selenide.$;
 

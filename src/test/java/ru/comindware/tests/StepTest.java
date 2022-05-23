@@ -1,11 +1,11 @@
-package ru.antipant.tests;
+package ru.comindware.tests;
 
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Allure;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
-import ru.antipant.pages.BaseTest;
+import ru.comindware.pages.BaseTest;
 
 import java.nio.charset.StandardCharsets;
 

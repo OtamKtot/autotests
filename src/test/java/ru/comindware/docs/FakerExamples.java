@@ -1,4 +1,4 @@
-package ru.antipant.docs;
+package ru.comindware.docs;
 
 import com.github.javafaker.Faker;
 

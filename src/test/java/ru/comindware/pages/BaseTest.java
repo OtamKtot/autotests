@@ -1,4 +1,4 @@
-package ru.antipant.pages;
+package ru.comindware.pages;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -7,8 +7,8 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import ru.antipant.config.CredentialsConfig;
-import ru.antipant.helpers.Attach;
+import ru.comindware.config.CredentialsConfig;
+import ru.comindware.helpers.Attach;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
@@ -34,6 +34,7 @@ public class BaseTest {
         Configuration.baseUrl = propertyMainPageUrl;
         Configuration.browserSize = propertyBrowserSize;
         Configuration.remote = "http://" + propertyRemoteUrl;
+        Configuration.timeout = 10000;
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();

@@ -1,4 +1,4 @@
-package ru.antipant.config;
+package ru.comindware.config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources("classpath:config/credentials.properties")

@@ -1,4 +1,4 @@
-package ru.antipant.utils;
+package ru.comindware.utils;
 
 import java.util.Random;
 

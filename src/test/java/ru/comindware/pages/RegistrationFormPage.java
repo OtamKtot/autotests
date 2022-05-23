@@ -1,7 +1,7 @@
-package ru.antipant.pages;
+package ru.comindware.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import ru.antipant.pages.components.Calendar;
+import ru.comindware.pages.components.Calendar;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;

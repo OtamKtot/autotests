@@ -1,4 +1,4 @@
-package ru.antipant.tests;
+package ru.comindware.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
@@ -6,7 +6,7 @@ import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import ru.antipant.pages.BaseTest;
+import ru.comindware.pages.BaseTest;
 
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
