@@ -34,7 +34,7 @@ public class BaseTest {
         Configuration.baseUrl = propertyMainPageUrl;
         Configuration.browserSize = propertyBrowserSize;
         Configuration.remote = "http://" + propertyRemoteUrl;
-        Configuration.timeout = 10000;
+        Configuration.timeout = 60000;
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();

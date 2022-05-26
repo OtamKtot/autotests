@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class MyTasks {
 
-
     SelenideElement createTicket = $("[title=\"Создать заявку на проект\"]"),
             textField = $(".input.input_text"),
             dropDown = $(byXpath("//*[@class='js-input bubbles__input']")),
@@ -21,7 +20,14 @@ public class MyTasks {
             newDateTime = $(".day.new", 2),
             createTicket2 = $(byXpath("(//*[text() = 'Создать заявку на проект'])[2]")),
             notificationContainer = $(".notification-body_container"),
-            popup = $(".layout__popup-view-content");
+            popup = $(".layout__popup-view-content"),
+            myTasks = $("[title=\"Мои задачи\"]"),
+            refresh = $("[title=\"Обновить список\"]"),
+            technicalRequirement = $("[title=\"Оформить и утвердить технические требования к ИТ-проекту\"]"),
+            loader = $(".loader"),
+            rateUrgency = $("[title=\"Оценить срочность выполнения заявки\"]"),
+            organizeEvaluation = $("[title=\"Организовать предпроектную оценку\"]"),
+            establishProject = $("[title=\"Формирование проектов по заявке\"]");
 
     @Step("На боковой навигации выбрать \"Создать заявку на проект\"")
     public MyTasks CreateTicketOnProject() {
@@ -45,9 +51,48 @@ public class MyTasks {
         return this;
     }
 
-    @Step("На боковой навигации выбрать \"Создать заявку на проект\"")
+    @Step("Заявка создана")
     public MyTasks OperationComplete() {
         notificationContainer.shouldHave(text("Операция выполнена"));
+        loader.shouldNotBe(visible);
+        return this;
+    }
+
+    @Step("Перейти в Мои Задачи")
+    public MyTasks GoToMyTasks() {
+        loader.shouldNotBe(visible);
+        myTasks.click();
+        return this;
+    }
+
+    @Step("Обновить список")
+    public MyTasks RefreshList() {
+        refresh.click();
+        return this;
+    }
+
+    @Step("Открыть задачу 'Оформить и утвердить технические требования к ИТ-проекту' ")
+    public MyTasks OpenTechnicalRequirements() {
+        technicalRequirement.click();
+        technicalRequirement.doubleClick();
+        return this;
+    }
+    @Step("Открыть задачу 'Оценить срочность выполнения заявки' ")
+    public MyTasks OpenRateUrgency() {
+        rateUrgency.click();
+        rateUrgency.doubleClick();
+        return this;
+    }
+    @Step("Открыть задачу 'Организовать предпроектную оценку' ")
+    public MyTasks OpenOrganizeEvaluation() {
+        organizeEvaluation.click();
+        organizeEvaluation.doubleClick();
+        return this;
+    }
+    @Step("Открыть задачу 'Формирование проектов по заявке' ")
+    public MyTasks OpenEstablishProject() {
+        establishProject.click();
+        establishProject.doubleClick();
         return this;
     }
 }
