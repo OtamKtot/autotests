@@ -19,11 +19,9 @@ public class BaseTest {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-        String login = config.login();
-        String password = config.password();
 
         String propertyBrowser = System.getProperty("propertyBrowser", "chrome");
-        String propertyVersion = System.getProperty("propertyVersion", "100");
+        String propertyVersion = System.getProperty("propertyVersion", "22.1");
 
         String propertyMainPageUrl = System.getProperty("propertyMainPageUrl", "https://ppm.36.qa.comindware.net/");
         String propertyBrowserSize = System.getProperty("propertyBrowserSize", "1980x1080");
