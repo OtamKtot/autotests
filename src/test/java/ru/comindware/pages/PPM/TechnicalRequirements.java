@@ -22,9 +22,9 @@ public class TechnicalRequirements {
             loader = $(".loader");
 
     @Step("Заполнить обязательные поля")
-    public TechnicalRequirements WriteDescription() {
-        textField1.setValue("TestName");
-        textField2.setValue("TestName");
+    public TechnicalRequirements WriteDescription(String nameProject) {
+        textField1.setValue(nameProject);
+        textField2.setValue(nameProject);
         return this;
     }
 

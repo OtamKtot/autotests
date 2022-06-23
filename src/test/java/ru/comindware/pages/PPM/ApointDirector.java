@@ -3,13 +3,10 @@ package ru.comindware.pages.PPM;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
-import static ru.comindware.utils.RandomUtils.getRandomInt;
 
-public class EstablishProject {
+public class ApointDirector {
     SelenideElement notificationContainer = $(".notification-body_container"),
             addNewRecordToCollection = $x("(//*[@class='toolbar-btn toolbar-btn_none    toolbar-btn_action  '])[4]"),
             collectionField1 = $x("(//*[@class='js-visible-collection visible-collection ']/tr/td[2])[2]"),
@@ -28,8 +25,8 @@ public class EstablishProject {
             AddRecordToCollection = $x("(//*[@class='toolbar-btn toolbar-btn_none    toolbar-btn_action  '])[4]"),
             completeTask = $("[title=\"Завершить задачу\"]");
 
-    @Step("Заполнение формы и полей коллекции")
-    public EstablishProject FillFormField(String nameProject,String codeProject,String fioDirector) {
+    @Step("Добавить руководителя в коллекцию")
+    public ApointDirector FillFormField(String nameProject, String codeProject, String fioDirector) {
         addNewRecordToCollection.click();
         collectionField1.click();
         textField.setValue(codeProject);
@@ -50,17 +47,4 @@ public class EstablishProject {
         verticalLayout.click();
         return this;
     }
-
-    @Step("Завершить задачу")
-    public EstablishProject CompleteTask() {
-        completeTask.click();
-        return this;
-    }
-
-    @Step("Задача завершена")
-    public EstablishProject OperationComplete() {
-        notificationContainer.shouldHave(text("Операция выполнена"));
-        return this;
-    }
-
 }

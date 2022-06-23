@@ -6,7 +6,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.comindware.config.CredentialsConfig;
-import ru.comindware.pages.BaseTest;
 import ru.comindware.pages.LoginPage;
 
 
@@ -17,8 +16,8 @@ import ru.comindware.pages.LoginPage;
 public class LoginTests extends BaseTest {
     LoginPage loginPage = new LoginPage();
     CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-    String login = config.login();
-    String password = config.password();
+    String login = config.loginProject();
+    String password = config.passwordProject();
 
     @Test
     @DisplayName("Залогиниться в платформу")
