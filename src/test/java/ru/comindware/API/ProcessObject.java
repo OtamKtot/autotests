@@ -61,5 +61,25 @@ public class ProcessObject {
         sleep(4000);
         return GetActiveSubtasksTimer(username, password, id, countRetry - 1);
     }
-
+    public String GetActiveSubprocessesTimer(String username, String password, String id, Integer countRetry) {
+        Response response = given()
+                .spec(request)
+                .auth().preemptive().basic(username, password)
+                .body(id)
+                .when()
+                .post("/api/public/system/Process/ProcessObjectService/GetActiveSubprocesses")
+                .then()
+                .log().all()
+                .spec(responseSpec).extract().response();
+        String strResponse = response.getBody().asString();
+        String expectedStr = "[]";
+        if (countRetry == 0) {
+            return null;
+        }
+        if (!strResponse.equals(expectedStr)) {
+            return strResponse.replaceAll("\\[|\"|\\]|\\s+", "");
+        }
+        sleep(4000);
+        return GetActiveSubtasksTimer(username, password, id, countRetry - 1);
+    }
 }
