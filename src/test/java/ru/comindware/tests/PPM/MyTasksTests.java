@@ -125,6 +125,8 @@ public class MyTasksTests extends BaseTest {
                 .FillFieldOnPopup()
                 .CompleteTask()
                 .OperationComplete();
+        String objectId = userTask.GetBusinessObject(loginProject, passwordProject, taskId);
+        objectService.DeleteObjectById(loginProject, passwordProject, objectId);
     }
 
     @DisplayName("Выполнить задачу 'Оценить срочность выполнения заявки'")
@@ -150,6 +152,8 @@ public class MyTasksTests extends BaseTest {
         myTasks.OpenTask(taskId1);
         rateUrgency.CompleteTask()
                 .OperationComplete();
+        String objectId = userTask.GetBusinessObject(loginProject, passwordProject, taskId1);
+        objectService.DeleteObjectById(loginProject, passwordProject, objectId);
     }
 
     @DisplayName("Выполнить задачу 'Организовать предпроектную оценку'")
@@ -207,6 +211,13 @@ public class MyTasksTests extends BaseTest {
         Map<String, String> objectData1 = new HashMap<>();
         objectData1.put("op.162", "true");
         objectService.EditObjectById(loginProject, passwordProject, objectId, objectData1);
+        Map<String, String> objectData2 = new HashMap<>();
+        objectData2.put("op.162", "true");
+        String objectAlias = "ProjectDocument";
+        Map<String, String> objectData3 = new HashMap<>();
+        objectData3.put("ProjectRequest", objectId);
+        objectData3.put("Type", "879022");
+        objectService.CreateWithObjectAlias(loginProject, passwordProject, objectAlias, objectData3);
         userTask.CompleteTask(loginProject, passwordProject, taskId1, true);
         String taskId2 = processObject.GetActiveSubtasksTimer(loginProject, passwordProject, processId, 3);
         assertThat(taskId2, is(notNullValue()));

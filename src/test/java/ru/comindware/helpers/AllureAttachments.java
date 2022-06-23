@@ -26,14 +26,14 @@ public class AllureAttachments {
     }
 
     @Attachment(value = "{attachName}", type = "image/png")
-    public static byte[] screenshotAs(String attachName) {
+    public static byte[] takeScreenshot(String attachName) {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
     public static void browserConsoleLogs() {
         attachAsText(
                 "Browser console logs",
-                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
+                String.join("\n", Selenide.getWebDriverLogs(String.valueOf(BROWSER)))
         );
     }
 
@@ -45,7 +45,7 @@ public class AllureAttachments {
     }
 
     public static URL getVideoUrl(String sessionId) {
-        String videoUrl = "http://192.168.0.65:8080/video/" + sessionId + ".mp4";
+        String videoUrl = "http://192.168.0.65:8080/" + sessionId + ".mp4";
 
         try {
             return new URL(videoUrl);
@@ -55,7 +55,7 @@ public class AllureAttachments {
         return null;
     }
 
-    public static String getSessionId(){
+    public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 

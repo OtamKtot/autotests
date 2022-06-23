@@ -7,15 +7,12 @@ import java.util.Map;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ObjectServiceModel {
-    private String objectId;
+public class ObjectAliasServiceModel {
+    private String objectAppAlias;
     private Map<String, String> objectData;
 
-    public ObjectServiceModel(String taskId, Map<String, String> objectData) {
-        this.objectId = taskId;
+    public ObjectAliasServiceModel(String objectAppAlias, Map<String, String> objectData) {
+        this.objectAppAlias = objectAppAlias;
         this.objectData = objectData;
-    }
-    public ObjectServiceModel(String taskId) {
-        this.objectId = taskId;
     }
 }

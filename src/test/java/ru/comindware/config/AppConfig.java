@@ -10,12 +10,11 @@ public interface AppConfig extends Config{
     String baseUrl();
     @DefaultValue("chrome")
     String browser();
-    @DefaultValue("101.0")
+    @DefaultValue("102.0")
     String browserVersion();
     @DefaultValue("1920x1080")
     String browserSize();
     String browserMobileView();
-    @DefaultValue("http://192.168.0.65:4444/wd/hub")
     String remoteDriverUrl();
     String videoStorage();
 }
