@@ -42,7 +42,7 @@ public class MyTasksTests extends BaseTest {
     ProcessObject processObject = new ProcessObject();
     UserTask userTask = new UserTask();
     ObjectService objectService = new ObjectService();
-    CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+    CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
     String loginProject = config.loginProject(),
             passwordProject = config.passwordProject(),
             loginDirector = config.loginDirector(),
@@ -89,17 +89,6 @@ public class MyTasksTests extends BaseTest {
         sleep(5000);
         loginPage.login(loginDirector, passwordDirector);
         myTasks.OpenAppointDirector(nameProject, codeProject);
-    }
-
-    @Test
-    void get() {
-        processObject.GetActiveSubtasks("Project", "C0m1ndw4r3Pl@tf0rm", "1915456");
-    }
-
-    @Test
-    void get1() {
-        String proc = processObject.GetActiveSubtasksTimer("Project", "C0m1ndw4r3Pl@tf0rm", "1915456", 3);
-        System.out.println(proc);
     }
 
     @DisplayName("Выполнить задачу оформление технических требований")
@@ -211,8 +200,6 @@ public class MyTasksTests extends BaseTest {
         Map<String, String> objectData1 = new HashMap<>();
         objectData1.put("op.162", "true");
         objectService.EditObjectById(loginProject, passwordProject, objectId, objectData1);
-        Map<String, String> objectData2 = new HashMap<>();
-        objectData2.put("op.162", "true");
         String objectAlias = "ProjectDocument";
         Map<String, String> objectData3 = new HashMap<>();
         objectData3.put("ProjectRequest", objectId);
