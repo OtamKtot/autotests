@@ -80,6 +80,6 @@ public class ProcessObject {
             return strResponse.replaceAll("\\[|\"|\\]|\\s+", "");
         }
         sleep(4000);
-        return GetActiveSubtasksTimer(username, password, id, countRetry - 1);
+        return GetActiveSubprocessesTimer(username, password, id, countRetry - 1);
     }
 }

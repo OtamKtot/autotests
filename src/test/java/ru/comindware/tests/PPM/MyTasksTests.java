@@ -91,7 +91,7 @@ public class MyTasksTests extends BaseTest {
         myTasks.OpenAppointDirector(nameProject, codeProject);
     }
 
-    @DisplayName("Выполнить задачу оформление технических требований")
+    @DisplayName("Выполнить задачу 'Оформить и утвердить технические требования к ИТ-проекту'")
     @Tag("PPM")
     @Test
     void completeTechnicalRequirements() {
