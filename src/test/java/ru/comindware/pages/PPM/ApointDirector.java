@@ -13,7 +13,7 @@ public class ApointDirector {
             collectionField1 = $x("//*[@class='js-visible-collection visible-collection ']/tr/td[3]"),
             dropDown = $x("(//*[@class='js-input bubbles__input'])[4]"),
             firstListCheckBox = $x("//*[@class='dd-list__i dd-list__i_checkbox selected']"),
-            completeTask = $("[title=\"Завершить задачу\"]");
+            completeTask = $("[title=\"Завершить\"]");
 
     @Step("Добавить руководителя в коллекцию")
     public ApointDirector FillFormField(String fioRukovoditel) {
