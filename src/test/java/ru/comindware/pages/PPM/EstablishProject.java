@@ -2,34 +2,33 @@ package ru.comindware.pages.PPM;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import ru.comindware.PlatformComponents;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
-import static ru.comindware.utils.RandomUtils.getRandomInt;
 
 public class EstablishProject {
-    SelenideElement notificationContainer = $(".notification-body_container"),
-            addNewRecordToCollection = $x("(//*[@class='toolbar-btn toolbar-btn_none    toolbar-btn_action  '])[4]"),
-            collectionField1 = $x("(//*[@class='js-visible-collection visible-collection ']/tr/td[2])[2]"),
-            collectionField2 = $x("(//*[@class='js-visible-collection visible-collection ']/tr/td[3])[2]"),
-            collectionField3 = $x("(//*[@class='js-visible-collection visible-collection ']/tr/td[4])[2]"),
-            collectionField4 = $x("//*[@class='js-visible-collection visible-collection ']/tr/td[5]"),
-            collectionField5 = $x("//*[@class='js-visible-collection visible-collection ']/tr/td[6]"),
-            collectionField6 = $x("//*[@class='js-visible-collection visible-collection ']/tr/td[7]"),
-            collectionField7 = $x("//*[@class='js-visible-collection visible-collection ']/tr/td[8]"),
-            textField = $x("(//*[@class='input input_text js-input'])[7]"),
+    PlatformComponents platformComponents = new PlatformComponents();
+    SelenideElement notificationContainer = platformComponents.notificationContainer(),
+            addNewRecordToCollection = platformComponents.addNewRecordToCollection(4),
+            collectionField1 = platformComponents.collectionField(2,2),
+            collectionField2 = platformComponents.collectionField(3,2),
+            collectionField3 = platformComponents.collectionField(4,2),
+            collectionField4 = platformComponents.collectionField(5),
+            collectionField5 = platformComponents.collectionField(6),
+            collectionField6 = platformComponents.collectionField(7),
+            collectionField7 = platformComponents.collectionField(8),
+            textField = platformComponents.textarea(7),
             verticalLayout = $x("//*[@class='layout__vertical-layout']"),
             oldDateTime = $(".day.old"),
             newDateTime = $(".day.new", 2),
-            dropDown = $x("(//*[@class='js-input bubbles__input'])[2]"),
+            dropDown = platformComponents.dropDown(2),
             firstElementFromDropdown = $(".dd-list__i.selected"),
-            AddRecordToCollection = $x("(//*[@class='toolbar-btn toolbar-btn_none    toolbar-btn_action  '])[4]"),
             completeTask = $("[title=\"Завершить задачу\"]");
 
     @Step("Заполнение формы и полей коллекции")
-    public EstablishProject FillFormField(String nameProject,String codeProject,String fioDirector) {
+    public EstablishProject FillFormField(String nameProject, String codeProject, String fioDirector) {
         addNewRecordToCollection.click();
         collectionField1.click();
         textField.setValue(codeProject);

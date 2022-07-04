@@ -8,8 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class OrganizeEvaluation {
 
-    SelenideElement radioButtonYes = $(".editor_radiobutton"),
-            notificationContainer = $(".notification-body_container"),
+    SelenideElement notificationContainer = $(".notification-body_container"),
             completeTask = $("[title=\"Завершить задачу\"]");
 
     @Step("Завершить задачу")

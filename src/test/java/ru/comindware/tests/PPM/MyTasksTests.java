@@ -44,7 +44,7 @@ public class MyTasksTests extends BaseTest {
     UserTask userTask = new UserTask();
     ObjectService objectService = new ObjectService();
     RequestProjectData requestProjectData = new RequestProjectData();
-    ApointDirector apointDirector = new ApointDirector();
+    AppointDirector apointDirector = new AppointDirector();
     CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
     String loginProject = config.loginProject(),
             passwordProject = config.passwordProject(),

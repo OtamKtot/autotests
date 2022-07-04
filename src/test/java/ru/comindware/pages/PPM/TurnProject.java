@@ -2,13 +2,15 @@ package ru.comindware.pages.PPM;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import ru.comindware.PlatformComponents;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class TurnProject {
-    SelenideElement radioButtonYes = $(".editor_radiobutton"),
-            notificationContainer = $(".notification-body_container"),
+    PlatformComponents platformComponents = new PlatformComponents();
+    SelenideElement radioButtonYes = platformComponents.radioButtonYes(),
+            notificationContainer = platformComponents.notificationContainer(),
             completeTask = $("[title=\"Завершить задачу\"]");
 
     @Step("Завершить задачу")

@@ -2,23 +2,24 @@ package ru.comindware.pages.PPM;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import ru.comindware.PlatformComponents;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TechnicalRequirements {
-
-    SelenideElement textField1 = $x("(//*[@class='textarea js-input'])"),
-            textField2 = $x("(//*[@class='textarea js-input'])[2]"),
+    PlatformComponents platformComponents = new PlatformComponents();
+    SelenideElement textField1 = platformComponents.textarea(),
+            textField2 = platformComponents.textarea(2),
             AddRecordToCollection = $x("(//*[@class='toolbar-btn toolbar-btn_none    toolbar-btn_action  '])[4]"),
             popup = $(".layout__popup-view-content"),
-            dropDown = $x("(//*[@class='js-input bubbles__input'])[2]"),
+            dropDown = platformComponents.dropDown(2),
             firstListCheckBox = $x("//*[@class='dd-list__i dd-list__i_checkbox selected']"),
             popupHeader = $x("//*[@class='layout__popup-view-header js-header']"),
             buttonOnAddForm = $x("(//*[@class='toolbar-btn js-btn   btn-strong'])[2]"),
             completeTask = $("[title=\"Завершить задачу\"]"),
-            notificationContainer = $(".notification-body_container"),
+            notificationContainer = platformComponents.notificationContainer(),
             loader = $(".loader");
 
     @Step("Заполнить обязательные поля")

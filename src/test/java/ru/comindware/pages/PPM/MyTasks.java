@@ -1,7 +1,6 @@
 package ru.comindware.pages.PPM;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
