@@ -24,6 +24,7 @@ public class AppointDirector {
         firstListCheckBox.click();
         return this;
     }
+
     @Step("Завершить задачу")
     public AppointDirector CompleteTask() {
         completeTask.click();

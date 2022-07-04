@@ -6,9 +6,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class PlatformComponents {
-    SelenideElement notificationContainer = $(".notification-body_container"),
-            radioButtonYes = $(".editor_radiobutton"),
-            addNewRecordToCollection = $x("(//*[@class='toolbar-btn toolbar-btn_none    toolbar-btn_action  '])[3]");
 
     public SelenideElement dropDown(int index) {
         return $x("(//*[@class='js-input bubbles__input'])[" + index + "]");
@@ -41,10 +38,28 @@ public class PlatformComponents {
     public SelenideElement addNewRecordToCollection() {
         return $x("(//*[@class='toolbar-btn toolbar-btn_none    toolbar-btn_action  '])");
     }
+
     public SelenideElement firstListCheckBox() {
         return $x("//*[@class='dd-list__i dd-list__i_checkbox selected']");
     }
+
     public SelenideElement radioButtonYes() {
         return $(".editor_radiobutton");
+    }
+
+    public SelenideElement radioButton(int index) {
+        return $x("(//*[@class='editor editor_radiobutton '])[" + index + "]");
+    }
+
+    public SelenideElement firstElementFromDropdown() {
+        return $(".dd-list__i.selected");
+    }
+
+    public SelenideElement textField(int index) {
+        return $x("(//*[@class='input input_text js-input'])[" + index + "]");
+    }
+
+    public SelenideElement textField() {
+        return $x("(//*[@class='input input_text js-input'])");
     }
 }

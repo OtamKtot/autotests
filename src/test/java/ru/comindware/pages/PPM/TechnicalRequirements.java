@@ -15,7 +15,7 @@ public class TechnicalRequirements {
             AddRecordToCollection = $x("(//*[@class='toolbar-btn toolbar-btn_none    toolbar-btn_action  '])[4]"),
             popup = $(".layout__popup-view-content"),
             dropDown = platformComponents.dropDown(2),
-            firstListCheckBox = $x("//*[@class='dd-list__i dd-list__i_checkbox selected']"),
+            firstListCheckBox = platformComponents.firstListCheckBox(),
             popupHeader = $x("//*[@class='layout__popup-view-header js-header']"),
             buttonOnAddForm = $x("(//*[@class='toolbar-btn js-btn   btn-strong'])[2]"),
             completeTask = $("[title=\"Завершить задачу\"]"),
