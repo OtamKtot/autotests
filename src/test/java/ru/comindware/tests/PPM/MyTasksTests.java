@@ -65,37 +65,7 @@ public class MyTasksTests extends BaseTest {
         loginPage.login(loginProject, passwordProject);
         myTasks.CreateTicketOnProject()
                 .WriteDescriptionAndCreate(nameProject)
-                .OperationComplete()
-                .RefreshList()
-                .OpenTechnicalRequirements();
-        technicalRequirements.WriteDescription(nameProject)
-                .AddNewRecordToCollection()
-                .FillFieldOnPopup()
-                .CompleteTask()
                 .OperationComplete();
-        sleep(5000);
-        myTasks.GoToMyTasks()
-                .OpenRateUrgency();
-        rateUrgency.CompleteTask()
-                .OperationComplete();
-        sleep(5000);
-        myTasks.GoToMyTasks()
-                .OpenOrganizeEvaluation();
-        organizeEvaluation.CompleteTask();
-        sleep(5000);
-        myTasks.GoToMyTasks()
-                .OpenEstablishProject();
-        establishProject.FillFormField(nameProject, codeProject, fioDirector)
-                .CompleteTask()
-                .OperationComplete();
-        myTasks.GoToMyTasks()
-                .OpenTurnProject();
-        turnProject.CompleteTask()
-                .OperationComplete();
-        myTasks.LogOut();
-        sleep(5000);
-        loginPage.login(loginDirector, passwordDirector);
-        myTasks.OpenAppointDirector(nameProject, codeProject);
     }
 
     @DisplayName("Выполнить задачу 'Оформить и утвердить технические требования к ИТ-проекту'")
