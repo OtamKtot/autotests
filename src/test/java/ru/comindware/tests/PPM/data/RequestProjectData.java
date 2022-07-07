@@ -22,8 +22,35 @@ public class RequestProjectData {
         objectData.put("op.133", dateAndTimeUtils.LocalDateAndTimeFormatter(thirtyDaysPlus));
         objectData.put("op.123", nameProject);
         objectData.put("op.15", accountId);
-
         return objectData;
     }
 
+    public Map<String, String> setRateUrgencyData() {
+        Map<String, String> objectData = new HashMap<>();
+        objectData.put("op.162", "true");
+        return objectData;
+    }
+
+    public Map<String, String> setProjectData(String requestProjectId) {
+        Map<String, String> objectData = new HashMap<>();
+        objectData.put("ProjectRequest", requestProjectId);
+        objectData.put("Type", "879022");
+        return objectData;
+    }
+
+    public Map<String, String> setEstablishProjectData(String loginAdmin, String passwordAdmin, String nameProject, String codeProject, String directorName, String requestProjectId) {
+        LocalDate thirtyDaysAgo = LocalDate.now().minusDays(30);
+        LocalDate thirtyDaysPlus = LocalDate.now().plusDays(30);
+        String accountId = accountService.GetByAccountName(loginAdmin, passwordAdmin, directorName);
+        Map<String, String> objectData = new HashMap<>();
+        objectData.put("ProjectRequest", requestProjectId);
+        objectData.put("Code", codeProject);
+        objectData.put("Name", nameProject);
+        objectData.put("Director", accountId);
+        objectData.put("PlannedStartDate", dateAndTimeUtils.LocalDateAndTimeFormatter(thirtyDaysAgo));
+        objectData.put("PlannedEndDate", dateAndTimeUtils.LocalDateAndTimeFormatter(thirtyDaysPlus));
+        objectData.put("Isp_ED", "true");
+        objectData.put("Status", "22");
+        return objectData;
+    }
 }
