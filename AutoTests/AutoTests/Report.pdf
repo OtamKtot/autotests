@@ -1,197 +1,0 @@
-<!DOCTYPE html>
-<html lang='ru-RU'>
-<head>
-<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-<title>Отчёт о тестировании</title>
-</head>
-<body>
-<div style='font-size:22px;' align='center'><strong>Тест начат: 29.04.2020 14:20:41</strong></div></br>
-<table border='1' align='center' cellpadding='5' cellspacing='0' width='100%'>
-<tr style='text-align:center;'>
-<td width='100px'><strong>Тест</strong></td>
-<td width='70px'><strong>Результат</strong></td>
-<td width='70px'><strong>Время</strong></td>
-<td width='70px'><strong>Снимок</strong></td>
-<td><strong>Сообщение</strong></td>
-</tr>
-<tr style='color: green;'>
-<td><a target='_blank' href='http://jira.ru/browse/WSP-1251'>WSP-1251</a></td>
-<td>Успех</td>
-<td>14:20:57</td>
-<td>-</td>
-<td>-</td>
-</tr>
-
-<tr style='text-align:center;'>
-<td colspan='5'>&nbsp;</center></td>
-</tr>
-<tr style='text-align:center;'>
-<td colspan='5'>Всего тестов запущено: 1 || <span style='color: green;'>Успешно: 1</span> || <span style='color: red;'>Провалено: 0</span> || Процент пройденных: 100% || Тест завершён: 29.04.2020 14:20:57</td>
-</tr>
-</table>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang='ru-RU'>
-<head>
-<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-<title>Отчёт о тестировании</title>
-</head>
-<body>
-<div style='font-size:22px;' align='center'><strong>Тест начат: 29.04.2020 14:53:11</strong></div></br>
-<table border='1' align='center' cellpadding='5' cellspacing='0' width='100%'>
-<tr style='text-align:center;'>
-<td width='100px'><strong>Тест</strong></td>
-<td width='70px'><strong>Результат</strong></td>
-<td width='70px'><strong>Время</strong></td>
-<td width='70px'><strong>Снимок</strong></td>
-<td><strong>Сообщение</strong></td>
-</tr>
-<!DOCTYPE html>
-<html lang='ru-RU'>
-<head>
-<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-<title>Отчёт о тестировании</title>
-</head>
-<body>
-<div style='font-size:22px;' align='center'><strong>Тест начат: 29.04.2020 14:55:15</strong></div></br>
-<table border='1' align='center' cellpadding='5' cellspacing='0' width='100%'>
-<tr style='text-align:center;'>
-<td width='100px'><strong>Тест</strong></td>
-<td width='70px'><strong>Результат</strong></td>
-<td width='70px'><strong>Время</strong></td>
-<td width='70px'><strong>Снимок</strong></td>
-<td><strong>Сообщение</strong></td>
-</tr>
-<tr style='color: red;'>
-<td><a target='_blank' href='http://jira.ru/browse/WSP-1251'>WSP-1251</a></td>
-<td>Провал</td>
-<td>14:55:23</td>
-<td><a target='_blank' href='screen/WSP-1251_2020-04-29_14-55-23.png'>смотреть</a></td>
-<td>OpenQA.Selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='password1']"}</br>  (Session info: chrome=81.0.4044.122)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementByXPath(String xpath)</br>   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass19_0.&lt;XPath&gt;b__0(ISearchContext context)</br>   at OpenQA.Selenium.By.FindElement(ISearchContext context)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)</br>   at TESTING_SPACE.Test.TEST_1() in C:\Users\aantipov\source\repos\TestReport\TestReport\UnitTest1.cs:line 85</td>
-</tr>
-
-<tr style='text-align:center;'>
-<td colspan='5'>&nbsp;</center></td>
-</tr>
-<tr style='text-align:center;'>
-<td colspan='5'>Всего тестов запущено: 1 || <span style='color: green;'>Успешно: 0</span> || <span style='color: red;'>Провалено: 1</span> || Процент пройденных: 0% || Тест завершён: 29.04.2020 14:55:23</td>
-</tr>
-</table>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang='ru-RU'>
-<head>
-<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-<title>Отчёт о тестировании</title>
-</head>
-<body>
-<div style='font-size:22px;' align='center'><strong>Тест начат: 29.04.2020 15:02:18</strong></div></br>
-<table border='1' align='center' cellpadding='5' cellspacing='0' width='100%'>
-<tr style='text-align:center;'>
-<td width='100px'><strong>Тест</strong></td>
-<td width='70px'><strong>Результат</strong></td>
-<td width='70px'><strong>Время</strong></td>
-<td width='70px'><strong>Снимок</strong></td>
-<td><strong>Сообщение</strong></td>
-</tr>
-<tr style='color: red;'>
-<td><a target='_blank' href='http://jira.ru/browse/WSP-1251'>WSP-1251</a></td>
-<td>Провал</td>
-<td>15:02:22</td>
-<td><a target='_blank' href='screen/WSP-1251_2020-04-29_15-02-22.png'>смотреть</a></td>
-<td>OpenQA.Selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='password1']"}</br>  (Session info: chrome=81.0.4044.122)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementByXPath(String xpath)</br>   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass19_0.&lt;XPath&gt;b__0(ISearchContext context)</br>   at OpenQA.Selenium.By.FindElement(ISearchContext context)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)</br>   at TESTING_SPACE.Test.TEST_1() in C:\Users\aantipov\source\repos\TestReport\TestReport\UnitTest1.cs:line 85</td>
-</tr>
-
-<tr style='text-align:center;'>
-<td colspan='5'>&nbsp;</center></td>
-</tr>
-<tr style='text-align:center;'>
-<td colspan='5'>Всего тестов запущено: 1 || <span style='color: green;'>Успешно: 0</span> || <span style='color: red;'>Провалено: 1</span> || Процент пройденных: 0% || Тест завершён: 29.04.2020 15:02:23</td>
-</tr>
-</table>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang='ru-RU'>
-<head>
-<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-<title>Отчёт о тестировании</title>
-</head>
-<body>
-<div style='font-size:22px;' align='center'><strong>Тест начат: 29.04.2020 16:00:27</strong></div></br>
-<table border='1' align='center' cellpadding='5' cellspacing='0' width='100%'>
-<tr style='text-align:center;'>
-<td width='100px'><strong>Тест</strong></td>
-<td width='70px'><strong>Результат</strong></td>
-<td width='70px'><strong>Время</strong></td>
-<td width='70px'><strong>Снимок</strong></td>
-<td><strong>Сообщение</strong></td>
-</tr>
-<!DOCTYPE html>
-<html lang='ru-RU'>
-<head>
-<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-<title>Отчёт о тестировании</title>
-</head>
-<body>
-<div style='font-size:22px;' align='center'><strong>Тест начат: 29.04.2020 16:02:06</strong></div></br>
-<table border='1' align='center' cellpadding='5' cellspacing='0' width='100%'>
-<tr style='text-align:center;'>
-<td width='100px'><strong>Тест</strong></td>
-<td width='70px'><strong>Результат</strong></td>
-<td width='70px'><strong>Время</strong></td>
-<td width='70px'><strong>Снимок</strong></td>
-<td><strong>Сообщение</strong></td>
-</tr>
-<tr style='color: red;'>
-<td><a target='_blank' href='https://docs.google.com/spreadsheets/d/10ALVRCaoaeTSa8-GDwmzX1lFfZY_ZzxOWNAc60esaBU/edit#gid=1934059197&range=D2:D3'>D2:D3</a></td>
-<td>Провал</td>
-<td>16:02:11</td>
-<td><a target='_blank' href='screen/iTestNum_2020-04-29_16-02-11.png'>смотреть</a></td>
-<td>OpenQA.Selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='password1']"}</br>  (Session info: chrome=81.0.4044.122)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementByXPath(String xpath)</br>   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass19_0.&lt;XPath&gt;b__0(ISearchContext context)</br>   at OpenQA.Selenium.By.FindElement(ISearchContext context)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)</br>   at TESTING_SPACE.Test.TEST_1() in C:\Users\aantipov\source\repos\TestReport\TestReport\UnitTest1.cs:line 85</td>
-</tr>
-
-<tr style='text-align:center;'>
-<td colspan='5'>&nbsp;</center></td>
-</tr>
-<tr style='text-align:center;'>
-<td colspan='5'>Всего тестов запущено: 1 || <span style='color: green;'>Успешно: 0</span> || <span style='color: red;'>Провалено: 1</span> || Процент пройденных: 0% || Тест завершён: 29.04.2020 16:02:11</td>
-</tr>
-</table>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang='ru-RU'>
-<head>
-<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-<title>Отчёт о тестировании</title>
-</head>
-<body>
-<div style='font-size:22px;' align='center'><strong>Тест начат: 29.04.2020 16:15:50</strong></div></br>
-<table border='1' align='center' cellpadding='5' cellspacing='0' width='100%'>
-<tr style='text-align:center;'>
-<td width='100px'><strong>Тест</strong></td>
-<td width='70px'><strong>Результат</strong></td>
-<td width='70px'><strong>Время</strong></td>
-<td width='70px'><strong>Снимок</strong></td>
-<td><strong>Сообщение</strong></td>
-</tr>
-<tr style='color: red;'>
-<td><a target='_blank' href='https://docs.google.com/spreadsheets/d/10ALVRCaoaeTSa8-GDwmzX1lFfZY_ZzxOWNAc60esaBU/edit#gid=1934059197&range=D2:D3'>TestUnit</a></td>
-<td>Провал</td>
-<td>16:15:54</td>
-<td><a target='_blank' href='screen/TestUnit_2020-04-29_16-15-55.png'>смотреть</a></td>
-<td>OpenQA.Selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='password1']"}</br>  (Session info: chrome=81.0.4044.122)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementByXPath(String xpath)</br>   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClass19_0.&lt;XPath&gt;b__0(ISearchContext context)</br>   at OpenQA.Selenium.By.FindElement(ISearchContext context)</br>   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)</br>   at TESTING_SPACE.Test.TEST_1() in C:\Users\aantipov\source\repos\TestReport\TestReport\UnitTest1.cs:line 87</td>
-</tr>
-
-<tr style='text-align:center;'>
-<td colspan='5'>&nbsp;</center></td>
-</tr>
-<tr style='text-align:center;'>
-<td colspan='5'>Всего тестов запущено: 1 || <span style='color: green;'>Успешно: 0</span> || <span style='color: red;'>Провалено: 1</span> || Процент пройденных: 0% || Тест завершён: 29.04.2020 16:15:55</td>
-</tr>
-</table>
-</body>
-</html>
